@@ -74,7 +74,14 @@ const Card = ({ item }) => {
             <div>
               {item.clzInfo.name}, {item.clzInfo.district}
             </div>
-            <div className="facultiesSize">{item.clzInfo.faculties} </div>
+            <div className="facultiesSize">
+              {item.clzInfo.faculties.map((faculty) => (
+                <span className="mx-1" key={faculty}>
+                  {" "}
+                  {faculty}
+                </span>
+              ))}
+            </div>
             <div className="clzBtnsContainer">
               <button className="visitWebsite">
                 <a href={item.clzInfo.websiteLink}>

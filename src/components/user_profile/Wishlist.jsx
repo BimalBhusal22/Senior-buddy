@@ -8,8 +8,9 @@ const Wishlist = () => {
         clzInfo: {
           imageUrl: "images/ButwalMultiple.jpg",
           name: "Butwal Multiple Campus",
-          district: "Butwal",
-          faculties: "o Bsc. CSIT o BBA o BSc o BBS o more",
+          district: "Rupandehi",
+          levels: ["bachelor", "master"],
+          faculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -23,6 +24,7 @@ const Wishlist = () => {
           fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
           email: "jivangaire@gmail.com",
         },
+        noOfOtherMentors: 2,
         otherMentors: [
           {
             id: 2,
@@ -54,7 +56,8 @@ const Wishlist = () => {
           imageUrl: "images/KathmanduModal.jpg",
           name: "Kathmandu Modal Campus",
           district: "Kathmandu",
-          faculties: "o +2 Sc o +2 Mgt o BBA o BBS o more",
+          levels: ["+2", "Bachelor"],
+          faculties: ["+2 Sc", "+2 Mgt", "BBA", "BBS", "more"],
           websiteLink: "https://ktmmodelcollege.edu.np/",
         },
         mentor1: {
@@ -68,6 +71,7 @@ const Wishlist = () => {
           fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
           email: "jivangaire@gmail.com",
         },
+        noOfOtherMentors: 2,
         otherMentors: [
           {
             id: 2,

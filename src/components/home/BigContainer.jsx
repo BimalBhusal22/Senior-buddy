@@ -9,9 +9,9 @@ const BigContainer = () => {
         clzInfo: {
           imageUrl: "images/ButwalMultiple.jpg",
           name: "Butwal Multiple Campus",
-          district: "Butwal",
+          district: "Rupandehi",
           levels: ["bachelor", "master"],
-          faculties: "o Bsc. CSIT o BBA o BSc o BBS o more",
+          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -57,7 +57,8 @@ const BigContainer = () => {
           imageUrl: "images/KathmanduModal.jpg",
           name: "Kathmandu Modal Campus",
           district: "Kathmandu",
-          faculties: "o +2 Sc o +2 Mgt o BBA o BBS o more",
+          levels: ["+2", "Bachelor"],
+          faculties: ["+2 Sc", "+2 Mgt", "BBA", "BBS", "more"],
           websiteLink: "https://ktmmodelcollege.edu.np/",
         },
         mentor1: {
@@ -102,8 +103,9 @@ const BigContainer = () => {
         clzInfo: {
           imageUrl: "images/Tilottama.jpg",
           name: "Tilottama Campus",
-          district: "Tilottama",
-          faculties: "o +2 Sc o +2 Mgt o BBA o MBA o more",
+          district: "Rupandehi",
+          levels: ["+2", "Bachelor", "Master"],
+          faculties: ["+2 Sc", "+2 Mgt", "BBA", "MBA" , "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -140,8 +142,9 @@ const BigContainer = () => {
         clzInfo: {
           imageUrl: "images/ButwalMultiple.jpg",
           name: "Butwal Multiple Campus",
-          district: "Butwal",
-          faculties: "o Bsc. CSIT o BBA o BSc o BBS o more",
+          district: "Rupandehi",
+          levels: ["bachelor", "master"],
+          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -185,8 +188,9 @@ const BigContainer = () => {
         clzInfo: {
           imageUrl: "images/ButwalMultiple.jpg",
           name: "Butwal Multiple Campus",
-          district: "Butwal",
-          faculties: "o Bsc. CSIT o BBA o BSc o BBS o more",
+          district: "Rupandehi",
+          levels: ["bachelor", "master"],
+          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -230,8 +234,9 @@ const BigContainer = () => {
         clzInfo: {
           imageUrl: "images/ButwalMultiple.jpg",
           name: "Butwal Multiple Campus",
-          district: "Butwal",
-          faculties: "o Bsc. CSIT o BBA o BSc o BBS o more",
+          district: "Rupandehi",
+          levels: ["bachelor", "master"],
+          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -275,8 +280,9 @@ const BigContainer = () => {
         clzInfo: {
           imageUrl: "images/ButwalMultiple.jpg",
           name: "Butwal Multiple Campus",
-          district: "Butwal",
-          faculties: "o Bsc. CSIT o BBA o BSc o BBS o more",
+          district: "Rupandehi",
+          levels: ["bachelor", "master"],
+          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {

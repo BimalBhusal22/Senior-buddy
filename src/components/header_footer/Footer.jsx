@@ -44,7 +44,7 @@ const Footer = () => {
                   <a href="faqs.html">FAQs</a>
                 </li>
                 <li>
-                  <a href="becomeamentor.html">Become a Mentor</a>
+                  <Link to="/become_a_mentor">Become a Mentor</Link>
                 </li>
                 <li>
                   <Link to="/dashboard">Dashboard</Link>

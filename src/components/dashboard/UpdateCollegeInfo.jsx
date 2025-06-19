@@ -38,7 +38,7 @@ const UpdateCollegeInfo = ({ data }) => {
                 <input
                   type="text"
                   className="valuePart"
-                  placeholder="faculty1 o faculty2 o more"
+                  placeholder="faculty1 faculty2 more"
                   defaultValue={data.faculties}
                 />
               </span>

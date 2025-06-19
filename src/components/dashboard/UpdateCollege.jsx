@@ -7,8 +7,9 @@ const UpdateCollege = () => {
     clzInfo: {
       imageUrl: "images/ButwalMultiple.jpg",
       name: "Butwal Multiple Campus",
-      district: "Butwal",
-      faculties: "o Bsc. CSIT o BBA o BSc o BBS o more",
+      district: "Rupandehi",
+      levels: ["bachelor", "master"],
+      faculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
       websiteLink: "https://bumc.tu.edu.np/",
     },
     mentor1: {
