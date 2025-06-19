@@ -1,0 +1,59 @@
+import { Outlet } from "react-router-dom";
+import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-router-dom";
+
+const AdminDashboard = () => {
+  return (
+    <>
+      <div className="text-center mb-4">
+        <h1 className="adminDashboardHeading py-4">
+          Admin Dashboard{" "}
+          <span className="float-end pe-5">
+            <Link to="/">
+              <button type="button" className="dashboardCrossBtn">
+                <RxCross2 className="fs-1" />
+              </button>
+            </Link>
+          </span>
+        </h1>
+
+        <div className="d-flex flex-wrap justify-content-center">
+          <div className="mx-2">
+            <Link to="/dashboard/add_college">
+              <button
+                type="button"
+                className="btn btn-success dashboardBtn mt-4 py-2"
+              >
+                Add College
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2">
+            <Link to="/dashboard/update_college">
+              <button
+                type="button"
+                className="btn btn-info dashboardBtn mt-4 py-2"
+              >
+                Update College
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2">
+            <Link to="/dashboard/delete_college">
+              <button
+                type="button"
+                className="btn btn-danger dashboardBtn mt-4 py-2"
+              >
+                Delete College
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <Outlet />
+    </>
+  );
+};
+export default AdminDashboard;

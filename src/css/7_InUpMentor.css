@@ -1,0 +1,52 @@
+.myInputBox{
+    width: 370px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.py4top{
+    padding-top: 1.5rem;
+}
+@media screen and (max-width:400px){
+    .myInputBox{
+        width: 250px;
+    }
+    .mySignUpBtnContainer button{
+        width: 250px;
+    }
+    #addCollegeAndMentorsBtn{
+        width: 250px;
+    }
+    #updateCollegeAndMentorsBtn{
+        width: 250px;
+    }
+    #deleteCollegeAndMentorsBtn{
+        width: 250px;
+    }
+}
+
+.mySignUpBtn{
+    width: 370px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #2e97ff;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
+.lightSmallFont{
+    font-size: 14px;
+    color: gray;
+}
+.logInHere{
+    font-size: 14px;
+    color: #2e97ff;
+}
+.signUpSlogan{
+    color: #2e97ff;
+}
+.specialWord{
+    font-weight: bold;
+    color: #2e97ff;
+}

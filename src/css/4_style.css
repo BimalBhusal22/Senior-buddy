@@ -1,0 +1,53 @@
+.introContainer{
+    display: flex;
+    justify-content: center;
+}
+.intro{
+    border-radius: 10px;
+    height: 200px;
+    padding: 25px;
+}
+.intro img{
+    padding-bottom: 0px;
+}
+.goBack, .getHelp2{
+    width:200px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    font-size: 20px;
+    border-radius: 20px;
+    /* padding: 20px !important; */
+}
+.getHelp2{
+    margin-top: 0px;
+}
+.goBack{
+    color:#a0afbd;
+}
+.icon{
+    height: calc(5rem + 2vw);
+    margin-right: 10px;
+}
+.iconPartTime{
+    margin-right: 20px;
+}
+.iconDifferentlyAble{
+    height: calc(10rem + 2vw);
+    margin-left: -30px;
+}
+.heading{
+    font-size: calc(1.2rem + 1vw);
+    text-align: center;
+}
+.point{
+    font-size: calc(1rem + 0.5vw);
+}
+.seniorName{
+    color: #2e97ff;
+}
+.g1p{
+    color:  #003f7f;
+}
+.g2p{
+    color: #2e97ff;
+}

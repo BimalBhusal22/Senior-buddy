@@ -1,0 +1,186 @@
+.bigContent{
+    display:inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 30px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    /* margin-right: 50px; */
+    /* border: 2px solid green; */
+}
+.allCards{
+    /* display: inline-block; */
+    /* flex-shrink: 2; */
+    display: flex;
+    /* width:80vw; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    /* border: 2px solid red; */
+    /* margin-left: 45px; */
+    margin-top: -2vw;
+}
+.BimalCard{
+    /* border: 2px solid black; */
+    display: inline-block;
+    width: 320px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 2vw;
+    border-radius: 15px;
+    background-color: white;
+}
+.part1{
+    /* border-bottom:2px solid black; */
+    height:155px;
+    display: flex;
+}
+.part11{
+    display:inline-block;
+    box-sizing: border-box;
+    height:150px;
+    width:150px;
+    overflow: hidden;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    /* margin:2px; */
+    background-size:cover;
+    /* position:relative; */
+    /* bottom:8px; */
+}
+/* .senior1{
+    background-image: url(../images/senior1.png);
+} */
+.part12{
+    display:inline-block;
+    box-sizing: border-box;
+    height:95%;
+    width:55%;
+    border-radius: 10px;
+    line-height: 30px;
+    /* margin:20px 2px 2px 2px; */
+    padding: 10px;
+    /* position:relative; */
+    /* top:-20px;  */
+}
+.part31{
+    /* box-sizing: border-box; */
+    height:100px;
+    width:100%;
+    overflow: hidden;
+    /* border: 2px solid black; */
+    /* border-radius: 5px; */
+    /* margin:5px 2px 2px 2px; */
+    /* background-image: url(../images/ButwalMultiple.jpg);  */
+    /* background-size:cover; */
+} 
+
+/* two... */
+
+.accordion-item:last-of-type>.accordion-header .accordion-button.collapsed {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.howHeHelps, .addtoWishlist{
+    border-radius: 10px;
+    border: none;
+    /* background: linear-gradient(to right, #006EDB,#DB6D00); */
+    background-color: #2e97ff;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 7px;
+    width: 153px;
+    color: white;
+}
+.howHeHelps{
+    margin-top: 7px;
+}
+.howHeHelps a{
+    color: white;
+}
+.part12{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.-body {
+    padding: 0px;
+}
+.messagePart{
+    position:fixed;
+    z-index: 2;
+    bottom:30px;
+    right:40px;
+    text-align: center;
+    background-color: #b6daff;
+    border-radius: 15px;
+    padding: 8px;
+}
+.messageUs{
+    display:inline-block;
+    height:40px;
+    width:100px;
+    margin-bottom: -20px;
+}
+.accordion-body{
+    margin-top: 5px;
+    padding: 0px;
+}
+.part32{
+    text-align: center;
+    line-height: 30px;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+.facultiesSize{
+    font-size: 14px;
+}
+.seeOther{
+    color:#003f7f;
+}
+.clzBtnsContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.visitWebsite{
+    border: none;
+    background-color: white;
+}
+.visitWebsite a{
+    color: #003f7f;
+    text-decoration: underline;
+}
+.rightArrow{
+    position: relative;
+    top: 7px;
+}
+.accordion-item {
+    border-left: none;
+    border-right: none;
+}
+.xWishlist{
+    color: #667b90;
+    background-color: white;
+    border: 2px solid #667b90;
+    box-sizing: border-box;
+    height: 32px;
+    /* padding-bottom: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deleteIcon{
+    font-size: 30px;
+    margin-right: 5px;
+}
+.addIcon{
+    font-size: 25px;
+    margin-right: 5px;
+}

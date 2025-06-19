@@ -1,0 +1,64 @@
+.keyPart{
+    display: inline-block;
+    width: 130px;
+}
+.valuePart{
+    width: 250px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+.imageInput{
+    padding-left: 0px;
+    width: 255px;
+}
+.myHeading{
+    color: #2e97ff;
+}
+.editBtn{
+    background-color:#2e97ff;
+    font-weight: bold;
+    color: white;
+    width: 104px;
+    border: none;
+}
+.editIcon{
+    position: relative;
+    bottom: 1px;
+}
+.confirmBtn{
+    background-color:#003f7f;
+    font-weight: bold;
+    color: white;
+    width: 104px;
+    border: none;
+}
+.confirmIcon{
+    position: relative;
+    bottom: 1px;
+}
+.showBtn, .hideBtn{
+    position: relative;
+    left: 130px;
+    margin-top: 5px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 2px;
+    height: 20px;
+}
+.showIcon, .hideIcon{
+    position: relative;
+    bottom: 5px;
+}
+.py3bottom{
+    padding-bottom: 1rem;
+}
+.py4bottom{
+    padding-bottom: 1.5rem;
+}
+.m4top{
+    margin-top: 1.5rem;
+}
+.m4bottom{
+    margin-bottom: 1.5rem;
+}

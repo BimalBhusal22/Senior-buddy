@@ -1,0 +1,18 @@
+@media screen and (max-width:1067px){
+    .container11, .slogan2{
+        display: none;
+    }
+    .slogan1{
+        text-align: center;
+        line-height: 30px;
+        font-weight: 600 !important;
+    }
+    .filter{
+        display:none;
+    }
+}
+@media screen and (max-width:1252px){
+        .container11, .slogan2{
+        display: none;
+    }
+}

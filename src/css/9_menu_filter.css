@@ -1,0 +1,56 @@
+.mobileMenuContainer, .mobileFilterContainer{
+    width: 80vw;
+    position: fixed;
+    top: 80px;
+    left: 0px;
+    display: none;
+    border-radius: 10px;
+}
+.mobileMenuContainer{
+    z-index:999;
+    background-color: #003f7f;
+    color: white;
+}
+.mobileFilterContainer{
+    z-index: 998;
+    background-color: white;
+}
+.crossIcon{
+    font-size: 30px;
+    color:  white;
+}
+.colorBlack{
+    color: black;
+}
+.crossBtn{
+    background-color: unset;
+    border: none;
+}
+.mobileSignInUp{
+    display: unset;
+    top: 0px;
+}
+.mobileTheme{
+    display: unset;
+    top: 0px;
+}
+.mobileLightThemeIcon, .mobileDarkThemeIcon{
+    position: relative;
+    bottom: 3px;
+}
+.mobileFilter{
+    display: unset;
+    margin-right: 0px;
+    padding: unset;
+    margin-top: 20px;
+    width: unset;
+
+
+
+}
+
+@media screen and (max-width: 1066px){
+    .mobileMenuContainer, .mobileFilterContainer{
+        display: unset;
+    }
+}

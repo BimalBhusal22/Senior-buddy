@@ -1,0 +1,17 @@
+@media screen and (max-width:750px){
+    .messagePart{
+        right:15px;
+    }
+}
+
+@media screen and (max-width:576px){
+    .tCenter{
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .contactPadding{
+        padding-top: 30px;
+    }
+}

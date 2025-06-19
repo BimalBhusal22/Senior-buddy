@@ -1,0 +1,218 @@
+
+/* <weight>: Use a value from 200 to 1000 */
+ /* <uniquifier>: Use a unique and descriptive className name */
+
+* {
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+.slogan2{
+    color:  rgb(97, 99, 104);
+}
+.guidance, .topper{
+    color: #2e97ff;
+}
+
+.logo{
+    max-height: calc(2.2rem + 1.5vw);
+    margin: 0px;
+    margin-right: 10px;
+    border-radius:50%;
+}
+.searchBar, .searchBar2{
+    width: 25vw;
+    height:30px;
+    border-radius: 10px;
+    padding: 3px;
+    padding-left: 10px;
+    border: 2px solid gray;
+}
+.upperNavbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:80%;
+}
+.signIn, .signUp{
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.signIn{
+    /* border: 2px solid #003f7f; */
+    border: none;
+    color: #667b90;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.signUp{
+    color: white;
+    background-color: #2e97ff;
+    border: none;
+    font-weight: bold;
+}
+.theme{
+    border: 3px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    display: flex;
+    height: 26px;
+    align-items: center;
+}
+.lightTheme{
+    border: 3px solid black;
+    background-color: white;
+    color: black;
+}
+header{
+    display: flex;
+    justify-content: center;
+    /* background: linear-gradient(to right, #003f7f,#007fff); */
+    background-color: #003f7f;
+    /* background-color: #DB6D00; */
+    flex-direction: column;
+    align-items: center;
+}
+.upperNavbar a{
+    padding-top: 3px;
+    text-decoration: none;
+}
+.senior{
+    color:  white;
+}
+.buddy{
+    color:#2e97ff;
+}
+.lowerNavbar{
+    padding-bottom: 45px;
+    width: 100%;
+    height: 35px;
+}
+.ctgy{
+    font-weight: 700;
+    color: white;
+}
+.homeIcon{
+    font-size: 25px;
+}
+.homeBtn{
+    padding: 8px;
+    border: none;
+    background-color: unset;
+}
+.sCtgy{
+    /* font-weight: 700 !important; */
+    color: white;
+}
+#navItems{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#navItems select{
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+a{
+    text-decoration: none;
+}
+.becomeAMentor{
+    border-radius: 10px;
+    border: 2px solid white;
+    /* height: 32px; */
+    background-color: #003f7f;
+    /* border: 2px solid white; */
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+}
+.userProfile{
+    min-height: 40px;
+    min-width: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #003f7f;
+    position: relative;
+    bottom: 0px;
+}
+.myBadge{
+    background-color: #2e97ff !important;
+}
+.middleBar{
+    display: flex;
+    align-items: center;
+}
+.mobileMenuIcon{
+    height: calc(1rem + 2vw);
+    width: calc(1rem + 2vw);
+    background-color: #003f7f;
+    color: white;
+}
+.middleBar, .mobileMenu{
+    display:none;
+}
+.mobileMenu{
+    border: none;
+    background-color: unset;
+}
+.filterBtn{
+    /* padding: 0px 3px 0px 3px; */
+    /* text-align: center; */
+    background-color: #003f7f;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
+}
+.filterIcon{
+    position: relative;
+    top: -1px;
+    margin-right: 3px;
+}
+.searchBar, .signInUp, .theme{
+    position: relative;
+    top: 3px;
+}
+.becomeAMentorIcon {
+    margin-right: 2px;
+    position: relative;
+    bottom: 2px;
+}
+.filterWord{
+    font-size: 14px;
+}
+.myHeader{
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+

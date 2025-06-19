@@ -1,0 +1,55 @@
+.animatedLogo {
+  position: relative;
+  right: 140px;
+  height: 120px;
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.slogansContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+@keyframes bimalAnimation {
+  from {
+    translate: 0px;
+  }
+  to {
+    translate: 90%;
+  }
+}
+.bAnimation {
+  animation: bimalAnimation 2s linear 1s 1 forwards;
+}
+.filter {
+  /* border:1px solid rgb(113, 111, 111); */
+  /* box-shadow: 5px; */
+  border-radius: 15px;
+  /* margin-left:45px; */
+  display: inline-block;
+  /* margin-top: 15px; */
+  margin-right: 25px;
+  /* margin-top: 2vw; */
+  padding: 25px;
+  /* padding-top: 10px; */
+  width: 250px;
+  background-color: white;
+  /* position:relative; */
+  /* top:-250px; */
+}
+.filter1{
+  margin-bottom: 20px;
+}
+.filter1 h5 {
+  margin: 10px 0;
+}
+.filter1 input {
+  margin: 8px 0;
+  border-radius: 5px;
+  border-color: gainsboro;
+}
