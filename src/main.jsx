@@ -28,6 +28,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddCollege from "./components/dashboard/AddCollege.jsx";
 import UpdateCollege from "./components/dashboard/UpdateCollege.jsx";
 import DeleteCollege from "./components/dashboard/DeleteCollege.jsx";
+import { Provider } from "react-redux";
+import store from "./store/index.js";
 
 const router = createBrowserRouter([
   {
@@ -82,7 +84,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
-  
 );
