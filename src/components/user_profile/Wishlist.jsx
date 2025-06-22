@@ -54,7 +54,7 @@ const Wishlist = () => {
         id: 2,
         clzInfo: {
           imageUrl: "images/KathmanduModal.jpg",
-          name: "Kathmandu Modal Campus",
+          name: "Kathmandu Model Campus",
           district: "Kathmandu",
           levels: ["+2", "Bachelor"],
           faculties: ["+2 Sc", "+2 Mgt", "BBA", "BBS", "more"],

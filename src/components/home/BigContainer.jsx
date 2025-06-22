@@ -1,8 +1,9 @@
 import Filter from "./Filter.jsx";
 import AllCards from "../others/AllCards.jsx";
+import { useState } from "react";
 
 const BigContainer = () => {
-  let data = {
+  let defaultData = {
     items: [
       {
         id: 1,
@@ -11,7 +12,7 @@ const BigContainer = () => {
           name: "Butwal Multiple Campus",
           district: "Rupandehi",
           levels: ["bachelor", "master"],
-          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
+          faculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -55,7 +56,7 @@ const BigContainer = () => {
         id: 2,
         clzInfo: {
           imageUrl: "images/KathmanduModal.jpg",
-          name: "Kathmandu Modal Campus",
+          name: "Kathmandu Model Campus",
           district: "Kathmandu",
           levels: ["+2", "Bachelor"],
           faculties: ["+2 Sc", "+2 Mgt", "BBA", "BBS", "more"],
@@ -105,7 +106,7 @@ const BigContainer = () => {
           name: "Tilottama Campus",
           district: "Rupandehi",
           levels: ["+2", "Bachelor", "Master"],
-          faculties: ["+2 Sc", "+2 Mgt", "BBA", "MBA" , "more"],
+          faculties: ["+2 Sc", "+2 Mgt", "BBA", "MBA", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -137,14 +138,203 @@ const BigContainer = () => {
 
       // Repeated data with id different
 
+      // {
+      //   id: 4,
+      //   clzInfo: {
+      //     imageUrl: "images/ButwalMultiple.jpg",
+      //     name: "Butwal Multiple Campus",
+      //     district: "Rupandehi",
+      //     levels: ["bachelor", "master"],
+      //     faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
+      //     websiteLink: "https://bumc.tu.edu.np/",
+      //   },
+      //   mentor1: {
+      //     id: 1,
+      //     imageUrl: "images/senior1.png",
+      //     name: "Jivan",
+      //     present: "3rd Yr, BSc. CSIT",
+      //     past: "1st Yr: 85%, 87%",
+      //     pageLink: "profile.html",
+      //     phoneNo: "9111111111",
+      //     fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //     email: "jivangaire@gmail.com",
+      //   },
+      //   otherMentors: [
+      //     {
+      //       id: 2,
+      //       imageUrl: "images/senior2.png",
+      //       name: "Anuradha",
+      //       present: "12, Management",
+      //       past: "11: 3.7 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //     {
+      //       id: 3,
+      //       imageUrl: "images/senior3.png",
+      //       name: "Sushila",
+      //       present: "12, Science",
+      //       past: "11: 3.86 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 5,
+      //   clzInfo: {
+      //     imageUrl: "images/ButwalMultiple.jpg",
+      //     name: "Butwal Multiple Campus",
+      //     district: "Rupandehi",
+      //     levels: ["bachelor", "master"],
+      //     faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
+      //     websiteLink: "https://bumc.tu.edu.np/",
+      //   },
+      //   mentor1: {
+      //     id: 1,
+      //     imageUrl: "images/senior1.png",
+      //     name: "Jivan",
+      //     present: "3rd Yr, BSc. CSIT",
+      //     past: "1st Yr: 85%, 87%",
+      //     pageLink: "profile.html",
+      //     phoneNo: "9111111111",
+      //     fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //     email: "jivangaire@gmail.com",
+      //   },
+      //   otherMentors: [
+      //     {
+      //       id: 2,
+      //       imageUrl: "images/senior2.png",
+      //       name: "Anuradha",
+      //       present: "12, Management",
+      //       past: "11: 3.7 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //     {
+      //       id: 3,
+      //       imageUrl: "images/senior3.png",
+      //       name: "Sushila",
+      //       present: "12, Science",
+      //       past: "11: 3.86 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 6,
+      //   clzInfo: {
+      //     imageUrl: "images/ButwalMultiple.jpg",
+      //     name: "Butwal Multiple Campus",
+      //     district: "Rupandehi",
+      //     levels: ["bachelor", "master"],
+      //     faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
+      //     websiteLink: "https://bumc.tu.edu.np/",
+      //   },
+      //   mentor1: {
+      //     id: 1,
+      //     imageUrl: "images/senior1.png",
+      //     name: "Jivan",
+      //     present: "3rd Yr, BSc. CSIT",
+      //     past: "1st Yr: 85%, 87%",
+      //     pageLink: "profile.html",
+      //     phoneNo: "9111111111",
+      //     fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //     email: "jivangaire@gmail.com",
+      //   },
+      //   otherMentors: [
+      //     {
+      //       id: 2,
+      //       imageUrl: "images/senior2.png",
+      //       name: "Anuradha",
+      //       present: "12, Management",
+      //       past: "11: 3.7 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //     {
+      //       id: 3,
+      //       imageUrl: "images/senior3.png",
+      //       name: "Sushila",
+      //       present: "12, Science",
+      //       past: "11: 3.86 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 7,
+      //   clzInfo: {
+      //     imageUrl: "images/ButwalMultiple.jpg",
+      //     name: "Butwal Multiple Campus",
+      //     district: "Rupandehi",
+      //     levels: ["bachelor", "master"],
+      //     faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
+      //     websiteLink: "https://bumc.tu.edu.np/",
+      //   },
+      //   mentor1: {
+      //     id: 1,
+      //     imageUrl: "images/senior1.png",
+      //     name: "Jivan",
+      //     present: "3rd Yr, BSc. CSIT",
+      //     past: "1st Yr: 85%, 87%",
+      //     pageLink: "profile.html",
+      //     phoneNo: "9111111111",
+      //     fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //     email: "jivangaire@gmail.com",
+      //   },
+      //   otherMentors: [
+      //     {
+      //       id: 2,
+      //       imageUrl: "images/senior2.png",
+      //       name: "Anuradha",
+      //       present: "12, Management",
+      //       past: "11: 3.7 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //     {
+      //       id: 3,
+      //       imageUrl: "images/senior3.png",
+      //       name: "Sushila",
+      //       present: "12, Science",
+      //       past: "11: 3.86 GPA",
+      //       pageLink: "profile.html",
+      //       phoneNo: "9111111111",
+      //       fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //       email: "jivangaire@gmail.com",
+      //     },
+      //   ],
+      // },
+    ],
+  };
+
+  let seachResult = {
+    items: [
       {
-        id: 4,
+        id: 1,
         clzInfo: {
           imageUrl: "images/ButwalMultiple.jpg",
           name: "Butwal Multiple Campus",
           district: "Rupandehi",
           levels: ["bachelor", "master"],
-          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
+          faculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
           websiteLink: "https://bumc.tu.edu.np/",
         },
         mentor1: {
@@ -158,144 +348,7 @@ const BigContainer = () => {
           fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
           email: "jivangaire@gmail.com",
         },
-        otherMentors: [
-          {
-            id: 2,
-            imageUrl: "images/senior2.png",
-            name: "Anuradha",
-            present: "12, Management",
-            past: "11: 3.7 GPA",
-            pageLink: "profile.html",
-            phoneNo: "9111111111",
-            fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-            email: "jivangaire@gmail.com",
-          },
-          {
-            id: 3,
-            imageUrl: "images/senior3.png",
-            name: "Sushila",
-            present: "12, Science",
-            past: "11: 3.86 GPA",
-            pageLink: "profile.html",
-            phoneNo: "9111111111",
-            fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-            email: "jivangaire@gmail.com",
-          },
-        ],
-      },
-      {
-        id: 5,
-        clzInfo: {
-          imageUrl: "images/ButwalMultiple.jpg",
-          name: "Butwal Multiple Campus",
-          district: "Rupandehi",
-          levels: ["bachelor", "master"],
-          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
-          websiteLink: "https://bumc.tu.edu.np/",
-        },
-        mentor1: {
-          id: 1,
-          imageUrl: "images/senior1.png",
-          name: "Jivan",
-          present: "3rd Yr, BSc. CSIT",
-          past: "1st Yr: 85%, 87%",
-          pageLink: "profile.html",
-          phoneNo: "9111111111",
-          fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          email: "jivangaire@gmail.com",
-        },
-        otherMentors: [
-          {
-            id: 2,
-            imageUrl: "images/senior2.png",
-            name: "Anuradha",
-            present: "12, Management",
-            past: "11: 3.7 GPA",
-            pageLink: "profile.html",
-            phoneNo: "9111111111",
-            fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-            email: "jivangaire@gmail.com",
-          },
-          {
-            id: 3,
-            imageUrl: "images/senior3.png",
-            name: "Sushila",
-            present: "12, Science",
-            past: "11: 3.86 GPA",
-            pageLink: "profile.html",
-            phoneNo: "9111111111",
-            fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-            email: "jivangaire@gmail.com",
-          },
-        ],
-      },
-      {
-        id: 6,
-        clzInfo: {
-          imageUrl: "images/ButwalMultiple.jpg",
-          name: "Butwal Multiple Campus",
-          district: "Rupandehi",
-          levels: ["bachelor", "master"],
-          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
-          websiteLink: "https://bumc.tu.edu.np/",
-        },
-        mentor1: {
-          id: 1,
-          imageUrl: "images/senior1.png",
-          name: "Jivan",
-          present: "3rd Yr, BSc. CSIT",
-          past: "1st Yr: 85%, 87%",
-          pageLink: "profile.html",
-          phoneNo: "9111111111",
-          fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          email: "jivangaire@gmail.com",
-        },
-        otherMentors: [
-          {
-            id: 2,
-            imageUrl: "images/senior2.png",
-            name: "Anuradha",
-            present: "12, Management",
-            past: "11: 3.7 GPA",
-            pageLink: "profile.html",
-            phoneNo: "9111111111",
-            fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-            email: "jivangaire@gmail.com",
-          },
-          {
-            id: 3,
-            imageUrl: "images/senior3.png",
-            name: "Sushila",
-            present: "12, Science",
-            past: "11: 3.86 GPA",
-            pageLink: "profile.html",
-            phoneNo: "9111111111",
-            fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-            email: "jivangaire@gmail.com",
-          },
-        ],
-      },
-      {
-        id: 7,
-        clzInfo: {
-          imageUrl: "images/ButwalMultiple.jpg",
-          name: "Butwal Multiple Campus",
-          district: "Rupandehi",
-          levels: ["bachelor", "master"],
-          faculties: ["BSc CSIT","BBA", "BSc", "BBS", "more"],
-          websiteLink: "https://bumc.tu.edu.np/",
-        },
-        mentor1: {
-          id: 1,
-          imageUrl: "images/senior1.png",
-          name: "Jivan",
-          present: "3rd Yr, BSc. CSIT",
-          past: "1st Yr: 85%, 87%",
-          pageLink: "profile.html",
-          phoneNo: "9111111111",
-          fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          email: "jivangaire@gmail.com",
-        },
+        noOfOtherMentors: 2,
         otherMentors: [
           {
             id: 2,
@@ -323,6 +376,12 @@ const BigContainer = () => {
       },
     ],
   };
+
+  const [data, setData] = useState(defaultData);
+  const handleOnSearch = () => {
+    setData(seachResult);
+  };
+
   return (
     <div className="bigContent mb-4">
       <Filter />

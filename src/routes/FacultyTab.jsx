@@ -53,7 +53,7 @@ const FacultyTab = ({ selectedFaculty }) => {
         id: 2,
         clzInfo: {
           imageUrl: "images/KathmanduModal.jpg",
-          name: "Kathmandu Modal Campus",
+          name: "Kathmandu Model Campus",
           district: "Kathmandu",
           faculties: "o +2 Sc o +2 Mgt o BBA o BBS o more",
           websiteLink: "https://ktmmodelcollege.edu.np/",

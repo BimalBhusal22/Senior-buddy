@@ -2,6 +2,7 @@ import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import FuzzySearchInput from "./FuzzySearchInput";
 
 const HeaderUpperNavbar = ({ handleMobileMenuClicked }) => {
   return (
@@ -14,12 +15,14 @@ const HeaderUpperNavbar = ({ handleMobileMenuClicked }) => {
         </span>
       </Link>
 
-      <input
+      {/* <input
         name="searchBar"
         type="text"
         placeholder="Search colleges . . ."
         className="searchBar"
-      />
+      /> */}
+
+      <FuzzySearchInput />
 
       <span className="signInUp">
         <Link to="/sign_in">
