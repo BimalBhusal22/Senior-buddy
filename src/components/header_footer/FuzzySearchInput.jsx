@@ -116,72 +116,74 @@ const FuzzySearchInput = ({ onSubmit }) => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <div style={{ position: "relative", width: "100%", maxWidth: "400px" }}>
-        <input
-          ref={inputRef}
-          type="text"
-          value={query}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          onBlur={handleBlur}
-          onFocus={handleFocus}
-          placeholder="Search colleges . . ."
-          style={{
-            width: "25vw",
-            height: "30px",
-            borderRadius: "10px",
-            padding: "3px",
-            paddingLeft: "10px",
-            border: "2px solid gray",
-            fontSize: "15px",
-            backgroundColor: "#fff",
-            position: "relative",
-            top: "3px",
-          }}
-        />
-        {matches.length > 0 && (
-          <ul
+    <div className="pcSearchBar">
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ position: "relative", width: "100%", maxWidth: "400px" }}>
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onBlur={handleBlur}
+            onFocus={handleFocus}
+            placeholder="Search colleges . . ."
             style={{
-              position: "absolute",
-              top: "100%",
-              left: 0,
-              right: 0,
-              margin: 0,
-              padding: "8px 0",
-              listStyle: "none",
-              backgroundColor: "#fff",
-              border: "1px solid #ccc",
-              borderTop: "none",
+              width: "25vw",
+              height: "30px",
               borderRadius: "10px",
-              boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-              zIndex: 10,
-              // Removed scroll behavior
+              padding: "3px",
+              paddingLeft: "10px",
+              border: "2px solid gray",
+              fontSize: "15px",
+              backgroundColor: "#fff",
+              position: "relative",
+              top: "3px",
             }}
-          >
-            {matches.map((result, index) => (
-              <li
-                key={index}
-                onMouseDown={(e) => {
-                  e.preventDefault(); // Prevent blur before click
-                  handleClick(result.match);
-                }}
-                style={{
-                  padding: "8px 12px",
-                  cursor: "pointer",
-                  fontSize: "15px",
-                  backgroundColor: index === activeIndex ? "#f0f0f0" : "#fff",
-                }}
-              >
-                {result.match}
-                <span style={{ color: "#999" }}>
-                  {" "}
-                  (distance: {result.distance})
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
+          />
+          {matches.length > 0 && (
+            <ul
+              style={{
+                position: "absolute",
+                top: "100%",
+                left: 0,
+                right: 0,
+                margin: 0,
+                padding: "8px 0",
+                listStyle: "none",
+                backgroundColor: "#fff",
+                border: "1px solid #ccc",
+                borderTop: "none",
+                borderRadius: "10px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                zIndex: 10,
+                // Removed scroll behavior
+              }}
+            >
+              {matches.map((result, index) => (
+                <li
+                  key={index}
+                  onMouseDown={(e) => {
+                    e.preventDefault(); // Prevent blur before click
+                    handleClick(result.match);
+                  }}
+                  style={{
+                    padding: "8px 12px",
+                    cursor: "pointer",
+                    fontSize: "15px",
+                    backgroundColor: index === activeIndex ? "#f0f0f0" : "#fff",
+                  }}
+                >
+                  {result.match}
+                  <span style={{ color: "#999" }}>
+                    {" "}
+                    (distance: {result.distance})
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

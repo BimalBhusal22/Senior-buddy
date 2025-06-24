@@ -6,6 +6,9 @@ import MobileFilter from "../components/others/MobileFilter.jsx";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import ScrollToTop from "../components/others/ScrollToTop.jsx";
+import FetchItems from "../components/others/FetchItems.jsx";
+import { useSelector } from "react-redux";
+import LoadingSpinner from "../components/others/LoadingSpinner.jsx";
 
 function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -18,14 +21,22 @@ function App() {
     setShowMobileFilter(!showMobileFilter);
   };
 
+  const fetchStatus = useSelector((store) => store.fetchStatus);
+
+  const [name, setName] = useState("Bimal");
+
   return (
     <>
+      <FetchItems />
       <ScrollToTop />
       <Header
         handleMobileMenuClicked={handleMobileMenuClicked}
         handleFilterBtnClicked={handleFilterBtnClicked}
       />
-      <Outlet />
+
+      {/* {fetchStatus.currentlyFetching ? <LoadingSpinner /> : <Outlet />} */}
+
+      <Outlet/>
       <Footer />
       <AnyQueries />
       {showMobileMenu && (

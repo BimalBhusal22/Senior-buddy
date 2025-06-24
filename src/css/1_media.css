@@ -10,7 +10,7 @@
     height:25px;
     margin-left:7vw;
 }
-.lowerNavbar, .searchBar, .signInUp, .theme{
+.lowerNavbar, .pcSearchBar, .signInUp, .theme{
     display: none;
 }
 .mobileMenu{

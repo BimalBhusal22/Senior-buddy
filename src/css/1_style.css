@@ -104,6 +104,8 @@ header{
     padding: 8px;
     border: none;
     background-color: unset;
+    position: relative;
+    bottom:  3px;
 }
 .sCtgy{
     /* font-weight: 700 !important; */
@@ -215,4 +217,6 @@ a{
     width: 100%;
     z-index: 1000;
 }
-
+.loadingSpinner{
+    margin: 100px 150px 150px 150px;
+}

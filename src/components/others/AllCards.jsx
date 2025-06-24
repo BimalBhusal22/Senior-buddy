@@ -1,15 +1,23 @@
 import { useSelector } from "react-redux";
 import Card from "./Card";
 import store from "../../store";
+import LoadingSpinner from "./LoadingSpinner";
 
 const AllCards = () => {
-  const data = useSelector((store) => store.cards);
+  const { items } = useSelector((store) => store.cards);
+  const fetchStatus = useSelector((store) => store.fetchStatus);
   return (
-    <div className="allCards foggybg ">
-      {data[0].items.map((item) => (
-        <Card key={item.id} item={item} />
-      ))}
-    </div>
+    <>
+      {fetchStatus.currentlyFetching ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="allCards foggybg ">
+          {items.map((item) => (
+            <Card key={item.id} item={item} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 export default AllCards;
