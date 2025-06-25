@@ -1,9 +1,11 @@
 import { RxCross1 } from "react-icons/rx";
-import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import store from "../../store";
 
 const MobileMenu = ({ handleMobileMenuClicked }) => {
+  const wishlist = useSelector((store) => store.wishlist);
   return (
     <div className="container-fluid mobileMenuContainer shadow-lg py-5">
       <div className="container">
@@ -22,36 +24,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </button>
           </div>
 
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
-            <div>
-              <Link to="/user_profile">
-                <button
-                  className="specialTab sCtgy userProfile fw-bold"
-                  onClick={() => handleMobileMenuClicked()}
-                >
-                  UN
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
-                    3<span className="visually-hidden">unread messages</span>
-                  </span>
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
-            <span>
-              <button
-                className="theme darkTheme mobileTheme"
-                onClick={() => handleMobileMenuClicked()}
-              >
-                {" "}
-                <MdDarkMode className="mobileDarkThemeIcon" />{" "}
-              </button>
-              {/* <button className="theme lightTheme mobileTheme"> <MdLightMode className="mobileLightThemeIcon" /> </button> */}
-            </span>
-          </div>
-
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-6 d-flex justify-content-center mt-3 pt-2">
             <Link
               to="/"
               className="ctgy"
@@ -61,7 +34,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </Link>
           </div>
 
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-6 d-flex justify-content-center mt-3 pt-2">
             <Link
               to="/bbs"
               className="ctgy"
@@ -71,7 +44,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </Link>
           </div>
 
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-6 d-flex justify-content-center mt-3 pt-2">
             <Link
               to="/bba"
               className="ctgy"
@@ -81,7 +54,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </Link>
           </div>
 
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-6 d-flex justify-content-center mt-3 pt-2">
             <Link
               to="/bhm"
               className="ctgy"
@@ -91,7 +64,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </Link>
           </div>
 
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-6 d-flex justify-content-center mt-3 pt-2">
             <Link
               href="/bsccsit"
               className="ctgy"
@@ -101,7 +74,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </Link>
           </div>
 
-          <div className="col-6 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-6 d-flex justify-content-center mt-3 pt-2">
             <Link
               to="bca.html"
               className="ctgy"
@@ -111,7 +84,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </Link>
           </div>
 
-          <div className="col-12 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-12 d-flex justify-content-center mt-3 pt-2">
             <span>
               <label htmlFor="more" className="ctgy">
                 More:
@@ -151,7 +124,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </span>
           </div>
 
-          <div className="col-12 d-flex justify-content-center mt-4 pt-2">
+          <div className="col-12 d-flex justify-content-center mt-3 pt-2">
             <div>
               <Link
                 to="become_a_mentor"
@@ -175,7 +148,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
             </div>
           </div>
 
-          <div className="col-12 d-flex justify-content-center  mt-4 pt-2">
+          <div className="col-12 d-flex justify-content-center  mt-3 pt-2">
             <span className="signInUp mobileSignInUp">
               <Link to="/sign_in" onClick={() => handleMobileMenuClicked()}>
                 <button className="signIn me-2">Sign-In</button>
@@ -184,6 +157,23 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
                 <button className="signUp ms-2">Sign-Up</button>
               </Link>
             </span>
+          </div>
+
+          <div className="col-12 d-flex justify-content-center mt-3 pt-2">
+            <div>
+              <Link to="/user_profile">
+                <button
+                  className="specialTab sCtgy userProfile fw-bold"
+                  onClick={() => handleMobileMenuClicked()}
+                >
+                  UN
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
+                    {wishlist.length}
+                    <span className="visually-hidden">unread messages</span>
+                  </span>
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -1,9 +1,13 @@
 import { GoArrowRight } from "react-icons/go";
 import AnotherMentor from "./AnotherMentor";
 import { TiDeleteOutline } from "react-icons/ti";
+import { TiDelete } from "react-icons/ti";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { IoMdAddCircle } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { wishlistActions } from "../../store/wishlistSlice";
 
 const Card = ({ item }) => {
   let values = ["See Other Senior Friends", "See Less"];
@@ -12,6 +16,17 @@ const Card = ({ item }) => {
     setIndex((prevIndex) => (prevIndex + 1) % 2);
   };
 
+  const wishlist = useSelector((store) => store.wishlist);
+  let elementFound = wishlist.indexOf(item.id) >= 0;
+
+  const dispatch = useDispatch();
+  const handleAddToWishlist = () => {
+    dispatch(wishlistActions.addToWishlist(item.id));
+  };
+
+  const handleRemoveFromWishlist = () => {
+    dispatch(wishlistActions.removeFromWishlist(item.id));
+  };
   return (
     <>
       <div className="card1 BimalCard shadow-lg">
@@ -28,7 +43,7 @@ const Card = ({ item }) => {
             <br />
             <button className="howHeHelps">
               <Link to="/mentor_profile" className="fw-bold normalWtMbl">
-                How he Helps?
+                How {item.mentor1.gender === "M" ? "he" : "she"} Helps?
               </Link>
             </button>
             <div></div>
@@ -90,13 +105,21 @@ const Card = ({ item }) => {
                 </a>{" "}
               </button>
 
-              <button className="addtoWishlist xWishlist fw-bold">
-                <IoMdAddCircleOutline className="addIcon" /> Wish-List
-              </button>
-
-              {/* <button className="addtoWishlist xWishlist fw-bold">
-                <TiDeleteOutline className="deleteIcon" /> Wishlist
-              </button> */}
+              {elementFound ? (
+                <button
+                  className="addtoWishlist removeWishlist fw-bold"
+                  onClick={handleRemoveFromWishlist}
+                >
+                  <TiDelete className="deleteIcon" /> Wishlist
+                </button>
+              ) : (
+                <button
+                  className="addtoWishlist addWishlist fw-bold"
+                  onClick={handleAddToWishlist}
+                >
+                  <IoMdAddCircle className="addIcon" /> Wishlist
+                </button>
+              )}
             </div>
           </div>
         </div>

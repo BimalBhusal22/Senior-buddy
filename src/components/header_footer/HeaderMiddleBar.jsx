@@ -1,4 +1,5 @@
 import { MdOutlineTune } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 
 const HeaderMiddleBar = ({ handleFilterBtnClicked }) => {
   return (
@@ -17,6 +18,19 @@ const HeaderMiddleBar = ({ handleFilterBtnClicked }) => {
         placeholder="Search colleges . . ."
         className="searchBar2"
       />
+
+      <span>
+        <span>
+          <button
+            className="theme darkTheme mobileTheme"
+            onClick={() => handleMobileMenuClicked()}
+          >
+            {" "}
+            <MdDarkMode className="mobileDarkThemeIcon" />{" "}
+          </button>
+          {/* <button className="theme lightTheme mobileTheme"> <MdLightMode className="mobileLightThemeIcon" /> </button> */}
+        </span>
+      </span>
     </div>
   );
 };

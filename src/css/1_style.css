@@ -152,10 +152,6 @@ a{
 .myBadge{
     background-color: #2e97ff !important;
 }
-.middleBar{
-    display: flex;
-    align-items: center;
-}
 .mobileMenuIcon{
     height: calc(1rem + 2vw);
     width: calc(1rem + 2vw);

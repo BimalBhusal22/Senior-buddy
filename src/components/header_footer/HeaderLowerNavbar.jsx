@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { ImHome } from "react-icons/im";
+import { useSelector } from "react-redux";
 
 const HeaderLowerNavbar = () => {
+  const wishlist = useSelector((store) => store.wishlist);
+
   return (
     <nav className="lowerNavbar">
       <ul id="navItems">
@@ -76,7 +79,7 @@ const HeaderLowerNavbar = () => {
             <button className="specialTab sCtgy userProfile fw-bold">
               UN
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
-                3<span className="visually-hidden">unread messages</span>
+                {wishlist.length}<span className="visually-hidden">unread messages</span>
               </span>
             </button>
           </Link>

@@ -3,8 +3,7 @@ import Card from "./Card";
 import store from "../../store";
 import LoadingSpinner from "./LoadingSpinner";
 
-const AllCards = () => {
-  const { items } = useSelector((store) => store.cards);
+const AllCards = ({items}) => {
   const fetchStatus = useSelector((store) => store.fetchStatus);
   return (
     <>

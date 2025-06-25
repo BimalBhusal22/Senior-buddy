@@ -20,6 +20,18 @@ const UpdateMentor = ({ rank, data }) => {
 
             <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-start">
               <span className="float-sm-end">
+                <span className="keyPart">Gender: </span>
+                <input
+                  type="text"
+                  className="valuePart"
+                  placeholder="M or F"
+                  defaultValue={data.gender}
+                />
+              </span>
+            </div>
+
+            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
+              <span className="float-sm-end">
                 <span className="keyPart">Present: </span>
                 <input
                   type="text"
@@ -30,7 +42,7 @@ const UpdateMentor = ({ rank, data }) => {
               </span>
             </div>
 
-            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
+            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-start">
               <span className="float-sm-end">
                 <span className="keyPart">Past: </span>
                 <input
@@ -42,7 +54,7 @@ const UpdateMentor = ({ rank, data }) => {
               </span>
             </div>
 
-            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-start">
+            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
               <span className="float-sm-end">
                 <span className="keyPart">Phone Number: </span>
                 <input
@@ -53,7 +65,7 @@ const UpdateMentor = ({ rank, data }) => {
               </span>
             </div>
 
-            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
+            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-start">
               <span className="float-sm-end">
                 <span className="keyPart">Facebook Link: </span>
                 <input
@@ -65,7 +77,7 @@ const UpdateMentor = ({ rank, data }) => {
               </span>
             </div>
 
-            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-start">
+            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
               <span className="float-sm-end">
                 <span className="keyPart">Email: </span>
                 <input
@@ -77,7 +89,7 @@ const UpdateMentor = ({ rank, data }) => {
               </span>
             </div>
 
-            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
+            <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-start">
               <span className="float-sm-end">
                 <span className="keyPart">Image: </span>
                 <input

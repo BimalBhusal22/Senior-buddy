@@ -60,7 +60,7 @@ const UserInfo = () => {
               />
             </span>
           </div>
-          <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
+          <div className="col-12 col-sm-6 px-sm-4 pt-3 d-flex justify-content-center justify-content-sm-end">
             <span className="float-sm-end">
               <span className="keyPart">Password:</span>
               <span>

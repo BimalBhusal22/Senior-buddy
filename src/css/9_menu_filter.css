@@ -33,6 +33,7 @@
 .mobileTheme{
     display: unset;
     top: 0px;
+    margin-left: 7vw;
 }
 .mobileLightThemeIcon, .mobileDarkThemeIcon{
     position: relative;

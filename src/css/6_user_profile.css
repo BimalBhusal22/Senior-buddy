@@ -62,3 +62,9 @@
 .m4bottom{
     margin-bottom: 1.5rem;
 }
+.wishlistEmptyMsg{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(190, 190, 190);
+}
