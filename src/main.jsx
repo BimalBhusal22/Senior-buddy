@@ -20,9 +20,11 @@ import "./css/9_menu_filter.css";
 import Home from "./routes/Home.jsx";
 import MentorProfile from "./routes/MentorProfile.jsx";
 import UserProfile from "./routes/UserProfile.jsx";
-import SignUp from "./routes/SignUp.jsx";
-import SignIn from "./routes/SignIn.jsx";
-import BecomeAMentor from "./routes/BecomeAMentor.jsx";
+import SignUp, { action as signUpAction } from "./routes/SignUp.jsx";
+import SignIn, { action as signInAction } from "./routes/SignIn.jsx";
+import BecomeAMentor, {
+  action as becomeAMentorAction,
+} from "./routes/BecomeAMentor.jsx";
 import AdminDashboard from "./routes/AdminDashboard.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddCollege from "./components/dashboard/AddCollege.jsx";
@@ -45,16 +47,19 @@ const router = createBrowserRouter([
         element: <MentorProfile />,
       },
       {
-        path: "sign_up",
+        path: "/sign_up",
         element: <SignUp />,
+        action: signUpAction,
       },
       {
         path: "sign_in",
         element: <SignIn />,
+        action: signInAction,
       },
       {
         path: "become_a_mentor",
         element: <BecomeAMentor />,
+        action: becomeAMentorAction,
       },
       {
         path: "user_profile",
