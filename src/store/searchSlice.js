@@ -1,14 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const cardsSlice = createSlice({
-  name: "cards",
+let stateCopy;
+
+const searchSlice = createSlice({
+  name: "search",
   initialState: [],
   reducers: {
     addInitialCards: (state, action) => {
+      stateCopy = action.payload.items;
+      console.log("searchSlice", action.payload.items);
       return action.payload.items;
     },
     showSearchedCard: (state, action) => {
-      const searchedCard = JSON.parse(JSON.stringify(state)).filter(
+      const searchedCard = JSON.parse(JSON.stringify(stateCopy)).filter(
         (item) => item.clzInfo.name === action.payload
       );
       const bimal = "bimal"; //If I remove a line anything like this then the return value is empty array.
@@ -17,5 +21,5 @@ const cardsSlice = createSlice({
   },
 });
 
-export const cardsActions = cardsSlice.actions;
-export default cardsSlice;
+export const searchActions = searchSlice.actions;
+export default searchSlice;

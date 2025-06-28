@@ -30,6 +30,7 @@ import UpdateCollege from "./components/dashboard/UpdateCollege.jsx";
 import DeleteCollege from "./components/dashboard/DeleteCollege.jsx";
 import { Provider } from "react-redux";
 import store from "./store/index.js";
+import SearchOutput from "./routes/SearchOutput.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/search_output",
+        element: <SearchOutput/>
       },
       {
         path: "/mentor_profile",

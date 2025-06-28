@@ -1,6 +1,8 @@
 
-/* <weight>: Use a value from 200 to 1000 */
- /* <uniquifier>: Use a unique and descriptive className name */
+/* body{
+    background-color: #e9f6fe; 
+   } */
+
 
 * {
   font-size: 16px;
@@ -29,6 +31,9 @@
     padding: 3px;
     padding-left: 10px;
     border: 2px solid gray;
+}
+.searchBarWidth{
+    width: 25vw;
 }
 .upperNavbar{
     display: flex;
@@ -216,3 +221,7 @@ a{
 .loadingSpinner{
     margin: 100px 150px 150px 150px;
 }
+.mt30px{
+    margin-top: 30px;
+}
+

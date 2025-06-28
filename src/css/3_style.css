@@ -193,3 +193,8 @@
     font-size: 25px;
     margin-right: 5px;
 }
+.noResultsMsg{
+    margin-top: 10vw;
+    color:rgb(139, 139, 139);
+    padding-left:5vw;
+}

@@ -17,15 +17,15 @@ const Card = ({ item }) => {
   };
 
   const wishlist = useSelector((store) => store.wishlist);
-  let elementFound = wishlist.indexOf(item.id) >= 0;
+  let elementFound = wishlist.indexOf(item) >= 0;
 
   const dispatch = useDispatch();
   const handleAddToWishlist = () => {
-    dispatch(wishlistActions.addToWishlist(item.id));
+    dispatch(wishlistActions.addToWishlist(item));
   };
 
   const handleRemoveFromWishlist = () => {
-    dispatch(wishlistActions.removeFromWishlist(item.id));
+    dispatch(wishlistActions.removeFromWishlist(item));
   };
   return (
     <>

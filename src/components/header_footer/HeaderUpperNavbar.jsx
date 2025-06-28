@@ -21,8 +21,9 @@ const HeaderUpperNavbar = ({ handleMobileMenuClicked }) => {
         placeholder="Search colleges . . ."
         className="searchBar"
       /> */}
-
-      <FuzzySearchInput />
+      <span className="pcSearchBar">
+        <FuzzySearchInput />
+      </span>
 
       <span className="signInUp">
         <Link to="/sign_in">

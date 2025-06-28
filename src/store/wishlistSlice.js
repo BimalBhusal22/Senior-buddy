@@ -8,7 +8,7 @@ const wishlistSlice = createSlice({
       state.unshift(action.payload);
     },
     removeFromWishlist: (state, action) => {
-      return state.filter((cardId) => cardId !== action.payload);
+      return state.filter((card) => card.id !== action.payload.id);
     },
   },
 });

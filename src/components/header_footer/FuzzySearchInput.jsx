@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { cardsActions } from "../../store/cardsSlice";
+import { searchActions } from "../../store/searchSlice";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   "Butwal Multiple Campus",
@@ -28,7 +32,7 @@ function levenshteinDistance(a, b) {
   return matrix[b.length][a.length];
 }
 
-function fuzzySearch(query, choices, maxDistance = 2) {
+function fuzzySearch(query, choices, maxDistance = 10) {
   const results = [];
 
   for (const choice of choices) {
@@ -44,12 +48,14 @@ function fuzzySearch(query, choices, maxDistance = 2) {
   return results.sort((a, b) => a.distance - b.distance);
 }
 
-const FuzzySearchInput = ({ onSubmit }) => {
+const FuzzySearchInput = () => {
   const [query, setQuery] = useState("");
   const [matches, setMatches] = useState([]);
   const [activeIndex, setActiveIndex] = useState(-1);
   const inputRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (query.trim() && isFocused) {
@@ -72,7 +78,7 @@ const FuzzySearchInput = ({ onSubmit }) => {
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setActiveIndex((prev) => (prev - 1 + matches.length) % matches.length);
-    } else if (e.key === "Enter") {
+    } else if (e.key === "Enter" && query !== "") {
       e.preventDefault();
       let finalValue = query;
 
@@ -85,7 +91,9 @@ const FuzzySearchInput = ({ onSubmit }) => {
       setActiveIndex(-1);
       inputRef.current.blur();
 
-      if (onSubmit) onSubmit(finalValue); // ✅ Send value to parent
+      //if (onSubmit) onSubmit(finalValue); // ✅ Send value to parent
+      dispatch(searchActions.showSearchedCard(finalValue));
+      navigate("/search_output");
     } else if (e.key === "Escape") {
       setMatches([]);
       setActiveIndex(-1);
@@ -112,14 +120,17 @@ const FuzzySearchInput = ({ onSubmit }) => {
     setActiveIndex(-1);
     inputRef.current.blur();
 
-    if (onSubmit) onSubmit(match); // ✅ Send clicked value to parent
+    // if (onSubmit) onSubmit(match); // ✅ Send clicked value to parent
+    dispatch(searchActions.showSearchedCard(match));
+    navigate("/search_output");
   };
 
   return (
-    <div className="pcSearchBar">
+    <span>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div style={{ position: "relative", width: "100%", maxWidth: "400px" }}>
           <input
+            className="searchBarWidth"
             ref={inputRef}
             type="text"
             value={query}
@@ -129,7 +140,7 @@ const FuzzySearchInput = ({ onSubmit }) => {
             onFocus={handleFocus}
             placeholder="Search colleges . . ."
             style={{
-              width: "25vw",
+              minWidth: "140px",
               height: "30px",
               borderRadius: "10px",
               padding: "3px",
@@ -157,7 +168,6 @@ const FuzzySearchInput = ({ onSubmit }) => {
                 borderRadius: "10px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                 zIndex: 10,
-                // Removed scroll behavior
               }}
             >
               {matches.map((result, index) => (
@@ -171,13 +181,13 @@ const FuzzySearchInput = ({ onSubmit }) => {
                     padding: "8px 12px",
                     cursor: "pointer",
                     fontSize: "15px",
-                    backgroundColor: index === activeIndex ? "#f0f0f0" : "#fff",
+                    backgroundColor: index === activeIndex ? "#cdcdcd" : "#fff",
                   }}
                 >
                   {result.match}
                   <span style={{ color: "#999" }}>
                     {" "}
-                    (distance: {result.distance})
+                    (Difference: {result.distance})
                   </span>
                 </li>
               ))}
@@ -185,7 +195,7 @@ const FuzzySearchInput = ({ onSubmit }) => {
           )}
         </div>
       </div>
-    </div>
+    </span>
   );
 };
 
