@@ -26,6 +26,7 @@ const BecomeAMentor = () => {
                       name="fullName"
                       className="myInputBox"
                       placeholder="Your Name"
+                      required
                     />
                   </div>
                 </div>
@@ -40,6 +41,7 @@ const BecomeAMentor = () => {
                       name="college"
                       className="myInputBox"
                       placeholder="Your College Name"
+                      required
                     />
                   </div>
                 </div>
@@ -54,6 +56,7 @@ const BecomeAMentor = () => {
                       name="faculty"
                       className="myInputBox"
                       placeholder="Your Faculty"
+                      required
                     />
                   </div>
                 </div>
@@ -95,6 +98,7 @@ const BecomeAMentor = () => {
                       type="text"
                       name="phoneNumber"
                       className="myInputBox"
+                      required
                     />
                   </div>
                 </div>
@@ -109,6 +113,7 @@ const BecomeAMentor = () => {
                       name="email"
                       className="myInputBox"
                       placeholder="your@email.com"
+                      required
                     />
                   </div>
                 </div>

@@ -19,7 +19,9 @@ import "./css/8_dashboard.css";
 import "./css/9_menu_filter.css";
 import Home from "./routes/Home.jsx";
 import MentorProfile from "./routes/MentorProfile.jsx";
-import UserProfile from "./routes/UserProfile.jsx";
+import UserProfile, {
+  action as userProfileAction,
+} from "./routes/UserProfile.jsx";
 import SignUp, { action as signUpAction } from "./routes/SignUp.jsx";
 import SignIn, { action as signInAction } from "./routes/SignIn.jsx";
 import BecomeAMentor, {
@@ -27,9 +29,15 @@ import BecomeAMentor, {
 } from "./routes/BecomeAMentor.jsx";
 import AdminDashboard from "./routes/AdminDashboard.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AddCollege from "./components/dashboard/AddCollege.jsx";
-import UpdateCollege from "./components/dashboard/UpdateCollege.jsx";
-import DeleteCollege from "./components/dashboard/DeleteCollege.jsx";
+import AddCollege, {
+  action as addCollegeAction,
+} from "./components/dashboard/AddCollege.jsx";
+import UpdateCollege, {
+  action as updateCollegeAction,
+} from "./components/dashboard/UpdateCollege.jsx";
+import DeleteCollege, {
+  action as deleteCollegeAction,
+} from "./components/dashboard/DeleteCollege.jsx";
 import { Provider } from "react-redux";
 import store from "./store/index.js";
 
@@ -64,6 +72,7 @@ const router = createBrowserRouter([
       {
         path: "user_profile",
         element: <UserProfile />,
+        action: userProfileAction,
       },
     ],
   },
@@ -74,14 +83,17 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/add_college",
         element: <AddCollege />,
+        action: addCollegeAction,
       },
       {
         path: "/dashboard/update_college",
         element: <UpdateCollege />,
+        action: updateCollegeAction,
       },
       {
         path: "/dashboard/delete_college",
         element: <DeleteCollege />,
+        action: deleteCollegeAction,
       },
     ],
   },

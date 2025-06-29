@@ -22,6 +22,7 @@ const SignIn = () => {
                       name="email"
                       className="myInputBox"
                       placeholder="your@email.com"
+                      required
                     />
                   </div>
                 </div>
@@ -36,6 +37,7 @@ const SignIn = () => {
                       name="password"
                       className="myInputBox"
                       placeholder="Your Password"
+                      required
                     />
                   </div>
                 </div>

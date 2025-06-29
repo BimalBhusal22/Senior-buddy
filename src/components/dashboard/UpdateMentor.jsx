@@ -11,6 +11,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Name: </span>
                 <input
                   type="text"
+                  name="mentorName"
                   className="valuePart"
                   placeholder="Mentor Name"
                   defaultValue={data.name}
@@ -23,6 +24,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Gender: </span>
                 <input
                   type="text"
+                  name="gender"
                   className="valuePart"
                   placeholder="M or F"
                   defaultValue={data.gender}
@@ -35,6 +37,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Present: </span>
                 <input
                   type="text"
+                  name="presentYear/presentGrade"
                   className="valuePart"
                   placeholder="Year/Grade, % or GPA"
                   defaultValue={data.present}
@@ -47,6 +50,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Past: </span>
                 <input
                   type="text"
+                  name="pastYear/pastGrade"
                   className="valuePart"
                   placeholder="Year/Grade, % or GPA"
                   defaultValue={data.past}
@@ -59,6 +63,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Phone Number: </span>
                 <input
                   type="text"
+                  name="phoneNumber"
                   className="valuePart"
                   defaultValue={data.phoneNo}
                 />
@@ -70,6 +75,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Facebook Link: </span>
                 <input
                   type="url"
+                  name="facebookId"
                   className="valuePart"
                   placeholder="facebook profile link"
                   defaultValue={data.fbProfileLink}
@@ -82,6 +88,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Email: </span>
                 <input
                   type="email"
+                  name="email"
                   className="valuePart"
                   placeholder="mentor@email.com"
                   defaultValue={data.email}
@@ -94,6 +101,7 @@ const UpdateMentor = ({ rank, data }) => {
                 <span className="keyPart">Image: </span>
                 <input
                   type="file"
+                  name="image"
                   accept="image/*"
                   className="valuePart imageInput"
                 />

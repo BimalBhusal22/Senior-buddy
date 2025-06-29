@@ -1,3 +1,4 @@
+import { Form } from "react-router-dom";
 import UpdateCollegeInfo from "./UpdateCollegeInfo";
 import UpdateMentor from "./UpdateMentor";
 
@@ -57,55 +58,66 @@ const UpdateCollege = () => {
       <h1 className="text-center px-3">
         Update College and it's Mentors Information
       </h1>
-
-      <h3 className="text-center p-3">
-        Enter College Name:{" "}
-        <input
-          type="text"
-          id="collegeNameInputBox"
-          className=" valuePart collegeNameInput ms-sm-3"
-          placeholder="College Name"
-        />{" "}
-      </h3>
-
-      <UpdateCollegeInfo data={collegeToUpdate.clzInfo} />
-
-      <div className="col-12 text-center fs-3 myHeading mt-3">
-        Update Mentors' Information
-      </div>
-
-      <UpdateMentor rank={1} data={collegeToUpdate.mentor1} />
-
-      <div className="col-12 px-4 px-sm-4 py-3 d-flex justify-content-center">
-        <span>
-          <b className="keyPart">No of Other Mentors: </b>
+      <Form method="POST">
+        <h3 className="text-center p-3">
+          Enter College Name:{" "}
           <input
-            type="number"
-            className="valuePart"
-            defaultValue={collegeToUpdate.noOfOtherMentors}
-            placeholder="1 or 2 or 3 ..."
-            onChange={(event) => handleOnChange(event)}
-          />
-        </span>
-      </div>
+            type="text"
+            name="collegeName"
+            id="collegeNameInputBox"
+            className=" valuePart collegeNameInput ms-sm-3"
+            placeholder="College Name"
+          />{" "}
+        </h3>
 
-      {collegeToUpdate.otherMentors.length > 0 &&
-        collegeToUpdate.otherMentors.map((anotherMentor) => (
-          <UpdateMentor
-            key={anotherMentor.id}
-            rank={collegeToUpdate.otherMentors.indexOf(anotherMentor) + 2}
-            data={anotherMentor}
-          />
-        ))}
+        <UpdateCollegeInfo data={collegeToUpdate.clzInfo} />
 
-      <div className="d-flex justify-content-center py-5">
-        <div>
-          <button className="mySignUpBtn" id="updateCollegeAndMentorsBtn">
-            Update College & Mentors
-          </button>
+        <div className="col-12 text-center fs-3 myHeading mt-3">
+          Update Mentors' Information
         </div>
-      </div>
+
+        <UpdateMentor rank={1} data={collegeToUpdate.mentor1} />
+
+        <div className="col-12 px-4 px-sm-4 py-3 d-flex justify-content-center">
+          <span>
+            <b className="keyPart">No of Other Mentors: </b>
+            <input
+              type="number"
+              name="noOfOtherMentors"
+              className="valuePart"
+              defaultValue={collegeToUpdate.noOfOtherMentors}
+              placeholder="1 or 2 or 3 ..."
+              onChange={(event) => handleOnChange(event)}
+            />
+          </span>
+        </div>
+
+        {collegeToUpdate.otherMentors.length > 0 &&
+          collegeToUpdate.otherMentors.map((anotherMentor) => (
+            <UpdateMentor
+              key={anotherMentor.id}
+              rank={collegeToUpdate.otherMentors.indexOf(anotherMentor) + 2}
+              data={anotherMentor}
+            />
+          ))}
+
+        <div className="d-flex justify-content-center py-5">
+          <div>
+            <button className="mySignUpBtn" id="updateCollegeAndMentorsBtn">
+              Update College & Mentors
+            </button>
+          </div>
+        </div>
+      </Form>
     </div>
   );
 };
+export async function action({ request }) {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  console.log(data);
+
+  return null;
+}
+
 export default UpdateCollege;

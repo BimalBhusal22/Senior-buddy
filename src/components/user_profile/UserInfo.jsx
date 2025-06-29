@@ -2,6 +2,7 @@ import { MdEdit } from "react-icons/md";
 import { GiConfirmed } from "react-icons/gi";
 import { BiShow } from "react-icons/bi";
 import { BiHide } from "react-icons/bi";
+import { Form } from "react-router-dom";
 
 const UserInfo = () => {
   let userInfo = {
@@ -21,6 +22,7 @@ const UserInfo = () => {
               <span className="keyPart">Name:</span>
               <input
                 type="text"
+                name="name"
                 className="valuePart"
                 value={userInfo.name}
                 readOnly
@@ -32,6 +34,7 @@ const UserInfo = () => {
               <span className="keyPart">Intrested Domain:</span>
               <input
                 type="text"
+                name="interestedDomain"
                 className="valuePart"
                 value={userInfo.intrestedDomain}
                 readOnly
@@ -43,6 +46,7 @@ const UserInfo = () => {
               <span className="keyPart">Phone No:</span>
               <input
                 type="text"
+                name="phoneNumber"
                 className="valuePart"
                 value={userInfo.phoneno}
                 readOnly
@@ -54,6 +58,7 @@ const UserInfo = () => {
               <span className="keyPart">Email:</span>
               <input
                 type="email"
+                name="email"
                 className="valuePart"
                 value={userInfo.email}
                 readOnly
@@ -66,6 +71,7 @@ const UserInfo = () => {
               <span>
                 <input
                   type="password"
+                  name="password"
                   className="valuePart"
                   value={userInfo.password}
                   readOnly
@@ -88,11 +94,12 @@ const UserInfo = () => {
 
             {/* <button type="button" className="btn btn-primary confirmBtn">
               <GiConfirmed className="confirmIcon" /> Confirm
-            </button> */}
+              </button> */}
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default UserInfo;
