@@ -33,7 +33,7 @@ const AddCollege = () => {
 
             <input
               type="number"
-              name="noOfMentors"
+              name="noOfOtherMentors"
               className="valuePart"
               placeholder="1 or 2 or 3 ..."
               onChange={(event) => handleOnChange(event)}

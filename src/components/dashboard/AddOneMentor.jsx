@@ -11,7 +11,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Name: </span>
                 <input
                   type="text"
-                  name="mentorName"
+                  name="name"
                   className="valuePart"
                   placeholder="Mentor Name"
                   required
@@ -37,7 +37,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Present: </span>
                 <input
                   type="text"
-                  name="presentYear/presentGrade"
+                  name="present"
                   className="valuePart"
                   placeholder="Year/Grade, % or GPA"
                   required
@@ -50,7 +50,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Past: </span>
                 <input
                   type="text"
-                  name="pastYear/pastGrade"
+                  name="past"
                   className="valuePart"
                   placeholder="Year/Grade, % or GPA"
                 />
@@ -62,7 +62,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Phone Number: </span>
                 <input
                   type="text"
-                  name="phoneNumber"
+                  name="phoneNo"
                   className="valuePart"
                   placeholder=""
                   required
@@ -75,7 +75,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Facebook Link: </span>
                 <input
                   type="url"
-                  name="facebookLink"
+                  name="fbProfileLink"
                   className="valuePart"
                   placeholder="facebook profile link"
                 />
@@ -100,7 +100,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Image: </span>
                 <input
                   type="file"
-                  name="image"
+                  name="imageUrl"
                   accept="image/*"
                   className="valuePart imageInput"
                 />

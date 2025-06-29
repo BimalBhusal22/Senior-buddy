@@ -12,7 +12,7 @@ const AddCollegeInfo = () => {
               <span className="keyPart">Name: </span>
               <input
                 type="text"
-                name="collegeName"
+                name="name"
                 className="valuePart"
                 placeholder="College Name"
                 required
@@ -38,7 +38,7 @@ const AddCollegeInfo = () => {
               <span className="keyPart">Faculties: </span>
               <input
                 type="text"
-                name="faculty"
+                name="faculties"
                 className="valuePart"
                 placeholder="faculty1 o faculty2 o more"
                 required
@@ -63,7 +63,7 @@ const AddCollegeInfo = () => {
               <span className="keyPart">Image: </span>
               <input
                 type="file"
-                name="image"
+                name="imageUrl"
                 accept="image/*"
                 className="valuePart imageInput"
               />
