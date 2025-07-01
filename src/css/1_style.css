@@ -1,7 +1,7 @@
 
-/* body{
-    background-color: #e9f6fe; 
-   } */
+body{
+    background-color: rgb(240, 240, 240); 
+   }
 
 
 * {
@@ -224,4 +224,7 @@ a{
 .mt30px{
     margin-top: 30px;
 }
-
+.noBgBorderBtn{
+    border: unset;
+    background-color: unset;
+}

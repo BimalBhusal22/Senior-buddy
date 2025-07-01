@@ -1,13 +1,11 @@
-import Filter from "./Filter.jsx";
-import AllCards from "../others/AllCards.jsx";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
+import PCFilter from "./PCFilter.jsx";
 
-const BigContainer = ({items}) => {
+const BigContainer = () => {
   return (
     <div className="bigContent mb-4">
-      <Filter />
-      <AllCards items={items} />
+      <PCFilter />
+      <Outlet />
     </div>
   );
 };

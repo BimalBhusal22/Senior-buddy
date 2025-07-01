@@ -3,18 +3,25 @@ import { RiInstagramFill } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiTelegram } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="container-fluid">
-        <div className="footerUpper row p-4 p-sm-5">
+        <div className="footerUpper row p-4 p-sm-5 ">
           <section className="col-12 col-sm-6 col-lg-4 d-flex justify-content-center py-3 py-sm-0 px-5">
             <div className="text-center d-flex">
               <div>
                 <div className="d-flex justify-content-center">
-                  <Link to="/" className="logoContainer">
+                  <button
+                    className="noBgBorderBtn logoContainer"
+                    onClick={() => {
+                      navigate("/");
+                      window.location.reload();
+                    }}
+                  >
                     <img
                       className="logo footerLogoImage"
                       src="images/Logo.png"
@@ -23,7 +30,7 @@ const Footer = () => {
                       <span className="fs-2 fw-bold senior">Senior </span>
                       <span className="fs-2 fw-bold buddy">buddy</span>
                     </span>
-                  </Link>
+                  </button>
                 </div>
                 <div>
                   Senior buddy is a near-peer mentorship platform which provides
@@ -71,11 +78,14 @@ const Footer = () => {
           </section>
         </div>
       </div>
+
       <div className="footerLower">
-        <div>
-          &copy; 2025 <a href="www.seniorbuddy.com">www.seniorbuddy.com</a>
+        <div className="footerLowerChild">
+          <div>
+            &copy; 2025 <a href="www.seniorbuddy.com">www.seniorbuddy.com</a>
+          </div>
+          <div>All Rights Reserved</div>
         </div>
-        <div>All Rights Reserved</div>
       </div>
     </>
   );

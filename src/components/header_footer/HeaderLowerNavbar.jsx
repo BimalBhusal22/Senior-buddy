@@ -1,57 +1,92 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ImHome } from "react-icons/im";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { filterActions } from "../../store/filterSlice";
+import MoreFacultySelection from "./MoreFacultySelection";
+import SignIn from "../../routes/SignIn";
 
 const HeaderLowerNavbar = () => {
   const wishlist = useSelector((store) => store.wishlist);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  const handleOnClick = (faculty) => {
+    navigate("/filter_output");
+    dispatch(filterActions.applyDisciplineFilter(faculty));
+  };
   return (
     <nav className="lowerNavbar">
       <ul id="navItems">
         <li>
-          <Link to="/" className="ctgy">
-            <button type="button" className="homeBtn">
+          <span className="ctgy">
+            <button
+              type="button"
+              className="homeBtn"
+              onClick={() => {
+                navigate("/");
+                window.location.reload();
+              }}
+            >
               <ImHome className="homeIcon ctgy" />
             </button>
-          </Link>
+          </span>
         </li>
         <li>
-          <a href="bbs.html" className="ctgy">
-            BBS
-          </a>
+          <button
+            className="noBgBorderBtn"
+            onClick={() => handleOnClick("BBS")}
+          >
+            <label htmlFor="bbs">
+              <span className="ctgy">BBS</span>
+            </label>
+          </button>
         </li>
         <li>
-          <a href="bba.html" className="ctgy">
-            BBA
-          </a>
+          <button
+            className="noBgBorderBtn"
+            onClick={() => handleOnClick("BBA")}
+          >
+            <label htmlFor="bba">
+              <span className="ctgy">BBA</span>
+            </label>
+          </button>
         </li>
         <li>
-          <a href="bhm.html" className="ctgy">
-            BHM
-          </a>
+          <button
+            className="noBgBorderBtn"
+            onClick={() => handleOnClick("BHM")}
+          >
+            <label htmlFor="bhm">
+              <span className="ctgy">BHM</span>
+            </label>
+          </button>
         </li>
         <li>
-          <a href="bsccsit.html" className="ctgy">
-            BSc. CSIT
-          </a>
+          <button
+            className="noBgBorderBtn"
+            onClick={() => handleOnClick("BSc CSIT")}
+          >
+            <label htmlFor="bsccsit">
+              <span className="ctgy">BSc. CSIT</span>
+            </label>
+          </button>
         </li>
         <li>
-          <a href="bca.html" className="ctgy">
-            BCA
-          </a>
+          <button
+            className="noBgBorderBtn"
+            onClick={() => handleOnClick("BCA")}
+          >
+            <label htmlFor="bca">
+              <span className="ctgy">BCA</span>
+            </label>
+          </button>
         </li>
         <li>
           <span>
             <label htmlFor="more" className="ctgy">
               More:
             </label>
-
-            <select name="moreFaculties" id="moreFaculties">
-              <option value="science">+2 Science</option>
-              <option value="management">+2 Management</option>
-              <option value="education">+2 Education</option>
-              <option value="engineering">Engineering</option>
-            </select>
+            <MoreFacultySelection />
           </span>
         </li>
 
@@ -79,7 +114,8 @@ const HeaderLowerNavbar = () => {
             <button className="specialTab sCtgy userProfile fw-bold">
               UN
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
-                {wishlist.length}<span className="visually-hidden">unread messages</span>
+                {wishlist.length}
+                <span className="visually-hidden">unread messages</span>
               </span>
             </button>
           </Link>

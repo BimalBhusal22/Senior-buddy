@@ -53,3 +53,25 @@
   border-radius: 5px;
   border-color: gainsboro;
 }
+.filterHeading{
+  color:#2e97ff;
+  margin-bottom: -2px;
+}
+.msgbox{
+  margin: 0 2vw;
+  border-radius: 15px;
+  background-color: white;
+}
+.oneFilter{
+  display: inline-block;
+  height: 122px;
+  width:170px;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+.facultyColor{
+  color:#2e97ff;
+}
+.test{
+  background-color: white;
+}

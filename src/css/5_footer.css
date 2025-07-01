@@ -1,5 +1,6 @@
 .footerUpper{
-    background-color: #b6daff;
+    background-color: #003f7f;
+    color: white;
 }
 .footerLogoImage{
      max-height: calc(2rem + 1vw);
@@ -10,7 +11,8 @@
     margin-bottom: 0px;
 }
 .impLinks li a{
-    font-size: 20px;
+    font-size: 18px;
+    color: white;
 }
 .contactIcon{
     font-size: 25px;
@@ -24,11 +26,15 @@
     margin-left: 5px;
 }
 .footerLower{
-    text-align: center;
-    padding:25px 0px !important;
+    text-align: center;   
     color: white;
     background-color: #003f7f;
 }
 .footerLower a{
     color: white;
+}
+.footerLowerChild{
+    padding:25px 0px !important;
+    border-top: 1px solid gray;
+    margin: 0px 7vw;
 }

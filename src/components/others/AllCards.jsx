@@ -10,7 +10,9 @@ const AllCards = ({ items }) => {
       {fetchStatus.currentlyFetching ? (
         <LoadingSpinner />
       ) : items.length === 0 ? (
-        <p class="fs-3 fw-bold noResultsMsg">No Matching Results to Show !</p>
+        <p className="fs-3 fw-bold noResultsMsg">
+          No Matching Results to Show !
+        </p>
       ) : (
         <div className="allCards foggybg ">
           {items.map((item) => (

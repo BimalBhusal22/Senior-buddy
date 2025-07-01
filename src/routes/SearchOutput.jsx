@@ -1,20 +1,19 @@
 import { useSelector } from "react-redux";
-import BigContainer from "../components/home/BigContainer";
-import SlogansContainer from "../components/home/SlogansContainer";
+import AllCards from "../components/others/AllCards";
 
 const SearchOutput = () => {
   const items = useSelector((store) => store.search);
   //   console.log("SearchOutput", items[0]);
   return (
     <>
-      <SlogansContainer />
-      {items.length === 1 && (
-        <p className="text-center mt30px">
-          Search result for "{items[0].clzInfo.name}"
-        </p>
-      )}
-
-      <BigContainer items={items} />
+      <div>
+        {items.length === 1 && (
+          <center className="shadow-lg p-2 mb-3 msgbox">
+            <span>Search result for "{items[0].clzInfo.name}"</span>
+          </center>
+        )}
+        <AllCards items={items} />
+      </div>
     </>
   );
 };

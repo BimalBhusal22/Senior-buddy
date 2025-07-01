@@ -1,19 +1,26 @@
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FuzzySearchInput from "./FuzzySearchInput";
 
 const HeaderUpperNavbar = ({ handleMobileMenuClicked }) => {
+  const navigate = useNavigate();
   return (
     <nav className="upperNavbar">
-      <Link to="/" className="logoContainer">
+      <button
+        className="noBgBorderBtn logoContainer"
+        onClick={() => {
+          navigate("/");
+          window.location.reload();
+        }}
+      >
         <img className="logo" src="images/Logo.png" />
         <span className="platformName">
           <span className="fs-1 fw-bold senior">Senior </span>
           <span className="fs-1 fw-bold buddy">buddy</span>
         </span>
-      </Link>
+      </button>
 
       {/* <input
         name="searchBar"

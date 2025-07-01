@@ -113,21 +113,34 @@
 .-body {
     padding: 0px;
 }
+@keyframes scaleBounce {
+  0%, 100% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
 .messagePart{
+    height: 70px;
+    width: 70px;
     position:fixed;
     z-index: 2;
     bottom:30px;
     right:40px;
     text-align: center;
-    background-color: #b6daff;
-    border-radius: 15px;
-    padding: 8px;
+    color: white;
+    background-color: #003f7f;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 7px;
+    animation: scaleBounce 3s ease-in-out infinite;
 }
 .messageUs{
-    display:inline-block;
-    height:40px;
-    width:100px;
-    margin-bottom: -20px;
+    font-size:8px;
+    display:inline;
+    position: relative;
+    bottom: 5px;
 }
 .accordion-body{
     margin-top: 5px;

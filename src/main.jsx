@@ -31,6 +31,9 @@ import DeleteCollege from "./components/dashboard/DeleteCollege.jsx";
 import { Provider } from "react-redux";
 import store from "./store/index.js";
 import SearchOutput from "./routes/SearchOutput.jsx";
+import FilterOutput from "./routes/FilterOutput.jsx";
+import Container from "./routes/Container.jsx";
+import BigContainer from "./components/home/BigContainer.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,11 +42,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/search_output",
-        element: <SearchOutput/>
+        element: <Container />,
+        children: [
+          {
+            path: "/",
+            element: <BigContainer />,
+            children: [
+              {
+                path: "/",
+                element: <Home />,
+              },
+              {
+                path: "/search_output",
+                element: <SearchOutput />,
+              },
+              {
+                path: "/filter_output",
+                element: <FilterOutput />,
+              },
+            ],
+          },
+        ],
       },
       {
         path: "/mentor_profile",

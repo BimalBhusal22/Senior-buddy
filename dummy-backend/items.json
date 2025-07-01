@@ -6,7 +6,7 @@
         "imageUrl": "images/ButwalMultiple.jpg",
         "name": "Butwal Multiple Campus",
         "district": "Rupandehi",
-        "levels": ["bachelor", "master"],
+        "levels": ["Bachelor", "Master"],
         "faculties": ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
         "websiteLink": "https://bumc.tu.edu.np/"
       },

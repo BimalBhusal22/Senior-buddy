@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cardsActions } from "../../store/cardsSlice";
 import { fetchStatusActions } from "../../store/fetchStatusSlice";
 import { searchActions } from "../../store/searchSlice";
+import { filterActions } from "../../store/filterSlice";
 
 const FetchItems = () => {
   const fetchStatus = useSelector((store) => store.fetchStatus);
@@ -22,6 +23,7 @@ const FetchItems = () => {
         dispatch(fetchStatusActions.markFetchingFinished());
         dispatch(cardsActions.addInitialCards(items));
         dispatch(searchActions.addInitialCards(items));
+        dispatch(filterActions.addInitialCards(items));
       });
 
     return () => {

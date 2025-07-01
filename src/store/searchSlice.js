@@ -8,7 +8,6 @@ const searchSlice = createSlice({
   reducers: {
     addInitialCards: (state, action) => {
       stateCopy = action.payload.items;
-      console.log("searchSlice", action.payload.items);
       return action.payload.items;
     },
     showSearchedCard: (state, action) => {
