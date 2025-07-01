@@ -11,8 +11,10 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Name: </span>
                 <input
                   type="text"
+                  name="name"
                   className="valuePart"
                   placeholder="Mentor Name"
+                  required
                 />
               </span>
             </div>
@@ -20,7 +22,13 @@ const AddOneMentor = ({ rank }) => {
             <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-start">
               <span className="float-sm-end">
                 <span className="keyPart">Gender: </span>
-                <input type="text" className="valuePart" placeholder="M or F" />
+                <input
+                  type="text"
+                  name="gender"
+                  className="valuePart"
+                  placeholder="M or F"
+                  required
+                />
               </span>
             </div>
 
@@ -29,8 +37,10 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Present: </span>
                 <input
                   type="text"
+                  name="present"
                   className="valuePart"
                   placeholder="Year/Grade, % or GPA"
+                  required
                 />
               </span>
             </div>
@@ -40,6 +50,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Past: </span>
                 <input
                   type="text"
+                  name="past"
                   className="valuePart"
                   placeholder="Year/Grade, % or GPA"
                 />
@@ -49,7 +60,13 @@ const AddOneMentor = ({ rank }) => {
             <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
               <span className="float-sm-end">
                 <span className="keyPart">Phone Number: </span>
-                <input type="text" className="valuePart" placeholder="" />
+                <input
+                  type="text"
+                  name="phoneNo"
+                  className="valuePart"
+                  placeholder=""
+                  required
+                />
               </span>
             </div>
 
@@ -58,6 +75,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Facebook Link: </span>
                 <input
                   type="url"
+                  name="fbProfileLink"
                   className="valuePart"
                   placeholder="facebook profile link"
                 />
@@ -69,8 +87,10 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Email: </span>
                 <input
                   type="email"
+                  name="email"
                   className="valuePart"
                   placeholder="mentor@email.com"
+                  required
                 />
               </span>
             </div>
@@ -80,6 +100,7 @@ const AddOneMentor = ({ rank }) => {
                 <span className="keyPart">Image: </span>
                 <input
                   type="file"
+                  name="imageUrl"
                   accept="image/*"
                   className="valuePart imageInput"
                 />
@@ -91,4 +112,5 @@ const AddOneMentor = ({ rank }) => {
     </>
   );
 };
+
 export default AddOneMentor;

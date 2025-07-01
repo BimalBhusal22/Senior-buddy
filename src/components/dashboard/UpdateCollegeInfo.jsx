@@ -13,6 +13,7 @@ const UpdateCollegeInfo = ({ data }) => {
                 <span className="keyPart">Name: </span>
                 <input
                   type="text"
+                  name="clzName"
                   className="valuePart"
                   placeholder="College Name"
                   defaultValue={data.name}
@@ -25,9 +26,11 @@ const UpdateCollegeInfo = ({ data }) => {
                 <span className="keyPart">District: </span>
                 <input
                   type="text"
+                  name="district"
                   className="valuePart"
                   placeholder="College District"
                   defaultValue={data.district}
+                  required
                 />
               </span>
             </div>
@@ -37,9 +40,11 @@ const UpdateCollegeInfo = ({ data }) => {
                 <span className="keyPart">Faculties: </span>
                 <input
                   type="text"
+                  name="faculty"
                   className="valuePart"
                   placeholder="faculty1 faculty2 more"
                   defaultValue={data.faculties}
+                  required
                 />
               </span>
             </div>
@@ -49,6 +54,7 @@ const UpdateCollegeInfo = ({ data }) => {
                 <span className="keyPart">Website Link:</span>
                 <input
                   type="url"
+                  name="websiteLink"
                   className="valuePart"
                   placeholder="www.collegename.com"
                   defaultValue={data.websiteLink}
@@ -61,6 +67,7 @@ const UpdateCollegeInfo = ({ data }) => {
                 <span className="keyPart">Image: </span>
                 <input
                   type="file"
+                  name="image"
                   accept="image/*"
                   className="valuePart imageInput"
                 />

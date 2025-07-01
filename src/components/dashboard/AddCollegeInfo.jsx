@@ -12,8 +12,10 @@ const AddCollegeInfo = () => {
               <span className="keyPart">Name: </span>
               <input
                 type="text"
+                name="name"
                 className="valuePart"
                 placeholder="College Name"
+                required
               />
             </span>
           </div>
@@ -23,8 +25,10 @@ const AddCollegeInfo = () => {
               <span className="keyPart">District: </span>
               <input
                 type="text"
+                name="district"
                 className="valuePart"
                 placeholder="College District"
+                required
               />
             </span>
           </div>
@@ -34,8 +38,10 @@ const AddCollegeInfo = () => {
               <span className="keyPart">Faculties: </span>
               <input
                 type="text"
+                name="faculties"
                 className="valuePart"
                 placeholder="faculty1 o faculty2 o more"
+                required
               />
             </span>
           </div>
@@ -45,6 +51,7 @@ const AddCollegeInfo = () => {
               <span className="keyPart">Website Link:</span>
               <input
                 type="url"
+                name="websiteLink"
                 className="valuePart"
                 placeholder="www.collegename.com"
               />
@@ -56,6 +63,7 @@ const AddCollegeInfo = () => {
               <span className="keyPart">Image: </span>
               <input
                 type="file"
+                name="imageUrl"
                 accept="image/*"
                 className="valuePart imageInput"
               />
@@ -66,4 +74,5 @@ const AddCollegeInfo = () => {
     </div>
   );
 };
+
 export default AddCollegeInfo;
