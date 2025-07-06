@@ -10,6 +10,10 @@
     .filter{
         display:none;
     }
+    .noResultsMsg{
+        padding-left: 0px;
+        margin-bottom: 15vw;
+    }
 }
 @media screen and (max-width:1252px){
         .container11, .slogan2{
