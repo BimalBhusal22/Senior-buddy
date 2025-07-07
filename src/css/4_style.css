@@ -23,6 +23,7 @@
 }
 .goBack{
     color:#a0afbd;
+    background-color: white;
 }
 .icon{
     height: calc(5rem + 2vw);

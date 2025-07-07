@@ -41,7 +41,7 @@ const Card = ({ item }) => {
             <br />
             {item.mentor1.past}
             <br />
-            <button className="howHeHelps">
+            <button className="howHeHelps" onClick={handleOnclick}>
               <Link to="/mentor_profile" className="fw-bold normalWtMbl">
                 How {item.mentor1.gender === "M" ? "he" : "she"} Helps?
               </Link>

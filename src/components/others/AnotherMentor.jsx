@@ -15,7 +15,7 @@ const AnotherMentor = ({ mentor }) => {
         <br />
         <button className="howHeHelps">
           <Link to="/mentor_profile" className="fw-bold normalWtMbl">
-            How she Helps?
+            How {mentor.gender === "M" ? "he" : "she"} Helps?
           </Link>
         </button>
       </div>
