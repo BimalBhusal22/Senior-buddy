@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { wishlistActions } from "../../store/wishlistSlice";
+import { selectedMentorActions } from "../../store/selectedMentorSlice";
 
 const Card = ({ item }) => {
   let values = ["See Other Senior Friends", "See Less"];
@@ -27,6 +28,16 @@ const Card = ({ item }) => {
   const handleRemoveFromWishlist = () => {
     dispatch(wishlistActions.removeFromWishlist(item));
   };
+
+  const handleOnClickHowHeHelps = () => {
+    dispatch(
+      selectedMentorActions.setSelectedMentor({
+        mentor: item.mentor1,
+        college: item.clzInfo.name,
+        district: item.clzInfo.district,
+      })
+    );
+  };
   return (
     <>
       <div className="card1 BimalCard shadow-lg">
@@ -41,7 +52,7 @@ const Card = ({ item }) => {
             <br />
             {item.mentor1.past}
             <br />
-            <button className="howHeHelps" onClick={handleOnclick}>
+            <button className="howHeHelps" onClick={handleOnClickHowHeHelps}>
               <Link to="/mentor_profile" className="fw-bold normalWtMbl">
                 How {item.mentor1.gender === "M" ? "he" : "she"} Helps?
               </Link>
@@ -73,7 +84,7 @@ const Card = ({ item }) => {
               >
                 <div className="accordion-body">
                   {item.otherMentors.map((mentor) => (
-                    <AnotherMentor key={mentor.id} mentor={mentor} />
+                    <AnotherMentor key={mentor.id} mentor={mentor} college={item.clzInfo.name} district={item.clzInfo.district} />
                   ))}
                 </div>
               </div>

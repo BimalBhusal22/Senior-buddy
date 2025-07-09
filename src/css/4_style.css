@@ -12,10 +12,10 @@
 }
 .goBack, .getHelp2{
     width:200px;
-    padding-top:8px;
-    padding-bottom: 8px;
-    font-size: 20px;
-    border-radius: 20px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-size: 22px;
+    border-radius: 15px;
     /* padding: 20px !important; */
 }
 .getHelp2{
@@ -26,29 +26,65 @@
     background-color: white;
 }
 .icon{
-    height: calc(5rem + 2vw);
+    height: calc(8rem + 4vw);
     margin-right: 10px;
 }
 .iconPartTime{
     margin-right: 20px;
 }
 .iconDifferentlyAble{
-    height: calc(10rem + 2vw);
+    height: calc(15rem + 4vw);
     margin-left: -30px;
+    margin-bottom: -35px;
 }
 .heading{
-    font-size: calc(1.2rem + 1vw);
+    font-size: calc(1.5rem + 0.5vw);
     text-align: center;
+    /* margin-bottom: 10px; */
 }
 .point{
-    font-size: calc(1rem + 0.5vw);
+    font-size: calc(1.5rem + 0.5vw);
+    font-weight: bold;
+}
+.pointDifferentlyAble{
+    font-size: calc(1.5rem + 1vw);
+    font-weight: bold;
+    margin-left: -20px;
 }
 .seniorName{
     color: #2e97ff;
+}
+.fontSize1-5rem{
+    font-size: 1.5rem;
 }
 .g1p{
     color:  #003f7f;
 }
 .g2p{
     color: #2e97ff;
+}
+.paymentStatement{
+    color: #003f7f;
+    line-height: 35px;
+}
+.colorGray{
+    color: gray;
+}
+.paymentBtn{
+    border-radius: 10px;
+    width: 160px;
+    height: 45px;
+    border:none;
+    margin-bottom: 17px;
+}
+.esewaBtn{
+    background-color: #62bc47;
+    overflow:hidden;
+}
+.khaltiBtn{
+    background-color: #582898;
+}
+.esewaImg{
+    position: relative;
+    bottom: 3px;
 }

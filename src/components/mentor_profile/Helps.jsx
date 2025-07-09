@@ -1,20 +1,19 @@
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const Helps = () => {
-  let mentor = {
-    id: 1,
-    imageUrl: "images/senior1.png",
-    name: "Jivan",
-    present: "3rd Yr, BSc. CSIT",
-    past: "1st Yr: 85%, 87%",
-    pageLink: "profile.html",
-    phoneNo: "9111111111",
-    fbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-    email: "jivangaire@gmail.com",
+  const navigate = useNavigate();
+
+  const { mentor } = useSelector((store) => store.selectedMentor);
+
+  const handleOnClickGetHelp = () => {
+    let signedIn = true;
+    signedIn ? navigate("/extended_mentor_profile") : navigate("/sign_up");
   };
+
   return (
     <div className="container-fluid mb-5">
-      <div className="container">
+      <div className="container pb-4">
         <div className="row gx-5">
           <div className="col-12 text-center">
             <div className="heading fw-bold">
@@ -24,76 +23,82 @@ const Helps = () => {
             </div>{" "}
           </div>
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g1p g1m">
-              <img src="images/Teaching_Learning.png" className="icon" />
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g1p g1m">
+              <img
+                src="images/illustrations/Teaching_Learning2.png"
+                className="icon"
+              />
               Understanding Reality of Teaching Learning Environment in the
-              College{" "}
+              College
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g2p g2m">
-              <img src="images/Future_Scope.png" className="icon" />
-              Reality of Course, Difficulty Level, Future Scope & Job
-              Opportunities{" "}
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g2p g2m">
+              <img
+                src="images/illustrations/Future_Scope.png"
+                className="icon"
+              />
+              <span className="point mt-2 mt-sm-0">
+                Reality of Course, Difficulty Level, Future Scope & Job
+                Opportunities
+              </span>
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g2p g1m">
-              <img src="images/Expenses.png" className="icon" />
-              Different Expenses and Fees Througout Your Study Period{" "}
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g2p g1m">
+              <img src="images/illustrations/Expenses.png" className="icon" />
+              <span className="point mt-2 mt-sm-0">
+                Different Expenses and Fees Througout Your Study Period
+              </span>
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g1p g2m">
-              <img src="images/Scholarships.png" className="icon" />
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g1p g2m">
+              <img
+                src="images/illustrations/Scholarships.png"
+                className="icon"
+              />
               Scholarships Available and How to Get them?{" "}
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g1p g1m">
-              <img src="images/Admission.png" className="icon" />
-              How to Get Admission and Minimum Qualifications{" "}
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g1p g1m">
+              <img src="images/illustrations/Admission.png" className="icon" />
+              <span className="point mt-2 mt-sm-0">
+                How to Get Admission and Minimum Qualifications
+              </span>
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g2p g2m">
-              <img src="images/Hostel.png" className="icon" />
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g2p g2m">
+              <img src="images/illustrations/Hostel.png" className="icon" />
               Hostel Facilities, Room Rent Near College{" "}
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g2p g1m">
-              <img src="images/Notes.png" className="icon" />
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center point text-center ps-md-5 pe-md-5 pe-md-0 pt-0 pb-4 py-sm-5 g2p g1m">
+              <img src="images/illustrations/Notes.png" className="icon" />
               How to Study? How to Make Notes? Old Books, Learning Sources
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g1p g2m">
-              <img src="images/Cricket.png" className="icon" />
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g1p g2m">
+              <img src="images/illustrations/Cricket.png" className="icon" />
               Reality of Extra-cirriculum Activities{" "}
             </div>
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g1p g1m">
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 py-sm-5 g1p g1m">
               <img
-                src="images/Part_Time_Job.png"
+                src="images/illustrations/Part_Time_Job.png"
                 className="icon iconPartTime"
               />
               Part-Time Jobs{" "}
@@ -101,26 +106,30 @@ const Helps = () => {
           </div>
 
           <div className="col-12 col-md-6 ">
-            {" "}
-            <div className=" d-flex align-items-center point text-center ps-md-5 pe-md-5 pe-md-0 py-4 g2p g2m">
+            <div className="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-center point text-center ps-md-5 pe-md-5 pe-md-0 pb-5 py-sm-5 g2p g2m ">
               <img
-                src="images/Differently_Able_Friendly.png"
+                src="images/illustrations/Differently_Able_Friendly.png"
                 className="icon iconDifferentlyAble"
               />
-              Differently-able Friendly or Not?
+              <span className="pointDifferentlyAble">
+                Differently-able Friendly or Not?
+              </span>
             </div>
           </div>
 
-          <div className="col-12 col-sm-6 pt-4 text-center text-sm-end ">
-            {" "}
+          <div className="col-12 col-sm-6  text-center text-sm-end mb-4 mb-sm-0">
             <Link to="/">
               <button className="signIn goBack">Go Back</button>
             </Link>
           </div>
 
-          <div className="col-12 col-sm-6 text-center text-sm-start pt-3 pt-sm-4">
-            {" "}
-            <button className="fw-bold howHeHelps getHelp2 ">Get Help</button>
+          <div className="col-12 col-sm-6 text-center text-sm-start ">
+            <button
+              className="fw-bold howHeHelps getHelp2"
+              onClick={handleOnClickGetHelp}
+            >
+              Get Help
+            </button>
           </div>
         </div>
       </div>

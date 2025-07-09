@@ -44,6 +44,7 @@ import SearchOutput from "./routes/SearchOutput.jsx";
 import FilterOutput from "./routes/FilterOutput.jsx";
 import Container from "./routes/Container.jsx";
 import BigContainer from "./components/home/BigContainer.jsx";
+import ExtendedMentorProfile from "./routes/ExtendedMentorProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/mentor_profile",
         element: <MentorProfile />,
+      },
+      {
+        path: "/extended_mentor_profile",
+        element: <ExtendedMentorProfile />,
       },
       {
         path: "sign_up",

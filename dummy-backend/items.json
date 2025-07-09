@@ -3,7 +3,7 @@
     {
       "id": 1,
       "clzInfo": {
-        "imageUrl": "images/ButwalMultiple.jpg",
+        "imageUrl": "images/colleges/ButwalMultiple.jpg",
         "name": "Butwal Multiple Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -12,11 +12,11 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior1.png",
+        "imageUrl": "images/mentors/senior1.png",
         "name": "Jivan",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 85%, 87%",
-        "pageLink": "profile.html",
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -25,22 +25,24 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
         },
         {
           "id": 3,
-          "imageUrl": "images/senior3.png",
+          "imageUrl": "images/mentors/senior3.png",
           "name": "Sushila",
+          "gender": "F",
           "present": "12, Science",
           "past": "11: 3.86 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -50,7 +52,7 @@
     {
       "id": 2,
       "clzInfo": {
-        "imageUrl": "images/KathmanduModal.jpg",
+        "imageUrl": "images/colleges/KathmanduModal.jpg",
         "name": "Kathmandu Model Campus",
         "district": "Kathmandu",
         "levels": ["+2", "Bachelor"],
@@ -59,11 +61,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior2.png",
+        "imageUrl": "images/mentors/senior2.png",
         "name": "Anuradha",
+        "gender": "F",
         "present": "12, Management",
         "past": "11: 3.7 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -72,34 +75,37 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
         },
         {
           "id": 3,
-          "imageUrl": "images/senior3.png",
+          "imageUrl": "images/mentors/senior3.png",
           "name": "Sushila",
+          "gender": "F",
           "present": "12, Science",
           "past": "11: 3.86 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
         },
         {
           "id": 4,
-          "imageUrl": "images/senior1.png",
+          "imageUrl": "images/mentors/senior1.png",
           "name": "Jivan",
+          "gender": "M",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 85%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -109,7 +115,7 @@
     {
       "id": 3,
       "clzInfo": {
-        "imageUrl": "images/Tilottama.jpg",
+        "imageUrl": "images/colleges/Tilottama.jpg",
         "name": "Tilottama Campus",
         "district": "Rupandehi",
         "levels": ["+2", "Bachelor", "Master"],
@@ -118,11 +124,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -131,11 +138,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -145,7 +153,7 @@
     {
       "id": 4,
       "clzInfo": {
-        "imageUrl": "images/st.xaviors.jpg",
+        "imageUrl": "images/colleges/st.xaviors.jpg",
         "name": "St. Xavier's College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -154,11 +162,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Akash-Bhusal.png",
-        "name": "Akash Bhusal",
+        "imageUrl": "images/mentors/Akash.png",
+        "name": "Akash",
+        "gender": "M",
         "present": "2nd Year, BSc",
         "past": "1st Yr: 85%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "akash@gmail.com"
@@ -167,11 +176,11 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
           "present": "7th sem, BSc CSIT",
           "past": "5th sem: 83.56%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -181,28 +190,21 @@
     {
       "id": 5,
       "clzInfo": {
-        "imageUrl": "images/kathford-international.jpeg",
+        "imageUrl": "images/colleges/kathford-international.jpeg",
         "name": "Kathford International College",
         "district": "Lalitpur",
         "levels": ["bachelor"],
-        "faculties": [
-          "BSc CSIT",
-          "BBA",
-          "BE Civil",
-          "BCA",
-          "BE Computer",
-          "BBM",
-          "more"
-        ],
+        "faculties": ["BSc CSIT", "BBA", "BE", "BCA", "BBM", "more"],
         "websiteLink": "https://kathford.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Mina.png",
+        "imageUrl": "images/mentors/Mina.png",
         "name": "Mina",
+        "gender": "F",
         "present": "3rd Yr, BBA",
         "past": "1st Yr: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -211,11 +213,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -225,20 +228,21 @@
     {
       "id": 6,
       "clzInfo": {
-        "imageUrl": "images/himalaya_engineering_college.jpg",
-        "name": " Himalaya College of Engineering",
+        "imageUrl": "images/colleges/himalaya_engineering_college.jpg",
+        "name": "Himalaya College of Engineering",
         "district": "Lalitpur",
         "levels": ["bachelor"],
-        "faculties": ["BSc CSIT", "BE Civil", "BE Computer", "BCA", "more"],
+        "faculties": ["BSc CSIT", "BE", "BCA", "more"],
         "websiteLink": "https://www.hcoe.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Hira.png",
-        "name": "Hira Gharti",
+        "imageUrl": "images/mentors/Hira.png",
+        "name": "Hira",
+        "gender": "M",
         "present": "4th Yr, BSc CSIT",
         "past": "2nd Yr: 87.05%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -247,11 +251,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -261,7 +266,7 @@
     {
       "id": 7,
       "clzInfo": {
-        "imageUrl": "images/amrit-science-campus-ascol-building.png",
+        "imageUrl": "images/colleges/amrit-science-campus-ascol-building.png",
         "name": "Amrit Science Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -270,11 +275,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Asmita.png",
-        "name": "Asmita Adhikari",
+        "imageUrl": "images/mentors/Asmita.png",
+        "name": "Asmita",
+        "gender": "F",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -283,11 +289,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Asmita.png",
-          "name": "Asmita Adhikari",
+          "imageUrl": "images/mentors/Asmita.png",
+          "name": "Asmita",
+          "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 83%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -297,8 +304,8 @@
     {
       "id": 8,
       "clzInfo": {
-        "imageUrl": "images/BIRENDRA-MULTIPLE-CAMPUS.jpg.webp",
-        "name": " Birendra Multiple Campus",
+        "imageUrl": "images/colleges/BIRENDRA-MULTIPLE-CAMPUS.jpg.webp",
+        "name": "Birendra Multiple Campus",
         "district": "chitawan",
         "levels": ["bachelor", "master"],
         "faculties": [
@@ -316,11 +323,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Sangit.png",
-        "name": "Sangit Chudali",
+        "imageUrl": "images/mentors/Sangit.png",
+        "name": "Sangit",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -329,11 +337,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Asmita.png",
-          "name": "Asmita Adhikari",
+          "imageUrl": "images/mentors/Asmita.png",
+          "name": "Asmita",
+          "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 83%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -343,7 +352,7 @@
     {
       "id": 9,
       "clzInfo": {
-        "imageUrl": "images/Nagarjuna College of Information Technology.jpeg",
+        "imageUrl": "images/colleges/Nagarjuna College of Information Technology.jpeg",
         "name": "Nagarjuna College of Information Technology",
         "district": "Lalitpur",
         "levels": ["bachelor"],
@@ -352,11 +361,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Anupama.png",
-        "name": "Anupama Sharma",
+        "imageUrl": "images/mentors/Anupama.png",
+        "name": "Anupama",
+        "gender": "F",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -365,11 +375,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Asmita.png",
-          "name": "Asmita Adhikari",
+          "imageUrl": "images/mentors/Asmita.png",
+          "name": "Asmita",
+          "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 83%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -379,7 +390,7 @@
     {
       "id": 10,
       "clzInfo": {
-        "imageUrl": "images/Patan Multiple Campus.jpg",
+        "imageUrl": "images/colleges/Patan Multiple Campus.jpg",
         "name": "Patan Multiple Campus",
         "district": "Lalitpur",
         "levels": ["bachelor", "master"],
@@ -398,11 +409,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Asmita.png",
-        "name": "Asmita Adhikari",
+        "imageUrl": "images/mentors/Asmita.png",
+        "name": "Asmita",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -411,11 +423,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -425,7 +438,7 @@
     {
       "id": 11,
       "clzInfo": {
-        "imageUrl": "images/Bhaktapur Multiple Campus.jpeg",
+        "imageUrl": "images/colleges/Bhaktapur Multiple Campus.jpeg",
         "name": "Bhaktapur Multiple Campus",
         "district": "Bhaktapur",
         "levels": ["bachelor"],
@@ -443,11 +456,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Rasmika.jpg",
-        "name": "Rasmika Basnet",
+        "imageUrl": "images/mentors/Rasmika.jpg",
+        "name": "Rasmika",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -456,11 +470,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Asmita.png",
-          "name": "Asmita Adhikari",
+          "imageUrl": "images/mentors/Asmita.png",
+          "name": "Asmita",
+          "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 83%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -470,7 +485,7 @@
     {
       "id": 12,
       "clzInfo": {
-        "imageUrl": "images/Prime College.jpeg",
+        "imageUrl": "images/colleges/Prime College.jpeg",
         "name": "Prime College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -479,11 +494,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Sangita.jpg",
-        "name": "Sangita Kunwar",
+        "imageUrl": "images/mentors/Sangita.jpg",
+        "name": "Sangita",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -492,11 +508,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Asmita.png",
-          "name": "Asmita Adhikari",
+          "imageUrl": "images/mentors/Asmita.png",
+          "name": "Asmita",
+          "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 83%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -506,7 +523,7 @@
     {
       "id": 13,
       "clzInfo": {
-        "imageUrl": "images/Ratna Rajyalaxmi Campus.jpeg",
+        "imageUrl": "images/colleges/Ratna Rajyalaxmi Campus.jpeg",
         "name": "Ratna Rajyalaxmi Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -515,11 +532,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Kavya.jpg",
+        "imageUrl": "images/mentors/Kavya.jpg",
         "name": "Kavya",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -528,11 +546,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Asmita.png",
-          "name": "Asmita Adhikari",
+          "imageUrl": "images/mentors/Asmita.png",
+          "name": "Asmita",
+          "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 83%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -542,7 +561,7 @@
     {
       "id": 14,
       "clzInfo": {
-        "imageUrl": "images/Kalika Multiple Campus.jpeg",
+        "imageUrl": "images/colleges/Kalika Multiple Campus.jpeg",
         "name": "Kalika Multiple Campus",
         "district": "Kaski",
         "levels": ["bachelor", "master"],
@@ -552,11 +571,12 @@
       "mentor1": {
         "id": 1,
 
-        "imageUrl": "images/Mentors/Amrita.jpg",
-        "name": "Amrita Basyal",
+        "imageUrl": "images/mentors/Amrita.jpg",
+        "name": "Amrita",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -565,11 +585,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Asmita.png",
-          "name": "Asmita Adhikari",
+          "imageUrl": "images/mentors/Asmita.png",
+          "name": "Asmita",
+          "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
           "past": "1st Yr: 83%, 87%",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -579,7 +600,7 @@
     {
       "id": 15,
       "clzInfo": {
-        "imageUrl": "images/Bhairahawa Multiple Campus.jpg",
+        "imageUrl": "images/colleges/Bhairahawa Multiple Campus.jpg",
         "name": "Bhairahawa Multiple Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -603,11 +624,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Asmita.png",
-        "name": "Asmita Adhikari",
+        "imageUrl": "images/mentors/Asmita.png",
+        "name": "Asmita",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -616,11 +638,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -630,7 +653,7 @@
     {
       "id": 16,
       "clzInfo": {
-        "imageUrl": "images/Model Campus Damak.jpg",
+        "imageUrl": "images/colleges/Model Campus Damak.jpg",
         "name": "Model Campus Damak",
         "district": "Jhapa",
         "levels": ["bachelor"],
@@ -639,11 +662,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Asmita.png",
-        "name": "Asmita Adhikari",
+        "imageUrl": "images/mentors/Asmita.png",
+        "name": "Asmita",
+        "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
         "past": "1st Yr: 83%, 87%",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -652,11 +676,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -666,7 +691,7 @@
     {
       "id": 17,
       "clzInfo": {
-        "imageUrl": "images/Mahendra Multiple Campus.jpg",
+        "imageUrl": "images/colleges/Mahendra Multiple Campus.jpg",
         "name": "Mahendra Multiple Campus",
         "district": "Banke",
         "levels": ["bachelor"],
@@ -675,11 +700,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -688,11 +714,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -702,7 +729,7 @@
     {
       "id": 18,
       "clzInfo": {
-        "imageUrl": "images/Everest_school.jpg",
+        "imageUrl": "images/colleges/Everest_school.jpg",
         "name": "Everest English Boarding Secondary School",
         "district": "Rupandehi",
         "levels": ["+2"],
@@ -711,11 +738,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -724,11 +752,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -738,7 +767,7 @@
     {
       "id": 19,
       "clzInfo": {
-        "imageUrl": "images/Dhawalagiri Multiple Campus.jpg",
+        "imageUrl": "images/colleges/Dhawalagiri Multiple Campus.jpg",
         "name": "Dhawalagiri Multiple Campus",
         "district": "Baglung",
         "levels": ["bachelor", "master"],
@@ -747,11 +776,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -760,11 +790,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -774,7 +805,7 @@
     {
       "id": 20,
       "clzInfo": {
-        "imageUrl": "images/Siddhartha Gautam Buddha Campus.jpg",
+        "imageUrl": "images/colleges/Siddhartha Gautam Buddha Campus.jpg",
         "name": "Siddhartha Gautam Buddha Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -783,11 +814,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -796,11 +828,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -810,7 +843,7 @@
     {
       "id": 21,
       "clzInfo": {
-        "imageUrl": "images/Aadikavi Bhanubhakta Campus.jpg",
+        "imageUrl": "images/colleges/Aadikavi Bhanubhakta Campus.jpg",
         "name": "Aadikavi Bhanubhakta Campus",
         "district": "Tanahun",
         "levels": ["bachelor", "master"],
@@ -829,11 +862,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -842,11 +876,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -857,7 +892,7 @@
     {
       "id": 22,
       "clzInfo": {
-        "imageUrl": "images/Lumbini Banijya Campus.jpg",
+        "imageUrl": "images/colleges/Lumbini Banijya Campus.jpg",
         "name": "Lumbini Banijya Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -866,11 +901,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -879,11 +915,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -893,7 +930,7 @@
     {
       "id": 23,
       "clzInfo": {
-        "imageUrl": "images/Nepal Mega College.jpeg",
+        "imageUrl": "images/colleges/Nepal Mega College.jpeg",
         "name": "Nepal Mega College",
         "district": "Kathmandu",
         "levels": ["+2", "bachelor", "master"],
@@ -913,11 +950,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -926,11 +964,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -940,7 +979,7 @@
     {
       "id": 24,
       "clzInfo": {
-        "imageUrl": "images/Nepal Commerce Campus.webp",
+        "imageUrl": "images/colleges/Nepal Commerce Campus.webp",
         "name": "Nepal Commerce Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -949,11 +988,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -962,11 +1002,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -976,7 +1017,7 @@
     {
       "id": 25,
       "clzInfo": {
-        "imageUrl": "images/DAV College.webp",
+        "imageUrl": "images/colleges/DAV College.webp",
         "name": "DAV College",
         "district": "Lalitpur",
         "levels": ["+2", "bachelor", "master"],
@@ -994,11 +1035,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1007,11 +1049,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1021,7 +1064,7 @@
     {
       "id": 26,
       "clzInfo": {
-        "imageUrl": "images/Nesfield International College.jpeg",
+        "imageUrl": "images/colleges/Nesfield International College.jpeg",
         "name": "Nesfield International College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1030,11 +1073,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1043,11 +1087,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1057,7 +1102,7 @@
     {
       "id": 27,
       "clzInfo": {
-        "imageUrl": "images/Padma Kanya Multiple Campus.jpg",
+        "imageUrl": "images/colleges/Padma Kanya Multiple Campus.jpg",
         "name": "Padma Kanya Multiple Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1079,11 +1124,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1092,11 +1138,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1106,8 +1153,8 @@
     {
       "id": 28,
       "clzInfo": {
-        "imageUrl": "images/Sukuna Multiple Campus.jpg",
-        "name": "Sukuna Multiple Campus ",
+        "imageUrl": "images/colleges/Sukuna Multiple Campus.jpg",
+        "name": "Sukuna Multiple Campus",
         "district": "Morang",
         "levels": ["bachelor", "master"],
         "faculties": ["BA", "BBS", "BSc", "BBA", "BICTE", "MBS", "MEd", "more"],
@@ -1115,11 +1162,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1128,11 +1176,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1142,8 +1191,8 @@
     {
       "id": 29,
       "clzInfo": {
-        "imageUrl": "images/PadmaShree College.jpeg",
-        "name": "PadmaShree College ",
+        "imageUrl": "images/colleges/PadmaShree College.jpeg",
+        "name": "PadmaShree College",
         "district": "Kathmandu",
         "levels": ["bachelor"],
         "faculties": ["BHM", "BCA", "BBA", "BIT", "more"],
@@ -1151,11 +1200,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1164,11 +1214,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1178,8 +1229,8 @@
     {
       "id": 30,
       "clzInfo": {
-        "imageUrl": "images/Platinum Management College.jpg",
-        "name": "Platinum Management College ",
+        "imageUrl": "images/colleges/Platinum Management College.jpg",
+        "name": "Platinum Management College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
         "faculties": ["BHM", "BBA", "MBA", "more"],
@@ -1187,11 +1238,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1200,11 +1252,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1214,7 +1267,7 @@
     {
       "id": 31,
       "clzInfo": {
-        "imageUrl": "images/Liberty College.jpg",
+        "imageUrl": "images/colleges/Liberty College.jpg",
         "name": "Liberty College",
         "district": "Kathmandu",
         "levels": ["bachelor"],
@@ -1223,11 +1276,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1236,11 +1290,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1250,7 +1305,7 @@
     {
       "id": 32,
       "clzInfo": {
-        "imageUrl": "images/ISMT College.webp",
+        "imageUrl": "images/colleges/ISMT College.webp",
         "name": "ISMT College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1259,11 +1314,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1272,11 +1328,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1286,7 +1343,7 @@
     {
       "id": 33,
       "clzInfo": {
-        "imageUrl": "images/Tri-Chandra Multiple Campus.jpeg",
+        "imageUrl": "images/colleges/Tri-Chandra Multiple Campus.jpeg",
         "name": "Tri-Chandra Multiple Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1295,11 +1352,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1308,11 +1366,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1322,20 +1381,21 @@
     {
       "id": 34,
       "clzInfo": {
-        "imageUrl": "images/Kathmandu Model College.jpg",
-        "name": "Kathmandu Model College",
-        "district": "Lalitpur",
-        "levels": ["bachelor"],
-        "faculties": ["BBA", "CA", "more"],
-        "websiteLink": "https://ktmmodelcollege.edu.np/"
+        "imageUrl": "images/colleges/Victoria College.jpg",
+        "name": "Victoria College",
+        "district": "Dang",
+        "levels": ["bachelor", "master"],
+        "faculties": ["BBA", "BHM", "MBA", "more"],
+        "websiteLink": "https://victoriacollege.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1344,11 +1404,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1358,20 +1419,21 @@
     {
       "id": 35,
       "clzInfo": {
-        "imageUrl": "images/Victoria College.jpg",
-        "name": "Victoria College",
-        "district": "Dang",
-        "levels": ["bachelor", "master"],
-        "faculties": ["BBA", "BHM", "MBA", "more"],
-        "websiteLink": "https://victoriacollege.edu.np/"
+        "imageUrl": "images/colleges/National Infotech College.jpg",
+        "name": "National Infotech College",
+        "district": "Parsa",
+        "levels": ["bachelor"],
+        "faculties": ["BSc CSIT", "BCA", "more"],
+        "websiteLink": "https://nationalinfotechcollege.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/Sangita.jpg",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1380,11 +1442,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1394,20 +1457,21 @@
     {
       "id": 36,
       "clzInfo": {
-        "imageUrl": "images/National Infotech College.jpg",
-        "name": "National Infotech College",
-        "district": "Parsa",
-        "levels": ["bachelor"],
-        "faculties": ["BSc CSIT", "BCA", "more"],
-        "websiteLink": "https://nationalinfotechcollege.edu.np/"
+        "imageUrl": "images/colleges/Gupteshwor Mahadev Multiple Campus.jpeg",
+        "name": "Gupteshwor Mahadev Multiple Campus",
+        "district": "Kaski",
+        "levels": ["bachelor", "master"],
+        "faculties": ["BIM", "BHM", "BBS", "BEd", "MBS", "more"],
+        "websiteLink": "https://gmmc.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Sangita.jpg",
+        "imageUrl": "images/mentors/Anupama.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1416,11 +1480,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1430,20 +1495,21 @@
     {
       "id": 37,
       "clzInfo": {
-        "imageUrl": "images/Gupteshwor Mahadev Multiple Campus.jpeg",
-        "name": "Gupteshwor Mahadev Multiple Campus",
+        "imageUrl": "images/colleges/Pokhara Lincoln International College.jpg",
+        "name": "Pokhara Lincoln International College",
         "district": "Kaski",
         "levels": ["bachelor", "master"],
-        "faculties": ["BIM", "BHM", "BBS", "BEd", "MBS", "more"],
-        "websiteLink": "https://gmmc.edu.np/"
+        "faculties": ["BBA", "BHM", "BCS", "MBA", "more"],
+        "websiteLink": "https://www.plic.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/Mentors/Anupama.png",
+        "imageUrl": "images/mentors/Kavya.jpg",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1452,11 +1518,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1466,43 +1533,7 @@
     {
       "id": 38,
       "clzInfo": {
-        "imageUrl": "images/Pokhara Lincoln International College.jpg",
-        "name": "Pokhara Lincoln International College",
-        "district": "Kaski",
-        "levels": ["bachelor", "master"],
-        "faculties": ["BBA", "BHM", "BCS", "MBA", "more"],
-        "websiteLink": "https://www.plic.edu.np/"
-      },
-      "mentor1": {
-        "id": 1,
-        "imageUrl": "images/Mentors/Kavya.jpg",
-        "name": "Sushila",
-        "present": "12, Science",
-        "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
-        "phoneNo": "9111111111",
-        "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-        "email": "jivangaire@gmail.com"
-      },
-      "noOfOtherMentors": 1,
-      "otherMentors": [
-        {
-          "id": 2,
-          "imageUrl": "images/senior2.png",
-          "name": "Anuradha",
-          "present": "12, Management",
-          "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
-          "phoneNo": "9111111111",
-          "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-          "email": "jivangaire@gmail.com"
-        }
-      ]
-    },
-    {
-      "id": 39,
-      "clzInfo": {
-        "imageUrl": "images/Prithvi Narayan Campus.jpeg",
+        "imageUrl": "images/colleges/Prithvi Narayan Campus.jpeg",
         "name": "Prithvi Narayan Campus",
         "district": "Kaski",
         "levels": ["bachelor", "master"],
@@ -1526,11 +1557,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1539,11 +1571,50 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/Mentors/Akash-Bhusal.png",
+          "imageUrl": "images/mentors/Akash-Bhusal.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
+          "phoneNo": "9111111111",
+          "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
+          "email": "jivangaire@gmail.com"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "clzInfo": {
+        "imageUrl": "images/colleges/Bheri Multiple Campus.jpg",
+        "name": "Bheri Multiple Campus",
+        "district": "Surkhet",
+        "levels": ["bachelor"],
+        "faculties": ["BBS", "BEd", "more"],
+        "websiteLink": "https://mubmcsurkhet.edu.np/"
+      },
+      "mentor1": {
+        "id": 1,
+        "imageUrl": "images/mentors/senior3.png",
+        "name": "Sushila",
+        "gender": "F",
+        "present": "12, Science",
+        "past": "11: 3.86 GPA",
+
+        "phoneNo": "9111111111",
+        "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
+        "email": "jivangaire@gmail.com"
+      },
+      "noOfOtherMentors": 1,
+      "otherMentors": [
+        {
+          "id": 2,
+          "imageUrl": "images/mentors/senior2.png",
+          "name": "Anuradha",
+          "gender": "F",
+          "present": "12, Management",
+          "past": "11: 3.7 GPA",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1553,20 +1624,21 @@
     {
       "id": 40,
       "clzInfo": {
-        "imageUrl": "images/Bheri Multiple Campus.jpg",
-        "name": "Bheri Multiple Campus",
-        "district": "Surkhet",
-        "levels": ["bachelor"],
-        "faculties": ["BBS", "BEd", "more"],
-        "websiteLink": "https://mubmcsurkhet.edu.np/"
+        "imageUrl": "images/colleges/Siddhanath Science Campus.jpeg",
+        "name": "Siddhanath Science Campus",
+        "district": "Kanchanpur",
+        "levels": ["bachelor", "master"],
+        "faculties": ["BIT", "BSc CSIT", "BSc", "MSc", "more"],
+        "websiteLink": "https://www.snsc.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior1.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1575,11 +1647,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1589,20 +1662,21 @@
     {
       "id": 41,
       "clzInfo": {
-        "imageUrl": "images/Siddhanath Science Campus.jpeg",
-        "name": "Siddhanath Science Campus",
-        "district": "Kanchanpur",
+        "imageUrl": "images/colleges/Butwal Kalika Campus.png",
+        "name": "Butwal Kalika Campus",
+        "district": "Rupandehi",
         "levels": ["bachelor", "master"],
-        "faculties": ["BIT", "BSc CSIT", "BSc", "MSc", "more"],
-        "websiteLink": "https://www.snsc.edu.np/"
+        "faculties": ["BEd", "BBS", "BCA", "BASW", "MA", "more"],
+        "websiteLink": "https://btlkalikacampus.edu.np/https://www.plic.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior1.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1611,11 +1685,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1625,20 +1700,21 @@
     {
       "id": 42,
       "clzInfo": {
-        "imageUrl": "images/Butwal Kalika Campus.png",
-        "name": "Butwal Kalika Campus",
-        "district": "Rupandehi",
+        "imageUrl": "images/colleges/Texas International College.webp",
+        "name": "Texas International College",
+        "district": "Kathmandu",
         "levels": ["bachelor", "master"],
-        "faculties": ["BEd", "BBS", "BCA", "BASW", "MA", "more"],
-        "websiteLink": "https://btlkalikacampus.edu.np/https://www.plic.edu.np/"
+        "faculties": ["BBS", "BBM", "BSc CSIT", "BSW", "BCA", "MBS", "more"],
+        "websiteLink": "https://texasintl.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior1.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1647,11 +1723,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1661,20 +1738,21 @@
     {
       "id": 43,
       "clzInfo": {
-        "imageUrl": "images/Texas International College.webp",
-        "name": "Texas International College",
-        "district": "Kathmandu",
-        "levels": ["bachelor", "master"],
-        "faculties": ["BBS", "BBM", "BSc CSIT", "BSW", "BCA", "MBS", "more"],
-        "websiteLink": "https://texasintl.edu.np/"
+        "imageUrl": "images/colleges/Kalika.jpg",
+        "name": "Kalika Manavgyan Secondary School",
+        "district": "Rupandehi",
+        "levels": ["+2"],
+        "faculties": ["+2 Sc", "+2 Mgt", "+2 Edu", "more"],
+        "websiteLink": "https://kalikaschoolbtl.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior1.png",
+        "imageUrl": "images/mentors/senior2.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1683,11 +1761,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1697,20 +1776,21 @@
     {
       "id": 44,
       "clzInfo": {
-        "imageUrl": "images/Kalika.jpg",
-        "name": "Kalika Manavgyan Secondary School",
-        "district": "Rupandehi",
+        "imageUrl": "images/colleges/svi.jpg",
+        "name": "Siddhartha vanasthali Institute",
+        "district": "Kathmandu",
         "levels": ["+2"],
-        "faculties": ["+2 Sc", "+2 Mgt", "+2 Edu", "more"],
-        "websiteLink": "https://kalikaschoolbtl.edu.np/"
+        "faculties": ["+2 Sc", "+2 Mgt", "more"],
+        "websiteLink": "https://svi.edu.np/"
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior2.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1719,11 +1799,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/Hira.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"
@@ -1733,43 +1814,7 @@
     {
       "id": 45,
       "clzInfo": {
-        "imageUrl": "images/svi.jpg",
-        "name": "Siddhartha vanasthali Institute",
-        "district": "Kathmandu",
-        "levels": ["+2"],
-        "faculties": ["+2 Sc", "+2 Mgt", "more"],
-        "websiteLink": "https://svi.edu.np/"
-      },
-      "mentor1": {
-        "id": 1,
-        "imageUrl": "images/senior3.png",
-        "name": "Sushila",
-        "present": "12, Science",
-        "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
-        "phoneNo": "9111111111",
-        "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-        "email": "jivangaire@gmail.com"
-      },
-      "noOfOtherMentors": 1,
-      "otherMentors": [
-        {
-          "id": 2,
-          "imageUrl": "images/Mentors/Hira.png",
-          "name": "Anuradha",
-          "present": "12, Management",
-          "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
-          "phoneNo": "9111111111",
-          "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-          "email": "jivangaire@gmail.com"
-        }
-      ]
-    },
-    {
-      "id": 46,
-      "clzInfo": {
-        "imageUrl": "images/times.jpeg",
+        "imageUrl": "images/colleges/times.jpeg",
         "name": "The Times International College",
         "district": "Kathmandu",
         "levels": ["+2", "bachelor", "master"],
@@ -1789,11 +1834,12 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/senior3.png",
+        "imageUrl": "images/mentors/senior3.png",
         "name": "Sushila",
+        "gender": "F",
         "present": "12, Science",
         "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
+
         "phoneNo": "9111111111",
         "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
         "email": "jivangaire@gmail.com"
@@ -1802,83 +1848,12 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/senior2.png",
+          "imageUrl": "images/mentors/senior2.png",
           "name": "Anuradha",
+          "gender": "F",
           "present": "12, Management",
           "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
-          "phoneNo": "9111111111",
-          "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-          "email": "jivangaire@gmail.com"
-        }
-      ]
-    },
-    {
-      "id": 43,
-      "clzInfo": {
-        "imageUrl": "images/Texas International College.webp",
-        "name": "Texas International College",
-        "district": "Kathmandu",
-        "levels": ["bachelor", "master"],
-        "faculties": ["BBS", "BBM", "BSc CSIT", "BSW", "BCA", "MBS", "more"],
-        "websiteLink": "https://texasintl.edu.np/"
-      },
-      "mentor1": {
-        "id": 1,
-        "imageUrl": "images/Mentors/Rasmika.jpg",
-        "name": "Rasmika Basnet",
-        "present": "12, Science",
-        "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
-        "phoneNo": "9111111111",
-        "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-        "email": "jivangaire@gmail.com"
-      },
-      "noOfOtherMentors": 1,
-      "otherMentors": [
-        {
-          "id": 2,
-          "imageUrl": "images/senior2.png",
-          "name": "Anuradha",
-          "present": "12, Management",
-          "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
-          "phoneNo": "9111111111",
-          "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-          "email": "jivangaire@gmail.com"
-        }
-      ]
-    },
-    {
-      "id": 43,
-      "clzInfo": {
-        "imageUrl": "images/Texas International College.webp",
-        "name": "Texas International College",
-        "district": "Kathmandu",
-        "levels": ["bachelor", "master"],
-        "faculties": ["BBS", "BBM", "BSc CSIT", "BSW", "BCA", "MBS", "more"],
-        "websiteLink": "https://texasintl.edu.np/"
-      },
-      "mentor1": {
-        "id": 1,
-        "imageUrl": "images/senior3.png",
-        "name": "Sushila",
-        "present": "12, Science",
-        "past": "11: 3.86 GPA",
-        "pageLink": "profile.html",
-        "phoneNo": "9111111111",
-        "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
-        "email": "jivangaire@gmail.com"
-      },
-      "noOfOtherMentors": 1,
-      "otherMentors": [
-        {
-          "id": 2,
-          "imageUrl": "images/senior2.png",
-          "name": "Anuradha",
-          "present": "12, Management",
-          "past": "11: 3.7 GPA",
-          "pageLink": "profile.html",
+
           "phoneNo": "9111111111",
           "fbProfileLink": "https://www.facebook.com/jivan.gaire.79",
           "email": "jivangaire@gmail.com"

@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { selectedMentorActions } from "../../store/selectedMentorSlice";
 
-const AnotherMentor = ({ mentor }) => {
+const AnotherMentor = ({ mentor, college, district }) => {
+  const dispatch = useDispatch();
+
+  const handleOnClickHowHeHelps = () => {
+    dispatch(
+      selectedMentorActions.setSelectedMentor({
+        mentor: mentor,
+        college: college,
+        district: district,
+      })
+    );
+  };
   return (
     <div className="part1">
       <div className="part11">
@@ -13,7 +26,7 @@ const AnotherMentor = ({ mentor }) => {
         <br />
         {mentor.past}
         <br />
-        <button className="howHeHelps">
+        <button className="howHeHelps" onClick={handleOnClickHowHeHelps}>
           <Link to="/mentor_profile" className="fw-bold normalWtMbl">
             How {mentor.gender === "M" ? "he" : "she"} Helps?
           </Link>
