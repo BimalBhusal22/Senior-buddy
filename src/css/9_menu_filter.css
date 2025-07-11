@@ -8,19 +8,20 @@
 }
 .mobileMenuContainer{
     z-index:999;
-    background-color: #003f7f;
+    background-color: var(--primary_color);
     color: white;
 }
 .mobileFilterContainer{
     z-index: 998;
-    background-color: white;
+    background-color: var(--card_background_color);
 }
 .crossIcon{
     font-size: 30px;
     color:  white;
 }
 .colorBlack{
-    color: black;
+    color: var(--text_color);
+    margin-top: 15px;
 }
 .crossBtn{
     background-color: unset;

@@ -30,23 +30,27 @@
     border: none;
     border-radius: 5px;
     padding: 15px;
-    background-color: #2e97ff;
+    background-color: var(--secondary_color);
     font-weight: bold;
     color: white;
     font-size: 18px;
 }
+.mySignUpBtn:hover, .mySignUpBtn:active{
+    background-color: var(--primary_color);
+}
 .lightSmallFont{
     font-size: 14px;
-    color: gray;
+    color: var(--light_gray_text_color);
 }
 .logInHere{
     font-size: 14px;
-    color: #2e97ff;
+    font-weight: bold;
+    color: var(--secondary_color);
 }
 .signUpSlogan{
-    color: #2e97ff;
+    color: var(--secondary_color);
 }
 .specialWord{
     font-weight: bold;
-    color: #2e97ff;
+    color: var(--secondary_color);
 }

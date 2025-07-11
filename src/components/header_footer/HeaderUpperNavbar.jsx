@@ -3,8 +3,9 @@ import { MdLightMode } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import FuzzySearchInput from "./FuzzySearchInput";
+import DarkMode from "../DarkMode/DarkMode";
 
-const HeaderUpperNavbar = ({ handleMobileMenuClicked }) => {
+const HeaderUpperNavbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="upperNavbar">
@@ -41,21 +42,18 @@ const HeaderUpperNavbar = ({ handleMobileMenuClicked }) => {
         </Link>
       </span>
 
-      <span>
+      {/* <span>
         <button className="theme darkTheme">
           {" "}
           <MdDarkMode />{" "}
         </button>
-        {/* <button className="theme lightTheme"> <MdLightMode /> </button> */}
-      </span>
+        <button className="theme lightTheme"> <MdLightMode /> </button>
+      </span> */}
+        <span className="theme">
+        </span>
+      
 
-      <button
-        type="button"
-        className="mobileMenu"
-        onClick={() => handleMobileMenuClicked()}
-      >
-        <RxHamburgerMenu className="mobileMenuIcon" />
-      </button>
+      <DarkMode/>
     </nav>
   );
 };

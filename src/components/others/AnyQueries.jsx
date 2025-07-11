@@ -2,7 +2,7 @@ const AnyQueries = () => {
   return (
     <>
       <a
-        href="https://www.facebook.com/profile.php?id=61577916390273"
+        href="https://business.facebook.com/latest/inbox/messenger?asset_id=697784286751641"
         target="_blank"
       >
         <span className="messagePart shadow-lg">

@@ -6,7 +6,7 @@ const Header = ({ handleMobileMenuClicked, handleFilterBtnClicked }) => {
   return (
     <header className="shadow myHeader">
       <HeaderUpperNavbar handleMobileMenuClicked={handleMobileMenuClicked} />
-      <HeaderMiddleBar handleFilterBtnClicked={handleFilterBtnClicked} />
+      <HeaderMiddleBar handleFilterBtnClicked={handleFilterBtnClicked} handleMobileMenuClicked={handleMobileMenuClicked} />
       <HeaderLowerNavbar />
     </header>
   );

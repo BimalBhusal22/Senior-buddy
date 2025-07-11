@@ -1,8 +1,8 @@
 @media screen and (max-width:767.9px){
  .g1m{
-    color:  #003f7f;
+    color:  var(--alternate_point_color);
  }
  .g2m{
-    color: #2e97ff;
+    color: var(--secondary_color);
  }
 }

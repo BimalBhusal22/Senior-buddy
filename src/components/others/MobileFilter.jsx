@@ -5,7 +5,7 @@ const MobileFilter = ({ handleFilterBtnClicked }) => {
   return (
     <section className="mobileFilterContainer shadow-lg pt-4 pt-sm-5">
       <div className="d-flex justify-content-center">
-        <div className="filter foggybg mobileFilter d-flex justify-content-center">
+        <div className=" foggybg mobileFilter d-flex justify-content-center">
           <div>
             <div className="container-fluid ">
               <div className="container p-0">

@@ -1,18 +1,21 @@
 import { MdOutlineTune } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import FuzzySearchInput from "./FuzzySearchInput";
+import { RxHamburgerMenu } from "react-icons/rx";
 
-const HeaderMiddleBar = ({ handleFilterBtnClicked }) => {
+const HeaderMiddleBar = ({
+  handleFilterBtnClicked,
+  handleMobileMenuClicked,
+}) => {
   return (
     <div className="middleBar">
       <div className="d-flex justify-content-evenly align-items-center">
         <button
-          className=" filterBtn"
           type="button"
-          onClick={() => handleFilterBtnClicked()}
+          className="mobileMenu"
+          onClick={() => handleMobileMenuClicked()}
         >
-          <MdOutlineTune className="filterIcon" />
-          <span className="filterWord">Filter</span>
+          <RxHamburgerMenu className="mobileMenuIcon" />
         </button>
 
         {/* <input
@@ -23,18 +26,15 @@ const HeaderMiddleBar = ({ handleFilterBtnClicked }) => {
         <span className="mSearchBar">
           <FuzzySearchInput />
         </span>
-        <span>
-          <span>
-            <button
-              className="theme darkTheme mobileTheme"
-              onClick={() => handleMobileMenuClicked()}
-            >
-              {" "}
-              <MdDarkMode className="mobileDarkThemeIcon" />{" "}
-            </button>
-            {/* <button className="theme lightTheme mobileTheme"> <MdLightMode className="mobileLightThemeIcon" /> </button> */}
-          </span>
-        </span>
+
+        <button
+          className=" filterBtn"
+          type="button"
+          onClick={() => handleFilterBtnClicked()}
+        >
+          <MdOutlineTune className="filterIcon" />
+          <span className="filterWord">Filter</span>
+        </button>
       </div>
     </div>
   );

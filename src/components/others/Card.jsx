@@ -66,7 +66,7 @@ const Card = ({ item }) => {
             <div className="accordion-item">
               <h2 className="accordion-header">
                 <button
-                  className="accordion-button collapsed seeOther"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target={`#${item.id.toString()}`}
@@ -74,7 +74,7 @@ const Card = ({ item }) => {
                   aria-controls={item.id.toString()}
                   onClick={() => handleSeeOtherClicked()}
                 >
-                  {values[index]}
+                 <div className="text-center seeOther"> {values[index]}</div>
                 </button>
               </h2>
               <div
@@ -110,7 +110,7 @@ const Card = ({ item }) => {
             </div>
             <div className="clzBtnsContainer">
               <button className="visitWebsite">
-                <a href={item.clzInfo.websiteLink}>
+                <a href={item.clzInfo.websiteLink} target="_blank">
                   Visit Website
                   <GoArrowRight />
                 </a>{" "}

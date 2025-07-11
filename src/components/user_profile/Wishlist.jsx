@@ -6,7 +6,7 @@ const Wishlist = () => {
 
   return (
     <>
-      <div className="text-center fs-3 myHeading py3bottom mt-2">
+      <div className="text-center fs-3 fw-bold myHeading py3bottom mt-2">
         Your Wishlist
       </div>
       <div className="py4bottom">

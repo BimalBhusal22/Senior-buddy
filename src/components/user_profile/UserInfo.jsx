@@ -16,7 +16,7 @@ const UserInfo = () => {
     <div className="container-fluid py-4">
       <div className="container">
         <div className="row ">
-          <div className="col-12 text-center fs-3 myHeading">Your Details</div>
+          <div className="col-12 text-center fs-3 fw-bold myHeading">Your Details</div>
           <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
             <span className="float-sm-end">
               <span className="keyPart">Name:</span>
@@ -88,7 +88,7 @@ const UserInfo = () => {
           </div>
 
           <div className="col-12 d-flex justify-content-center">
-            <button type="button" className="btn btn-primary editBtn">
+            <button type="button" className="editBtn">
               <MdEdit className="editIcon" /> Edit
             </button>
 

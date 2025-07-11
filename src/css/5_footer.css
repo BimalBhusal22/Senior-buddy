@@ -1,5 +1,5 @@
 .footerUpper{
-    background-color: #003f7f;
+    background-color: var(--primary_color);
     color: white;
 }
 .footerLogoImage{
@@ -14,10 +14,19 @@
     font-size: 18px;
     color: white;
 }
+.impLinks li:hover{
+    transform: scale(1.05);
+}
+.impLink:hover, .impLink:active{
+    text-decoration: underline;
+}
 .contactIcon{
     font-size: 25px;
-    margin-right: 10px;
+    margin-right: 15px;
     margin-bottom:8px;
+}
+.contactIcon:hover, .contactIcon:active{
+    transform: scale(1.3);
 }
 .logoContainer{
     flex-shrink: 0;
@@ -28,7 +37,7 @@
 .footerLower{
     text-align: center;   
     color: white;
-    background-color: #003f7f;
+    background-color: var(--primary_color);
 }
 .footerLower a{
     color: white;

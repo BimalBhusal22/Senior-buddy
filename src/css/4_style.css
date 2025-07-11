@@ -6,6 +6,8 @@
     border-radius: 10px;
     height: 200px;
     padding: 25px;
+    border: var(--card_border);
+    background-color: var(--card_background_color);
 }
 .intro img{
     padding-bottom: 0px;
@@ -22,7 +24,8 @@
     margin-top: 0px;
 }
 .goBack{
-    color:#a0afbd;
+    /* color:#a0afbd; */
+    color: var(--light_gray_text_color);
     background-color: white;
 }
 .icon{
@@ -38,7 +41,7 @@
     margin-bottom: -35px;
 }
 .heading{
-    font-size: calc(1.5rem + 0.5vw);
+    font-size: calc(1.7rem + 0.7vw);
     text-align: center;
     /* margin-bottom: 10px; */
 }
@@ -52,19 +55,19 @@
     margin-left: -20px;
 }
 .seniorName{
-    color: #2e97ff;
+    color: var(--secondary_color);
 }
 .fontSize1-5rem{
     font-size: 1.5rem;
 }
 .g1p{
-    color:  #003f7f;
+    color:  var(--alternate_point_color);
 }
 .g2p{
-    color: #2e97ff;
+    color: var(--secondary_color);
 }
 .paymentStatement{
-    color: #003f7f;
+    color: var(--alternate_point_color);
     line-height: 35px;
 }
 .colorGray{

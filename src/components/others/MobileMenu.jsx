@@ -10,11 +10,11 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
     <div className="container-fluid mobileMenuContainer shadow-lg py-5">
       <div className="container">
         <div className="row">
-          <div className="col-6 fs-3 fw-bold d-flex justify-content-center pt-2">
+          <div className="col-6 fs-3 fw-bold d-flex justify-content-center pt-4">
             Menu
           </div>
 
-          <div className="col-6 d-flex justify-content-center pt-2">
+          <div className="col-6 d-flex justify-content-center pt-4">
             <button
               type="button"
               className="crossBtn"

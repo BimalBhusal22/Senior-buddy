@@ -12,7 +12,6 @@
     margin-left:7vw;
 }
 .mSearchBar{
-    margin-left: 7vw;
     position: relative;
     top: -3px;
 }
@@ -20,8 +19,17 @@
     width: 40vw;
     min-width: 140px;
 }
+/* .theme{
+    position: relative;
+    top: -10px;
+} */
 .lowerNavbar, .pcSearchBar, .signInUp, .theme{
     display: none;
+}
+.mobileTheme{
+    background-color: red;
+    /* position: relative;
+    bottom: 5px; */
 }
 .mobileMenu{
     display: unset;

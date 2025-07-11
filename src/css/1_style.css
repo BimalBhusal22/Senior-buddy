@@ -1,8 +1,41 @@
+:root{
+    --primary_color: #003f7f;
+    --secondary_color: #2e97ff;
+    --body_background_color: rgb(210, 210, 210);
+    --card_background_color: rgb(225,225,225);
+    --card_border: 0.5px solid gray;
+    --text_color:  black;
+    --gray_text_color: rgb(127, 127, 127);
+    --light_gray_text_color: rgb(98, 98, 98);
+    --extra_gray_text_color:  rgb(120, 120, 120);
+    --visit_website_color: #003f7f;
+    --alternate_point_color: #003f7f;
+}
+
+[data-theme="dark"] {
+  --primary_color: #003f7f;
+    --secondary_color: #2e97ff;
+    --body_background_color:rgb(50, 50, 50); 
+    --card_background_color: rgb(65, 65, 65);
+    --card_border: 0.5px solid gray;
+    --text_color:  white;
+    --gray_text_color: rgb(100, 100, 100);
+    --light_gray_text_color: rgb(129, 129, 129);
+    --extra_gray_text_color:  rgb(148, 148, 148);
+    --visit_website_color: #2e97ff;
+    --alternate_point_color: white;
+    color: white;
+}
 
 body{
-    background-color: rgb(240, 240, 240); 
+    background-color:var(--body_background_color); 
    }
 
+input, select{
+    background-color:var(--card_background_color) ;
+    border: var(--card_border);
+    color:var(--text_color);
+}
 
 * {
   font-size: 16px;
@@ -10,12 +43,18 @@ body{
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
+  transition: all 0.3s ease-in-out;
+}
+
+.ctgy:hover, .ctgy:active ,label:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 .slogan2{
-    color:  rgb(97, 99, 104);
+    color:  var(--gray_text_color);
 }
 .guidance, .topper{
-    color: #2e97ff;
+    color: var(--secondary_color);
 }
 
 .logo{
@@ -36,6 +75,7 @@ body{
     width: 25vw;
 }
 .upperNavbar{
+    padding-top: 5px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -46,39 +86,28 @@ body{
     padding-left: 10px;
     padding-right: 10px;
 }
+.signIn:hover, .signIn:active, .signUp:hover, .signUp:active{
+    transform: scale(1.1);
+}
 .signIn{
-    /* border: 2px solid #003f7f; */
+    /* border: 2px solid var(--primary_color); */
     border: none;
-    color: #667b90;
-    margin-right: 5px;
+    /* color: #667b90; */
+    color: var(--light_gray_text_color);
+    margin-right: 10px;
     font-weight: bold;
 }
 .signUp{
     color: white;
-    background-color: #2e97ff;
+    background-color: var(--secondary_color);
     border: none;
     font-weight: bold;
-}
-.theme{
-    border: 3px solid white;
-    border-radius: 10px;
-    box-sizing: border-box;
-    background-color: black;
-    color: white;
-    display: flex;
-    height: 26px;
-    align-items: center;
-}
-.lightTheme{
-    border: 3px solid black;
-    background-color: white;
-    color: black;
 }
 header{
     display: flex;
     justify-content: center;
     /* background: linear-gradient(to right, #003f7f,#007fff); */
-    background-color: #003f7f;
+    background-color: var(--primary_color);
     /* background-color: #DB6D00; */
     flex-direction: column;
     align-items: center;
@@ -91,7 +120,7 @@ header{
     color:  white;
 }
 .buddy{
-    color:#2e97ff;
+    color:var(--secondary_color);
 }
 .lowerNavbar{
     padding-bottom: 45px;
@@ -116,6 +145,9 @@ header{
     /* font-weight: 700 !important; */
     color: white;
 }
+.sCtgy:hover, .sCtgy:active{
+    transform: scale(1.1);
+}
 #navItems{
     display: flex;
     list-style: none;
@@ -139,7 +171,7 @@ a{
     border-radius: 10px;
     border: 2px solid white;
     /* height: 32px; */
-    background-color: #003f7f;
+    background-color: var(--primary_color);
     /* border: 2px solid white; */
     padding-left: 10px;
     padding-right: 10px;
@@ -150,7 +182,7 @@ a{
     min-width: 40px;
     border: 2px solid white;
     border-radius: 50%;
-    background-color: #003f7f;
+    background-color: var(--primary_color);
     position: relative;
     bottom: 0px;
 }
@@ -158,9 +190,9 @@ a{
     background-color: #2e97ff !important;
 }
 .mobileMenuIcon{
-    height: calc(1rem + 2vw);
-    width: calc(1rem + 2vw);
-    background-color: #003f7f;
+    height: calc(2rem + 2vw);
+    width: calc(2rem + 2vw);
+    background-color: var(--primary_color);
     color: white;
 }
 .middleBar, .mobileMenu{
@@ -171,9 +203,7 @@ a{
     background-color: unset;
 }
 .filterBtn{
-    /* padding: 0px 3px 0px 3px; */
-    /* text-align: center; */
-    background-color: #003f7f;
+    background-color: var(--primary_color);
     border: 2px solid white;
     border-radius: 10px;
     color: white;
@@ -227,4 +257,29 @@ a{
 .noBgBorderBtn{
     border: unset;
     background-color: unset;
+}
+.theme{
+    position: relative;
+    top: -0.5px;
+}
+.accordion {
+    --bs-accordion-color: var(--text_color);
+     --bs-accordion-bg: var(--card_background_color);
+}
+.accordion-item {
+    color: var(--text_color);
+    background-color: var(--card_background_color);
+    border: none;
+}
+.accordion-button{
+    font-weight: bold;
+    border: 0.5px solid gray;
+}
+
+.accordion-button:not(.collapsed) {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text_color);
+    background-color: var(--card_background_color);
+    
 }

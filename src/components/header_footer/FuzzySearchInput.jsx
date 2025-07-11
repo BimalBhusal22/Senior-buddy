@@ -188,6 +188,7 @@ const FuzzySearchInput = () => {
               paddingLeft: "10px",
               border: "2px solid gray",
               fontSize: "15px",
+              color: "black",
               backgroundColor: "#fff",
               position: "relative",
               top: "3px",
@@ -203,7 +204,8 @@ const FuzzySearchInput = () => {
                 margin: 0,
                 padding: "8px 0",
                 listStyle: "none",
-                backgroundColor: "#fff",
+                color: "var(--text_color)",
+                backgroundColor: "var(--card_background_color)",
                 border: "1px solid #ccc",
                 borderTop: "none",
                 borderRadius: "10px",
@@ -222,7 +224,7 @@ const FuzzySearchInput = () => {
                     padding: "8px 12px",
                     cursor: "pointer",
                     fontSize: "15px",
-                    backgroundColor: index === activeIndex ? "#cdcdcd" : "#fff",
+                    backgroundColor: index === activeIndex ? "var(--body_background_color)" : "var(--card_background_color)",
                   }}
                 >
                   {result.match}

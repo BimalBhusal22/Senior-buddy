@@ -38,7 +38,8 @@
   padding: 25px;
   /* padding-top: 10px; */
   width: 250px;
-  background-color: white;
+  background-color: var(--card_background_color);
+  border: var(--card_border);
   /* position:relative; */
   /* top:-250px; */
 }
@@ -54,13 +55,15 @@
   border-color: gainsboro;
 }
 .filterHeading{
-  color:#2e97ff;
+  color:var(--secondary_color);
   margin-bottom: -2px;
 }
 .msgbox{
   margin: 0 2vw;
   border-radius: 15px;
-  background-color: white;
+  background-color: var(--card_background_color);
+  color: var(--text_color);
+  border: var(--card_border);
 }
 .oneFilter{
   display: inline-block;
@@ -70,10 +73,10 @@
   overflow-y: auto;
 }
 .facultyColor{
-  color:#2e97ff;
+  color:var(--secondary_color);
 }
 .test{
-  background-color: white;
+  background-color: var(--card_background_color);
 }
 .paginationBtn{
   width: 98px;

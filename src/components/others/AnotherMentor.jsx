@@ -15,7 +15,7 @@ const AnotherMentor = ({ mentor, college, district }) => {
     );
   };
   return (
-    <div className="part1">
+    <div className="part1 my-2">
       <div className="part11">
         <img src={mentor.imageUrl} height="150px" width="150px" />
       </div>

@@ -37,7 +37,7 @@ const HeaderLowerNavbar = () => {
             onClick={() => handleOnClick("BBS")}
           >
             <label htmlFor="bbs">
-              <span className="ctgy">BBS</span>
+              <div className="ctgy">BBS</div>
             </label>
           </button>
         </li>
@@ -47,7 +47,7 @@ const HeaderLowerNavbar = () => {
             onClick={() => handleOnClick("BBA")}
           >
             <label htmlFor="bba">
-              <span className="ctgy">BBA</span>
+              <div className="ctgy">BBA</div>
             </label>
           </button>
         </li>
@@ -57,7 +57,7 @@ const HeaderLowerNavbar = () => {
             onClick={() => handleOnClick("BHM")}
           >
             <label htmlFor="bhm">
-              <span className="ctgy">BHM</span>
+              <div className="ctgy">BHM</div>
             </label>
           </button>
         </li>
@@ -67,7 +67,7 @@ const HeaderLowerNavbar = () => {
             onClick={() => handleOnClick("BSc CSIT")}
           >
             <label htmlFor="bsccsit">
-              <span className="ctgy">BSc. CSIT</span>
+              <div className="ctgy">BSc. CSIT</div>
             </label>
           </button>
         </li>
@@ -77,7 +77,7 @@ const HeaderLowerNavbar = () => {
             onClick={() => handleOnClick("BCA")}
           >
             <label htmlFor="bca">
-              <span className="ctgy">BCA</span>
+              <div className="ctgy">BCA</div>
             </label>
           </button>
         </li>
