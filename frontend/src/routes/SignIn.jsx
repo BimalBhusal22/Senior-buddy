@@ -1,9 +1,57 @@
 import { Form, redirect } from "react-router-dom";
+import React, { useState } from "react";
 
 const SignIn = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    // Email
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())
+    ) {
+      newErrors.email = "Email is invalid";
+    }
+    return newErrors;
+  };
+
+  // Handle form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      setErrors({});
+      console.log("Form submitted successfully!", formData);
+      // Here you might send data to an API, etc.
+      // Reset form if desired
+      setFormData({
+        email: "",
+        password: "",
+      });
+    }
+  };
+
   return (
     <>
-      <Form method="POST">
+      <Form method="POST" onSubmit={handleSubmit}>
         <div className="container-fluid py-4">
           <div className="container">
             <div className="row">
@@ -22,8 +70,11 @@ const SignIn = () => {
                       name="email"
                       className="myInputBox"
                       placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                     />
+                    {errors.email && <p style={styles.error}>{errors.email}</p>}
                   </div>
                 </div>
               </div>
@@ -37,6 +88,8 @@ const SignIn = () => {
                       name="password"
                       className="myInputBox"
                       placeholder="Your Password"
+                      value={formData.password}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -59,10 +112,17 @@ const SignIn = () => {
     </>
   );
 };
+const styles = {
+  error: {
+    color: "red",
+    fontSize: "0.8em",
+    marginTop: "5px",
+  },
+};
 
 export async function action({ request }) {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formDatas = await request.formData();
+  const data = Object.fromEntries(formDatas);
   console.log(data);
   return redirect("/");
 }
