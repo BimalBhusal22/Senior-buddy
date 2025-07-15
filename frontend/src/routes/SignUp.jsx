@@ -22,12 +22,15 @@ const SignUp = () => {
   // Validate fields
   const validate = () => {
     const newErrors = {};
+    const alphabetRegex = /^[A-Za-z\s]+$/;
 
     // Full Name
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full Name is required";
     } else if (formData.fullName.trim().length < 3) {
       newErrors.fullName = "Full Name must be at least 3 characters";
+    } else if (!alphabetRegex.test(formData.fullName.trim())) {
+      newErrors.fullName = "Full name must contain only letters.";
     }
 
     // Phone Number

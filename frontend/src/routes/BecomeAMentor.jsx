@@ -28,19 +28,26 @@ const BecomeAMentor = () => {
 
   const validate = () => {
     const newErrors = {};
+    const alphabetRegex = /^[A-Za-z\s]+$/;
 
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full name is required.";
     } else if (formData.fullName.trim().length < 3) {
       newErrors.fullName = "Full name must be at least 3 characters.";
+    } else if (!alphabetRegex.test(formData.fullName.trim())) {
+      newErrors.fullName = "Full name must contain only letters.";
     }
 
     if (!formData.college.trim()) {
       newErrors.college = "College name is required.";
+    } else if (!alphabetRegex.test(formData.college.trim())) {
+      newErrors.college = "College name must contain only letters.";
     }
 
     if (!formData.faculty.trim()) {
       newErrors.faculty = "Faculty is required.";
+    } else if (!alphabetRegex.test(formData.faculty.trim())) {
+      newErrors.faculty = "Faculty must contain only letters.";
     }
 
     if (!formData.yearGrade) {
@@ -179,6 +186,8 @@ const BecomeAMentor = () => {
                       className="myInputBox"
                       name="semester"
                       defaultValue=""
+                      value={formData.semester}
+                      onChange={handleChange}
                     >
                       <option value="" disabled>
                         -- Select Semester --
@@ -203,7 +212,6 @@ const BecomeAMentor = () => {
                       type="tel"
                       name="phoneNumber"
                       className="myInputBox"
-                      placeholder="9801234567"
                       value={formData.phoneNumber}
                       onChange={handleChange}
                     />
