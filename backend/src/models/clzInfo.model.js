@@ -4,11 +4,11 @@ const clzInfoSchema = new mongoose.Schema(
   {
     imageUrl: {
       type: String,
-      required: true,
+      required: [true, "College image URL is a required field"],
     },
     name: {
       type: String,
-      required: true,
+      required: [true, "College Name is a required field"],
     },
     district: {
       type: String,
@@ -92,23 +92,23 @@ const clzInfoSchema = new mongoose.Schema(
         "Tehrathum",
         "Udayapur",
       ],
-      required: true,
+      required: [true, "District is a required field"],
     },
     levels: [
       {
         type: String,
-        required: true,
+        required: [true, "Levels is a required field"],
       },
     ],
     faculties: [
       {
         type: String,
-        required: true,
+        required: [true, "Faculties is a required field"],
       },
     ],
     websiteLink: {
       type: String,
-      required: true,
+      required: [true, "Website Link is a required field"],
     },
   },
   { timestamps: true }

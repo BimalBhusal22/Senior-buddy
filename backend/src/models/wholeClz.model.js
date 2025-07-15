@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const wholeClzSchema = new mongoose.Schema(
   {
@@ -15,7 +16,7 @@ const wholeClzSchema = new mongoose.Schema(
     noOfOtherMentors: {
       type: Number,
       default: 0,
-      required: true,
+      required: [true, "No of other mentors is a required field"],
     },
     otherMentors: [
       {
@@ -26,5 +27,7 @@ const wholeClzSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+wholeClzSchema.plugin(mongooseAggregatePaginate);
 
 export const WholeClz = mongoose.model("WholeClz", wholeClzSchema);
