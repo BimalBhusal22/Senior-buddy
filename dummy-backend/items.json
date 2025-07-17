@@ -3,7 +3,7 @@
     {
       "id": 1,
       "clzInfo": {
-        "imageUrl": "images/colleges/ButwalMultiple.jpg",
+        "image": "images/colleges/ButwalMultiple.jpg",
         "name": "Butwal Multiple Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -12,7 +12,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior1.png",
+        "image": "images/mentors/senior1.png",
         "name": "Jivan",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -25,7 +25,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -37,7 +37,7 @@
         },
         {
           "id": 3,
-          "imageUrl": "images/mentors/senior3.png",
+          "image": "images/mentors/senior3.png",
           "name": "Sushila",
           "gender": "F",
           "present": "12, Science",
@@ -52,7 +52,7 @@
     {
       "id": 2,
       "clzInfo": {
-        "imageUrl": "images/colleges/KathmanduModal.jpg",
+        "image": "images/colleges/KathmanduModal.jpg",
         "name": "Kathmandu Model Campus",
         "district": "Kathmandu",
         "levels": ["+2", "Bachelor"],
@@ -61,7 +61,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior2.png",
+        "image": "images/mentors/senior2.png",
         "name": "Anuradha",
         "gender": "F",
         "present": "12, Management",
@@ -75,7 +75,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -87,7 +87,7 @@
         },
         {
           "id": 3,
-          "imageUrl": "images/mentors/senior3.png",
+          "image": "images/mentors/senior3.png",
           "name": "Sushila",
           "gender": "F",
           "present": "12, Science",
@@ -99,7 +99,7 @@
         },
         {
           "id": 4,
-          "imageUrl": "images/mentors/senior1.png",
+          "image": "images/mentors/senior1.png",
           "name": "Jivan",
           "gender": "M",
           "gender": "M",
@@ -115,7 +115,7 @@
     {
       "id": 3,
       "clzInfo": {
-        "imageUrl": "images/colleges/Tilottama.jpg",
+        "image": "images/colleges/Tilottama.jpg",
         "name": "Tilottama Campus",
         "district": "Rupandehi",
         "levels": ["+2", "Bachelor", "Master"],
@@ -124,7 +124,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -138,7 +138,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -153,7 +153,7 @@
     {
       "id": 4,
       "clzInfo": {
-        "imageUrl": "images/colleges/st.xaviors.jpg",
+        "image": "images/colleges/st.xaviors.jpg",
         "name": "St. Xavier's College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -162,7 +162,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Akash.png",
+        "image": "images/mentors/Akash.png",
         "name": "Akash",
         "gender": "M",
         "present": "2nd Year, BSc",
@@ -176,7 +176,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "present": "7th sem, BSc CSIT",
           "past": "5th sem: 83.56%",
@@ -190,7 +190,7 @@
     {
       "id": 5,
       "clzInfo": {
-        "imageUrl": "images/colleges/kathford-international.jpeg",
+        "image": "images/colleges/kathford-international.jpeg",
         "name": "Kathford International College",
         "district": "Lalitpur",
         "levels": ["bachelor"],
@@ -199,7 +199,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Mina.png",
+        "image": "images/mentors/Mina.png",
         "name": "Mina",
         "gender": "F",
         "present": "3rd Yr, BBA",
@@ -213,7 +213,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -228,7 +228,7 @@
     {
       "id": 6,
       "clzInfo": {
-        "imageUrl": "images/colleges/himalaya_engineering_college.jpg",
+        "image": "images/colleges/himalaya_engineering_college.jpg",
         "name": "Himalaya College of Engineering",
         "district": "Lalitpur",
         "levels": ["bachelor"],
@@ -237,7 +237,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Hira.png",
+        "image": "images/mentors/Hira.png",
         "name": "Hira",
         "gender": "M",
         "present": "4th Yr, BSc CSIT",
@@ -251,7 +251,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -266,7 +266,7 @@
     {
       "id": 7,
       "clzInfo": {
-        "imageUrl": "images/colleges/amrit-science-campus-ascol-building.png",
+        "image": "images/colleges/amrit-science-campus-ascol-building.png",
         "name": "Amrit Science Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -275,7 +275,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Asmita.png",
+        "image": "images/mentors/Asmita.png",
         "name": "Asmita",
         "gender": "F",
         "present": "3rd Yr, BSc. CSIT",
@@ -289,7 +289,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Asmita.png",
+          "image": "images/mentors/Asmita.png",
           "name": "Asmita",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
@@ -304,7 +304,7 @@
     {
       "id": 8,
       "clzInfo": {
-        "imageUrl": "images/colleges/BIRENDRA-MULTIPLE-CAMPUS.jpg.webp",
+        "image": "images/colleges/BIRENDRA-MULTIPLE-CAMPUS.jpg.webp",
         "name": "Birendra Multiple Campus",
         "district": "chitawan",
         "levels": ["bachelor", "master"],
@@ -323,7 +323,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Sangit.png",
+        "image": "images/mentors/Sangit.png",
         "name": "Sangit",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -337,7 +337,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Asmita.png",
+          "image": "images/mentors/Asmita.png",
           "name": "Asmita",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
@@ -352,7 +352,7 @@
     {
       "id": 9,
       "clzInfo": {
-        "imageUrl": "images/colleges/Nagarjuna College of Information Technology.jpeg",
+        "image": "images/colleges/Nagarjuna College of Information Technology.jpeg",
         "name": "Nagarjuna College of Information Technology",
         "district": "Lalitpur",
         "levels": ["bachelor"],
@@ -361,7 +361,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Anupama.png",
+        "image": "images/mentors/Anupama.png",
         "name": "Anupama",
         "gender": "F",
         "present": "3rd Yr, BSc. CSIT",
@@ -375,7 +375,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Asmita.png",
+          "image": "images/mentors/Asmita.png",
           "name": "Asmita",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
@@ -390,7 +390,7 @@
     {
       "id": 10,
       "clzInfo": {
-        "imageUrl": "images/colleges/Patan Multiple Campus.jpg",
+        "image": "images/colleges/Patan Multiple Campus.jpg",
         "name": "Patan Multiple Campus",
         "district": "Lalitpur",
         "levels": ["bachelor", "master"],
@@ -409,7 +409,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Asmita.png",
+        "image": "images/mentors/Asmita.png",
         "name": "Asmita",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -423,7 +423,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -438,7 +438,7 @@
     {
       "id": 11,
       "clzInfo": {
-        "imageUrl": "images/colleges/Bhaktapur Multiple Campus.jpeg",
+        "image": "images/colleges/Bhaktapur Multiple Campus.jpeg",
         "name": "Bhaktapur Multiple Campus",
         "district": "Bhaktapur",
         "levels": ["bachelor"],
@@ -456,7 +456,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Rasmika.jpg",
+        "image": "images/mentors/Rasmika.jpg",
         "name": "Rasmika",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -470,7 +470,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Asmita.png",
+          "image": "images/mentors/Asmita.png",
           "name": "Asmita",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
@@ -485,7 +485,7 @@
     {
       "id": 12,
       "clzInfo": {
-        "imageUrl": "images/colleges/Prime College.jpeg",
+        "image": "images/colleges/Prime College.jpeg",
         "name": "Prime College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -494,7 +494,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Sangita.jpg",
+        "image": "images/mentors/Sangita.jpg",
         "name": "Sangita",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -508,7 +508,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Asmita.png",
+          "image": "images/mentors/Asmita.png",
           "name": "Asmita",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
@@ -523,7 +523,7 @@
     {
       "id": 13,
       "clzInfo": {
-        "imageUrl": "images/colleges/Ratna Rajyalaxmi Campus.jpeg",
+        "image": "images/colleges/Ratna Rajyalaxmi Campus.jpeg",
         "name": "Ratna Rajyalaxmi Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -532,7 +532,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Kavya.jpg",
+        "image": "images/mentors/Kavya.jpg",
         "name": "Kavya",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -546,7 +546,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Asmita.png",
+          "image": "images/mentors/Asmita.png",
           "name": "Asmita",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
@@ -561,7 +561,7 @@
     {
       "id": 14,
       "clzInfo": {
-        "imageUrl": "images/colleges/Kalika Multiple Campus.jpeg",
+        "image": "images/colleges/Kalika Multiple Campus.jpeg",
         "name": "Kalika Multiple Campus",
         "district": "Kaski",
         "levels": ["bachelor", "master"],
@@ -571,7 +571,7 @@
       "mentor1": {
         "id": 1,
 
-        "imageUrl": "images/mentors/Amrita.jpg",
+        "image": "images/mentors/Amrita.jpg",
         "name": "Amrita",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -585,7 +585,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Asmita.png",
+          "image": "images/mentors/Asmita.png",
           "name": "Asmita",
           "gender": "M",
           "present": "3rd Yr, BSc. CSIT",
@@ -600,7 +600,7 @@
     {
       "id": 15,
       "clzInfo": {
-        "imageUrl": "images/colleges/Bhairahawa Multiple Campus.jpg",
+        "image": "images/colleges/Bhairahawa Multiple Campus.jpg",
         "name": "Bhairahawa Multiple Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -624,7 +624,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Asmita.png",
+        "image": "images/mentors/Asmita.png",
         "name": "Asmita",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -638,7 +638,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -653,7 +653,7 @@
     {
       "id": 16,
       "clzInfo": {
-        "imageUrl": "images/colleges/Model Campus Damak.jpg",
+        "image": "images/colleges/Model Campus Damak.jpg",
         "name": "Model Campus Damak",
         "district": "Jhapa",
         "levels": ["bachelor"],
@@ -662,7 +662,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Asmita.png",
+        "image": "images/mentors/Asmita.png",
         "name": "Asmita",
         "gender": "M",
         "present": "3rd Yr, BSc. CSIT",
@@ -676,7 +676,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -691,7 +691,7 @@
     {
       "id": 17,
       "clzInfo": {
-        "imageUrl": "images/colleges/Mahendra Multiple Campus.jpg",
+        "image": "images/colleges/Mahendra Multiple Campus.jpg",
         "name": "Mahendra Multiple Campus",
         "district": "Banke",
         "levels": ["bachelor"],
@@ -700,7 +700,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -714,7 +714,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -729,7 +729,7 @@
     {
       "id": 18,
       "clzInfo": {
-        "imageUrl": "images/colleges/Everest_school.jpg",
+        "image": "images/colleges/Everest_school.jpg",
         "name": "Everest English Boarding Secondary School",
         "district": "Rupandehi",
         "levels": ["+2"],
@@ -738,7 +738,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -752,7 +752,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -767,7 +767,7 @@
     {
       "id": 19,
       "clzInfo": {
-        "imageUrl": "images/colleges/Dhawalagiri Multiple Campus.jpg",
+        "image": "images/colleges/Dhawalagiri Multiple Campus.jpg",
         "name": "Dhawalagiri Multiple Campus",
         "district": "Baglung",
         "levels": ["bachelor", "master"],
@@ -776,7 +776,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -790,7 +790,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -805,7 +805,7 @@
     {
       "id": 20,
       "clzInfo": {
-        "imageUrl": "images/colleges/Siddhartha Gautam Buddha Campus.jpg",
+        "image": "images/colleges/Siddhartha Gautam Buddha Campus.jpg",
         "name": "Siddhartha Gautam Buddha Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -814,7 +814,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -828,7 +828,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -843,7 +843,7 @@
     {
       "id": 21,
       "clzInfo": {
-        "imageUrl": "images/colleges/Aadikavi Bhanubhakta Campus.jpg",
+        "image": "images/colleges/Aadikavi Bhanubhakta Campus.jpg",
         "name": "Aadikavi Bhanubhakta Campus",
         "district": "Tanahun",
         "levels": ["bachelor", "master"],
@@ -862,7 +862,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -876,7 +876,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -892,7 +892,7 @@
     {
       "id": 22,
       "clzInfo": {
-        "imageUrl": "images/colleges/Lumbini Banijya Campus.jpg",
+        "image": "images/colleges/Lumbini Banijya Campus.jpg",
         "name": "Lumbini Banijya Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -901,7 +901,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -915,7 +915,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -930,7 +930,7 @@
     {
       "id": 23,
       "clzInfo": {
-        "imageUrl": "images/colleges/Nepal Mega College.jpeg",
+        "image": "images/colleges/Nepal Mega College.jpeg",
         "name": "Nepal Mega College",
         "district": "Kathmandu",
         "levels": ["+2", "bachelor", "master"],
@@ -950,7 +950,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -964,7 +964,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -979,7 +979,7 @@
     {
       "id": 24,
       "clzInfo": {
-        "imageUrl": "images/colleges/Nepal Commerce Campus.webp",
+        "image": "images/colleges/Nepal Commerce Campus.webp",
         "name": "Nepal Commerce Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -988,7 +988,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1002,7 +1002,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1017,7 +1017,7 @@
     {
       "id": 25,
       "clzInfo": {
-        "imageUrl": "images/colleges/DAV College.webp",
+        "image": "images/colleges/DAV College.webp",
         "name": "DAV College",
         "district": "Lalitpur",
         "levels": ["+2", "bachelor", "master"],
@@ -1035,7 +1035,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1049,7 +1049,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1064,7 +1064,7 @@
     {
       "id": 26,
       "clzInfo": {
-        "imageUrl": "images/colleges/Nesfield International College.jpeg",
+        "image": "images/colleges/Nesfield International College.jpeg",
         "name": "Nesfield International College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1073,7 +1073,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1087,7 +1087,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1102,7 +1102,7 @@
     {
       "id": 27,
       "clzInfo": {
-        "imageUrl": "images/colleges/Padma Kanya Multiple Campus.jpg",
+        "image": "images/colleges/Padma Kanya Multiple Campus.jpg",
         "name": "Padma Kanya Multiple Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1124,7 +1124,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1138,7 +1138,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1153,7 +1153,7 @@
     {
       "id": 28,
       "clzInfo": {
-        "imageUrl": "images/colleges/Sukuna Multiple Campus.jpg",
+        "image": "images/colleges/Sukuna Multiple Campus.jpg",
         "name": "Sukuna Multiple Campus",
         "district": "Morang",
         "levels": ["bachelor", "master"],
@@ -1162,7 +1162,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1176,7 +1176,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1191,7 +1191,7 @@
     {
       "id": 29,
       "clzInfo": {
-        "imageUrl": "images/colleges/PadmaShree College.jpeg",
+        "image": "images/colleges/PadmaShree College.jpeg",
         "name": "PadmaShree College",
         "district": "Kathmandu",
         "levels": ["bachelor"],
@@ -1200,7 +1200,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1214,7 +1214,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1229,7 +1229,7 @@
     {
       "id": 30,
       "clzInfo": {
-        "imageUrl": "images/colleges/Platinum Management College.jpg",
+        "image": "images/colleges/Platinum Management College.jpg",
         "name": "Platinum Management College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1238,7 +1238,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1252,7 +1252,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1267,7 +1267,7 @@
     {
       "id": 31,
       "clzInfo": {
-        "imageUrl": "images/colleges/Liberty College.jpg",
+        "image": "images/colleges/Liberty College.jpg",
         "name": "Liberty College",
         "district": "Kathmandu",
         "levels": ["bachelor"],
@@ -1276,7 +1276,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1290,7 +1290,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1305,7 +1305,7 @@
     {
       "id": 32,
       "clzInfo": {
-        "imageUrl": "images/colleges/ISMT College.webp",
+        "image": "images/colleges/ISMT College.webp",
         "name": "ISMT College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1314,7 +1314,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1328,7 +1328,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1343,7 +1343,7 @@
     {
       "id": 33,
       "clzInfo": {
-        "imageUrl": "images/colleges/Tri-Chandra Multiple Campus.jpeg",
+        "image": "images/colleges/Tri-Chandra Multiple Campus.jpeg",
         "name": "Tri-Chandra Multiple Campus",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1352,7 +1352,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1366,7 +1366,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1381,7 +1381,7 @@
     {
       "id": 34,
       "clzInfo": {
-        "imageUrl": "images/colleges/Victoria College.jpg",
+        "image": "images/colleges/Victoria College.jpg",
         "name": "Victoria College",
         "district": "Dang",
         "levels": ["bachelor", "master"],
@@ -1390,7 +1390,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1404,7 +1404,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1419,7 +1419,7 @@
     {
       "id": 35,
       "clzInfo": {
-        "imageUrl": "images/colleges/National Infotech College.jpg",
+        "image": "images/colleges/National Infotech College.jpg",
         "name": "National Infotech College",
         "district": "Parsa",
         "levels": ["bachelor"],
@@ -1428,7 +1428,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Sangita.jpg",
+        "image": "images/mentors/Sangita.jpg",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1442,7 +1442,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1457,7 +1457,7 @@
     {
       "id": 36,
       "clzInfo": {
-        "imageUrl": "images/colleges/Gupteshwor Mahadev Multiple Campus.jpeg",
+        "image": "images/colleges/Gupteshwor Mahadev Multiple Campus.jpeg",
         "name": "Gupteshwor Mahadev Multiple Campus",
         "district": "Kaski",
         "levels": ["bachelor", "master"],
@@ -1466,7 +1466,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Anupama.png",
+        "image": "images/mentors/Anupama.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1480,7 +1480,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1495,7 +1495,7 @@
     {
       "id": 37,
       "clzInfo": {
-        "imageUrl": "images/colleges/Pokhara Lincoln International College.jpg",
+        "image": "images/colleges/Pokhara Lincoln International College.jpg",
         "name": "Pokhara Lincoln International College",
         "district": "Kaski",
         "levels": ["bachelor", "master"],
@@ -1504,7 +1504,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/Kavya.jpg",
+        "image": "images/mentors/Kavya.jpg",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1518,7 +1518,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1533,7 +1533,7 @@
     {
       "id": 38,
       "clzInfo": {
-        "imageUrl": "images/colleges/Prithvi Narayan Campus.jpeg",
+        "image": "images/colleges/Prithvi Narayan Campus.jpeg",
         "name": "Prithvi Narayan Campus",
         "district": "Kaski",
         "levels": ["bachelor", "master"],
@@ -1557,7 +1557,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1571,7 +1571,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Akash-Bhusal.png",
+          "image": "images/mentors/Akash-Bhusal.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1586,7 +1586,7 @@
     {
       "id": 39,
       "clzInfo": {
-        "imageUrl": "images/colleges/Bheri Multiple Campus.jpg",
+        "image": "images/colleges/Bheri Multiple Campus.jpg",
         "name": "Bheri Multiple Campus",
         "district": "Surkhet",
         "levels": ["bachelor"],
@@ -1595,7 +1595,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1609,7 +1609,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1624,7 +1624,7 @@
     {
       "id": 40,
       "clzInfo": {
-        "imageUrl": "images/colleges/Siddhanath Science Campus.jpeg",
+        "image": "images/colleges/Siddhanath Science Campus.jpeg",
         "name": "Siddhanath Science Campus",
         "district": "Kanchanpur",
         "levels": ["bachelor", "master"],
@@ -1633,7 +1633,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior1.png",
+        "image": "images/mentors/senior1.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1647,7 +1647,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1662,7 +1662,7 @@
     {
       "id": 41,
       "clzInfo": {
-        "imageUrl": "images/colleges/Butwal Kalika Campus.png",
+        "image": "images/colleges/Butwal Kalika Campus.png",
         "name": "Butwal Kalika Campus",
         "district": "Rupandehi",
         "levels": ["bachelor", "master"],
@@ -1671,7 +1671,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1685,7 +1685,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1700,7 +1700,7 @@
     {
       "id": 42,
       "clzInfo": {
-        "imageUrl": "images/colleges/Texas International College.webp",
+        "image": "images/colleges/Texas International College.webp",
         "name": "Texas International College",
         "district": "Kathmandu",
         "levels": ["bachelor", "master"],
@@ -1709,7 +1709,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior1.png",
+        "image": "images/mentors/senior1.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1723,7 +1723,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1738,7 +1738,7 @@
     {
       "id": 43,
       "clzInfo": {
-        "imageUrl": "images/colleges/Kalika.jpg",
+        "image": "images/colleges/Kalika.jpg",
         "name": "Kalika Manavgyan Secondary School",
         "district": "Rupandehi",
         "levels": ["+2"],
@@ -1747,7 +1747,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior2.png",
+        "image": "images/mentors/senior2.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1761,7 +1761,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1776,7 +1776,7 @@
     {
       "id": 44,
       "clzInfo": {
-        "imageUrl": "images/colleges/svi.jpg",
+        "image": "images/colleges/svi.jpg",
         "name": "Siddhartha vanasthali Institute",
         "district": "Kathmandu",
         "levels": ["+2"],
@@ -1785,7 +1785,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1799,7 +1799,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/Hira.png",
+          "image": "images/mentors/Hira.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
@@ -1814,7 +1814,7 @@
     {
       "id": 45,
       "clzInfo": {
-        "imageUrl": "images/colleges/times.jpeg",
+        "image": "images/colleges/times.jpeg",
         "name": "The Times International College",
         "district": "Kathmandu",
         "levels": ["+2", "bachelor", "master"],
@@ -1834,7 +1834,7 @@
       },
       "mentor1": {
         "id": 1,
-        "imageUrl": "images/mentors/senior3.png",
+        "image": "images/mentors/senior3.png",
         "name": "Sushila",
         "gender": "F",
         "present": "12, Science",
@@ -1848,7 +1848,7 @@
       "otherMentors": [
         {
           "id": 2,
-          "imageUrl": "images/mentors/senior2.png",
+          "image": "images/mentors/senior2.png",
           "name": "Anuradha",
           "gender": "F",
           "present": "12, Management",
