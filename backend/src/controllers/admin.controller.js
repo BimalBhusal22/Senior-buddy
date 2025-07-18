@@ -1,52 +1,124 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import {WholeClz} from "../models/wholeClz.model.js"
-import {ApiError} from "../utils/ApiError.js";
-import {uploadOnCloudinary} from "../utils/cloudinary.js";
+import { Mentor } from "../models/mentor.model.js";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
+import { User } from "../models/user.model.js";
 
-const addCollege = asyncHandler(async (req, res) => {
-  console.log(req.body);
+const addMentor = asyncHandler(async (req, res) => {
+  const {
+    mentorName,
+    mentorGender,
+    mentorFaculty,
+    mentorPhoneNo,
+    mentorFbProfileLink,
+    mentorEmail,
+    collegeName,
+    collegeDistrict,
+    collegeLevels,
+    collegeFaculties,
+    collegeWebsiteLink,
+  } = req.body;
 
-  const { clzInfo, mentor1, noOfOtherMentors, otherMentors } = req.body;
+  console.log(
+    mentorName,
+    mentorGender,
+    mentorFaculty,
+    mentorPhoneNo,
+    mentorFbProfileLink,
+    mentorEmail,
+    collegeName,
+    collegeDistrict,
+    collegeLevels,
+    collegeFaculties,
+    collegeWebsiteLink
+  );
+
+  // console.log("Bimal your req.body = ", req.body);
 
   if (
     [
-      clzInfo.name,
-      clzInfo.name,
-      clzInfo.district,
-      clzInfo.levels,
-      clzInfo.faculties,
-      clzInfo.websiteLink,
-      mentor1.name,
-      mentor1.gender,
-      mentor1.present,
-      mentor1.past,
-      mentor1.phoneNo,
-      mentor1.fbProfileLink,
-      mentor1.email,
-      noOfOtherMentors
-    ].some((field) => field?.trim() === "")
+      mentorName,
+      mentorGender,
+      mentorFaculty,
+      mentorPhoneNo,
+      mentorFbProfileLink,
+      mentorEmail,
+      collegeName,
+      collegeDistrict,
+      collegeLevels,
+      collegeFaculties,
+      collegeWebsiteLink,
+    ].some((field) => (field = ""))
   ) {
-    throw new ApiError(400, "Bimal, Submit data for all required fields");
+    throw new ApiError(400, "Bimal, Submit data for all fields");
   }
 
-  const clzImageLocalPath = req.files?.clzImage[0]?.path;
-  if(!clzImageLocalPath){
-    throw new ApiError(400,"Bimal, ClzImage is required.")
+  const existedMentor = await User.findOne({
+    mentorPhoneNo,
+  });
+
+  if (existedMentor) {
+    throw new ApiError(
+      409,
+      "Bimal, Mentor with given phone number already exists"
+    );
   }
 
-  const clzImage = await uploadOnCloudinary(clzImageLocalPath);
+  const mentorImageLocalPath = req.files?.mentorImage[0]?.path;
+  const collgeImageLocalPath = req.files?.collegeImage[0]?.path;
 
-  if(!clzImage){
-    throw new ApiError(400,"Bimal, ClzImage is required.")
+  if (!mentorImageLocalPath) {
+    throw new ApiError(400, "Bimal, Mentor Image is required.");
+  }
+  if (!collgeImageLocalPath) {
+    throw new ApiError(400, "Bimal, College Image is required.");
   }
 
-  WholeClz.create({
-    clzInfo,
-    mentor1,
-    noOfOtherMentors,
-    otherMentors
-  })
+  const mentorImage = await uploadOnCloudinary(mentorImageLocalPath);
+  const collegeImage = await uploadOnCloudinary(collgeImageLocalPath);
 
+  if (!mentorImage) {
+    throw new ApiError(400, "Bimal, Mentor Image is required.");
+  }
+  if (!collegeImage) {
+    throw new ApiError(400, "Bimal, College Image is required.");
+  }
+
+  const mentor = await Mentor.create({
+    mentorImage,
+    mentorName,
+    mentorGender,
+    mentorFaculty,
+    mentorPhoneNo,
+    mentorFbProfileLink,
+    mentorEmail,
+    collegeImage,
+    collegeName,
+    collegeDistrict,
+    collegeLevels,
+    collegeFaculties,
+    collegeWebsiteLink,
+  });
+
+  const createdMentor = await Mentor.findById(mentor._id);
+
+  if (!createdMentor) {
+    throw new ApiError(
+      500,
+      "Bimal, Something went wrong while user adding new mentor"
+    );
+  }
+
+  return res
+    .status(201)
+    .json(
+      new ApiResponse(
+        200,
+        createdMentor,
+        "Bimal, New Mentor added Successfully"
+      )
+    );
 });
 
-export { addCollege };
+export { addMentor };

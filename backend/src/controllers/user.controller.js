@@ -24,7 +24,7 @@ const signUp = asyncHandler(async (req, res) => {
     throw newApiError(400, "Bimal, Submit data for all required fields");
   }
 
-  const existedUser = User.findOne({
+  const existedUser = await User.findOne({
     $or: [{ email }, { phoneNo }],
   });
 

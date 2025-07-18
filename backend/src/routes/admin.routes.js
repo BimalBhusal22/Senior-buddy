@@ -1,20 +1,23 @@
 import { Router } from "express";
-import { addCollege } from "../controllers/user.controller.js";
+import { addMentor } from "../controllers/admin.controller.js";
+import { upload } from "../middlewares/multer.middleware.js";
 
 const router = Router();
 
-router.route("/add_college").post(
+router.route("/add_mentor").post(
   upload.fields([
     {
-      name: clzImage,
+      name: "mentorImage",
       maxCount: 1,
     },
     {
-      name: mentorImage,
-      maxCount: 10,
+      name: "collegeImage",
+      maxCount: 1,
     },
   ]),
-  addCollege
+  addMentor
 );
+
+// router.route("/add_mentor").post(addMentor);
 
 export default router;

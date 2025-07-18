@@ -1,0 +1,15 @@
+{
+  "mentorImage": "images/mentors/senior1.png",
+  "mentorName": "Jivan",
+  "mentorGender": "M",
+  "mentorFaculty": "BSc. CSIT",
+  "mentorPhoneNo": "9111111111",
+  "mentorFbProfileLink": "https://www.facebook.com/jivan.gaire.79",
+  "mentorEmail": "jivangaire@gmail.com",
+  "collegeImage": "images/colleges/ButwalMultiple.jpg",
+  "collegeName": "Butwal Multiple Campus",
+  "collegeDistrict": "Rupandehi",
+  "collegeLevels": ["bachelor", "master"],
+  "collegeFaculties": ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
+  "collegeWebsiteLink": "https://bumc.tu.edu.np/"
+}

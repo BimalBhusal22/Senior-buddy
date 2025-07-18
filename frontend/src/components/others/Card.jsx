@@ -43,7 +43,7 @@ const Card = ({ item }) => {
       <div className="card1 BimalCard shadow-lg">
         <div className="part1">
           <div className="part11">
-            <img src={item.mentor1.imageUrl} height="150px" width="150px" />
+            <img src={item.mentor1.image} height="150px" width="150px" />
           </div>
           <div className="part12">
             {item.mentor1.name}
@@ -94,7 +94,7 @@ const Card = ({ item }) => {
 
         <div className="part3">
           <div className="part31">
-            <img src={item.clzInfo.imageUrl} height="100px" width="100%" />
+            <img src={item.clzInfo.image} height="100px" width="100%" />
           </div>
           <div className="part32">
             <div>
