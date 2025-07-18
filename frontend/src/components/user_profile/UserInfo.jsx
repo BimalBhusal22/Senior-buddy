@@ -11,13 +11,7 @@ const UserInfo = () => {
     password: "1234",
   };
 
-  const [userData, setUserData] = useState({
-    name: userInfo.name,
-    phoneno: userInfo.phoneno,
-    email: userInfo.email,
-    password: userInfo.password,
-  });
-
+  const [userData, setUserData] = useState(userInfo);
   const [errors, setErrors] = useState({});
   const [isEditing, setIsEditing] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -57,24 +51,17 @@ const UserInfo = () => {
     setIsEditing(true);
   };
 
-  const handleSaveClick = () => {
-    if (validate()) {
-      console.log("Updated user data:", userData);
-      setIsEditing(false);
-    }
-  };
-
   return (
     <div className="container-fluid py-4">
       <div className="container">
-        <div className="row ">
+        <div className="row">
           <div className="col-12 text-center fs-3 fw-bold myHeading">
             Your Details
           </div>
 
           {/* Name */}
           <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
-            <span className="float-sm-end">
+            <span>
               <span className="keyPart">Name:</span>
               <input
                 type="text"
@@ -92,7 +79,7 @@ const UserInfo = () => {
 
           {/* Phone Number */}
           <div className="col-12 col-sm-6 px-sm-4 py-3 d-flex justify-content-center justify-content-sm-end">
-            <span className="float-sm-end">
+            <span>
               <span className="keyPart">Phone No:</span>
               <input
                 type="text"
@@ -128,18 +115,18 @@ const UserInfo = () => {
 
           {/* Password */}
           <div className="col-12 col-sm-6 px-sm-4 pt-3 d-flex justify-content-center justify-content-sm-end">
-            <span className="float-sm-end">
+            <span>
               <span className="keyPart">Password:</span>
-              <span>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  className="valuePart"
-                  value={userData.password}
-                  onChange={handleChange}
-                  disabled={!isEditing}
-                />
-                {isEditing && (
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                className="valuePart"
+                value={userData.password}
+                onChange={handleChange}
+                disabled={!isEditing}
+              />
+              {isEditing && (
+                <div>
                   <button
                     type="button"
                     className="showBtn"
@@ -151,14 +138,16 @@ const UserInfo = () => {
                       <BiShow className="showIcon" />
                     )}
                   </button>
-                )}
-                {errors.password && (
-                  <div className="text-danger small">{errors.password}</div>
-                )}
-              </span>
+                </div>
+              )}
+
+              {errors.password && (
+                <div className="text-danger small">{errors.password}</div>
+              )}
             </span>
           </div>
 
+          {/* Action Buttons */}
           <div className="col-12 d-flex justify-content-center">
             {!isEditing && (
               <button
@@ -172,9 +161,11 @@ const UserInfo = () => {
 
             {isEditing && (
               <button
-                type="button"
+                type="submit" // ✅ Now submits the form to action
                 className="btn btn-primary confirmBtn"
-                onClick={handleSaveClick}
+                onClick={(e) => {
+                  if (!validate()) e.preventDefault(); // prevent submission if invalid
+                }}
               >
                 <GiConfirmed className="confirmIcon" /> Confirm
               </button>
