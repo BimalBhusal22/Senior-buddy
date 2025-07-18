@@ -139,8 +139,8 @@ const BecomeAMentor = () => {
                 <span className="specialWord">Paid</span> for your valuable{" "}
                 <span className="specialWord">Guidance</span> !
               </div>
-              <br />
               <div className="col-12 fw-bold text-center fs-3 ">
+                <br />
                 Add your information
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
@@ -282,9 +282,9 @@ const BecomeAMentor = () => {
                   </div>
                 </div>
               </div>
-              <br />
-              <br />
+
               <div className="col-12 fw-bold text-center fs-3 ">
+                <br />
                 Add your college's information
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
