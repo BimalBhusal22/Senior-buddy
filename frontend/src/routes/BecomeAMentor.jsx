@@ -91,31 +91,42 @@ const BecomeAMentor = () => {
     mentorEmail: "",
     mentorGender: "",
     mentorFbProfileLink: "",
-    mentorImage: "",
+    mentorImage: null,
     collegeName: "",
-    collegeFaculties: "",
+    collegeFaculties: [],
     collegeDistrict: "",
-    collegeLevels: "",
-    collegeImage: "",
+    collegeLevels: [],
+    collegeImage: null,
     collegeWebsiteLink: "",
   });
 
   const handleChange = (e) => {
-    if (e.target.type === "file") {
+    const { name, type, value, checked, files } = e.target;
+
+    if (type === "file") {
+      setFormData({ ...formData, [name]: files[0] });
+    } else if (type === "checkbox") {
+      const currentValues = formData[name] || [];
+      const updatedValues = checked
+        ? [...currentValues, value]
+        : currentValues.filter((v) => v !== value);
+
+      setFormData({ ...formData, [name]: updatedValues });
+    } else if (name === "collegeFaculties") {
+      const arrayValues = value.split(",").map((v) => v.trim());
       setFormData({
         ...formData,
-        [e.target.name]: e.target.files[0],
+        [name]: value,
+        collegeFacultiesArray: arrayValues,
       });
+    } else {
+      setFormData({ ...formData, [name]: value });
     }
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
     <>
-      <Form method="POST">
+      <Form method="POST" encType="multipart/form-data">
         <div className="container-fluid py-4">
           <div className="container">
             <div className="row">
@@ -128,7 +139,7 @@ const BecomeAMentor = () => {
                 <span className="specialWord">Paid</span> for your valuable{" "}
                 <span className="specialWord">Guidance</span> !
               </div>
-              \<br />
+              <br />
               <div className="col-12 fw-bold text-center fs-3 ">
                 Add your information
               </div>
@@ -143,7 +154,6 @@ const BecomeAMentor = () => {
                       placeholder="Your Name"
                       value={formData.mentorName}
                       onChange={handleChange}
-                      required
                     />
                     {actionErrors?.mentorName && (
                       <p style={styles.error}>{actionErrors.mentorName}</p>
@@ -162,7 +172,6 @@ const BecomeAMentor = () => {
                       placeholder="Your Faculty"
                       value={formData.mentorFaculty}
                       onChange={handleChange}
-                      required
                     />
                     {actionErrors?.mentorFaculty && (
                       <p style={styles.error}>{actionErrors.mentorFaculty}</p>
@@ -182,7 +191,6 @@ const BecomeAMentor = () => {
                         value="M"
                         checked={formData.mentorGender === "M"}
                         onChange={handleChange}
-                        required
                       />
                       Male
                     </label>
@@ -212,7 +220,6 @@ const BecomeAMentor = () => {
                       className="myInputBox"
                       value={formData.mentorPhoneNo}
                       onChange={handleChange}
-                      required
                     />
                     {actionErrors?.mentorPhoneNo && (
                       <p style={styles.error}>{actionErrors.mentorPhoneNo}</p>
@@ -231,7 +238,6 @@ const BecomeAMentor = () => {
                       placeholder="your@email.com"
                       value={formData.mentorEmail}
                       onChange={handleChange}
-                      required
                     />
                     {actionErrors?.mentorEmail && (
                       <p style={styles.error}>{actionErrors.mentorEmail}</p>
@@ -268,7 +274,6 @@ const BecomeAMentor = () => {
                       name="mentorImage"
                       accept="image/*"
                       className="myInputBox"
-                      value={formData.mentorImage}
                       onChange={handleChange}
                     />
                     {actionErrors?.mentorImage && (
@@ -277,7 +282,7 @@ const BecomeAMentor = () => {
                   </div>
                 </div>
               </div>
-              \<br />
+              <br />
               <br />
               <div className="col-12 fw-bold text-center fs-3 ">
                 Add your college's information
@@ -293,7 +298,6 @@ const BecomeAMentor = () => {
                       placeholder="Your college's name"
                       value={formData.collegeName}
                       onChange={handleChange}
-                      required
                     />
                     {actionErrors?.collegeName && (
                       <p style={styles.error}>{actionErrors.collegeName}</p>
@@ -379,7 +383,6 @@ const BecomeAMentor = () => {
                       placeholder="Enter faculties seperated by comma"
                       value={formData.collegeFaculties}
                       onChange={handleChange}
-                      required
                     />
                     {actionErrors?.collegeFaculties && (
                       <p style={styles.error}>
@@ -398,7 +401,6 @@ const BecomeAMentor = () => {
                       name="collegeImage"
                       accept="image/*"
                       className="myInputBox"
-                      value={formData.collegeImage}
                       onChange={handleChange}
                     />
                     {actionErrors?.collegeImage && (
@@ -452,82 +454,99 @@ const styles = {
 };
 
 export async function action({ request }) {
-  const formData = Object.fromEntries(await request.formData());
+  const formDataRaw = await request.formData();
+
+  const data = Object.fromEntries(formDataRaw);
+
+  const mentorImage = formDataRaw.get("mentorImage");
+  const collegeImage = formDataRaw.get("collegeImage");
+
+  // ✅ Convert repeated checkbox entries to array
+  const collegeLevels = formDataRaw.getAll("collegeLevels");
+
+  // ✅ Convert comma-separated faculties to array
+  const collegeFacultiesRaw = data.collegeFaculties || "";
+  const collegeFaculties = collegeFacultiesRaw
+    .split(",")
+    .map((v) => v.trim())
+    .filter(Boolean);
 
   const errors = {};
   const alphabetRegex = /^[A-Za-z\s]+$/;
 
-  if (!formData.mentorName) {
+  if (!data.mentorName) {
     errors.mentorName = "Full Name is required.";
-  } else if (formData.mentorName.trim().length < 3) {
-    errors.mentorName = "Full Name must be of atleast 3 letters.";
-  } else if (!alphabetRegex.test(formData.mentorName.trim())) {
+  } else if (data.mentorName.trim().length < 3) {
+    errors.mentorName = "Full Name must be of at least 3 letters.";
+  } else if (!alphabetRegex.test(data.mentorName.trim())) {
     errors.mentorName = "Full Name must contain only letters.";
   }
 
-  if (!formData.mentorFaculty) {
+  // ... other validation logic ...
+  if (!data.mentorFaculty) {
     errors.mentorFaculty = "Faulty is required.";
   }
 
-  if (!formData.mentorGender) {
+  if (!data.mentorGender) {
     errors.mentorGender = "Gender is required.";
   }
 
-  if (!formData.mentorPhoneNo?.trim()) {
+  if (!data.mentorPhoneNo?.trim()) {
     errors.mentorPhoneNo = "Phone Number is required";
-  } else if (!/^\d+$/.test(formData.mentorPhoneNo.trim())) {
+  } else if (!/^\d+$/.test(data.mentorPhoneNo.trim())) {
     errors.mentorPhoneNo = "Phone Number must contain only digits";
-  } else if (formData.mentorPhoneNo.trim().length < 10) {
+  } else if (data.mentorPhoneNo.trim().length < 10) {
     errors.mentorPhoneNo = "Phone Number must be at least 10 digits";
   }
 
-  if (!formData.mentorEmail?.trim()) {
+  if (!data.mentorEmail?.trim()) {
     errors.mentorEmail = "Email is required";
   } else if (
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-      formData.mentorEmail.trim()
-    )
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.mentorEmail.trim())
   ) {
     errors.mentorEmail = "Email is invalid";
   }
 
-  if (!formData.mentorFbProfileLink) {
+  if (!data.mentorFbProfileLink) {
     errors.mentorFbProfileLink = "This field is required.";
   } else if (
-    !/^https?:\/\/(www\.)?facebook\.com/.test(formData.mentorFbProfileLink)
+    !/^https?:\/\/(www\.)?facebook\.com/.test(data.mentorFbProfileLink)
   ) {
     errors.mentorFbProfileLink = "Must be a valid Facebook profile URL.";
   }
 
-  if (!formData.mentorImage) {
+  if (!mentorImage || mentorImage.size === 0) {
     errors.mentorImage = "This field is required.";
   }
 
-  if (!formData.collegeName) {
+  if (!data.collegeName) {
     errors.collegeName = "College Name is required.";
-  } else if (formData.collegeName.trim().length < 3) {
+  } else if (data.collegeName.trim().length < 3) {
     errors.collegeName = "College Name must be of atleast 3 letters.";
-  } else if (!alphabetRegex.test(formData.collegeName.trim())) {
+  } else if (!alphabetRegex.test(data.collegeName.trim())) {
     errors.collegeName = "College Name must contain only letters.";
   }
 
-  if (!formData.collegeDistrict) {
+  if (!data.collegeDistrict) {
     errors.collegeDistrict = "This field is required.";
   }
 
-  if (!formData.collegeLevels) {
-    errors.collegeLevels = "This field is required.";
+  if (!collegeLevels.length) {
+    errors.collegeLevels = "At least one level must be selected.";
   }
 
-  if (!formData.collegeFaculties) {
-    errors.collegeFaculties = "This field is required.";
+  if (!collegeFaculties.length) {
+    errors.collegeFaculties = "At least one faculty is required.";
+  }
+  if (!collegeImage || collegeImage.size === 0) {
+    errors.collegeImage = "This field is required.";
   }
 
-  if (!formData.collegeWebsiteLink) {
+  if (!data.collegeWebsiteLink) {
     errors.collegeWebsiteLink = "This field is required.";
   } else if (
     !/^(https?:\/\/)?([\w\-])+\.{1}[a-zA-Z]{2,}(\S*)?$/.test(
-      formData.collegeWebsiteLink
+      data.collegeWebsiteLink
     )
   ) {
     errors.collegeWebsiteLink = "Invalid URL format";
@@ -536,8 +555,15 @@ export async function action({ request }) {
     return errors;
   }
 
-  // ✅ If passed validation
-  console.log("Form submitted to backend:", formData);
+  // ✅ Final structured payload
+  const finalPayload = {
+    ...data,
+    collegeLevels,
+    collegeFaculties,
+  };
+
+  console.log("🚀 Final submission payload:", finalPayload);
   return redirect("/");
 }
+
 export default BecomeAMentor;
