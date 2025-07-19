@@ -30,12 +30,6 @@ import BecomeAMentor, {
 import AdminDashboard from "./routes/AdminDashboard.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import UpdateCollege, {
-  action as updateCollegeAction,
-} from "./components/dashboard/UpdateCollege.jsx";
-import DeleteCollege, {
-  action as deleteCollegeAction,
-} from "./components/dashboard/DeleteCollege.jsx";
 import { Provider } from "react-redux";
 import store from "./store/index.js";
 import SearchOutput from "./routes/SearchOutput.jsx";
@@ -51,6 +45,7 @@ import AddMentor, {
 } from "./components/dashboard/AddMentor.jsx";
 
 import UpdateMentor from "./components/dashboard/UpdateMentor.jsx";
+import DeleteMentor from "./components/dashboard/DeleteMentor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -126,8 +121,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/delete_mentor",
-        element: <DeleteCollege />,
-        action: deleteCollegeAction,
+        element: <DeleteMentor />,
       },
       {
         path: "/dashboard/view_mentors",
