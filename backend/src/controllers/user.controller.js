@@ -1,5 +1,25 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { User } from "../models/user.model.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { ApiError } from "../utils/ApiError.js";
+import jwt from "jsonwebtoken";
+
+const generateAccessAndRefereshTokens = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    const accessToken = user.generateAccessToken();
+    const refreshToken = user.generateRefreshToken();
+
+    user.refreshToken = refreshToken;
+    user.save({ validateBeforeSave: false });
+    return { accessToken, refreshToken };
+  } catch (error) {
+    throw new ApiError(
+      500,
+      "Something went wrong while generating Access Token and Refresh Token"
+    );
+  }
+};
 
 const signUp = asyncHandler(async (req, res) => {
   // --- STEPS/ALGORITHM FOR SIGN_UP/USER_REGISTRATION ---
@@ -13,14 +33,10 @@ const signUp = asyncHandler(async (req, res) => {
   // remove password and refresh token field from response
   // return response
 
-  const { name, phoneNo, email, password, wishList } = req.body;
-  console.log(name, phoneNo, email, password, wishList);
+  const { name, phoneNo, email, password } = req.body;
+  console.log(name, phoneNo, email, password);
 
-  if (
-    [name, phoneNo, email, password, wishList].some(
-      (field) => field?.trim() === ""
-    )
-  ) {
+  if ([name, phoneNo, email, password].some((field) => field === "")) {
     throw newApiError(400, "Bimal, Submit data for all required fields");
   }
 
@@ -37,10 +53,11 @@ const signUp = asyncHandler(async (req, res) => {
     phoneNo,
     email,
     password,
-    wishList,
   });
 
-  const createdUser = await User.findById(user._id).select("-refreshToken");
+  const createdUser = await User.findById(user._id).select(
+    "-password -refreshToken"
+  );
 
   if (!createdUser) {
     throw new ApiError(500, "Bimal, Something went wrong while user sign up.");
@@ -53,4 +70,134 @@ const signUp = asyncHandler(async (req, res) => {
     );
 });
 
-export { signUp };
+const signIn = asyncHandler(async (req, res) => {
+  // ALGORITHM:
+  // req body -> data
+  // email,password
+  // find the user
+  // password check
+  // access and refresh token
+  // send cookie
+
+  const { email, password } = req.body;
+
+  if (!email) {
+    throw new ApiError(400, "Bimal, Email is required");
+  }
+
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    throw new ApiError(404, "Bimal, User with provided email doesn't exit !!");
+  }
+
+  const isPasswordValid = await user.isPasswordCorrect(password);
+
+  if (!isPasswordValid) {
+    throw new ApiError(401, "Invalid Password");
+  }
+
+  const { accessToken, refreshToken } = await generateAccessAndRefereshTokens(
+    user._id
+  );
+
+  const loggedInUser = await User.findById(user._id).select(
+    "-password -refreshToken"
+  );
+
+  const options = {
+    httpOnly: true,
+    secure: true,
+  };
+
+  return res
+    .status(200)
+    .cookie("accessToken", accessToken, options)
+    .cookie("refreshToken", refreshToken, options)
+    .json(
+      new ApiResponse(
+        200,
+        {
+          user: loggedInUser,
+          accessToken,
+          refreshToken,
+        },
+        "Bimal, User signed in successfully !!"
+      )
+    );
+});
+
+const signOut = asyncHandler(async (req, res) => {
+  await User.findByIdAndUpdate(
+    req.user._id,
+    {
+      $set: {
+        refreshToken: undefined,
+      },
+    },
+    {
+      new: true,
+    }
+  );
+
+  const options = {
+    httpOnly: true,
+    secure: true,
+  };
+
+  return res
+    .status(200)
+    .clearCookie("accessToken", options)
+    .clearCookie("refreshToken", options)
+    .json(new ApiResponse(200, {}, "Bimal, User Sign Out successfully !!"));
+});
+
+const refreshAccessToken = asyncHandler(async (req, res) => {
+  const incomingRefreshToken =
+    req.cookies.refreshToken || req.body.refreshToken;
+
+  if (!incomingRefreshToken) {
+    throw new ApiError(401, "unauthorized request");
+  }
+
+  try {
+    const decodedToken = jwt.verify(
+      incomingRefreshToken,
+      process.env.REFRESH_TOKEN_SECRET
+    );
+
+    const user = await User.findById(decodedToken?._id);
+
+    if (!user) {
+      throw new ApiError(401, "Bimal Invalid refresh Token ");
+    }
+
+    if (incomingRefreshToken !== user?.refreshToken) {
+      throw new ApiError(401, "Refresh token is expired or used.");
+    }
+
+    const options = {
+      httpOnly: true,
+      secure: true,
+    };
+
+    const { accessToken, newRefreshToken } =
+      await generateAccessAndRefreshTokens(user._id);
+
+    return res
+      .status(200)
+      .cookie("accessToken", accessToken, options)
+      .cookie("refreshToken", newRefreshToken, options)
+      .json(
+        new ApiResponse(
+          200,
+          { accessToken, refreshToken: newRefreshToken },
+          "Access token refreshed"
+        )
+      );
+  } catch (error) {
+    throw new ApiError(401, error?.message || "Invalid refresh token");
+  }
+});
+
+export { signUp, signIn, signOut, refreshAccessToken };

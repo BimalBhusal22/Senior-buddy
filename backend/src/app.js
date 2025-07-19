@@ -19,13 +19,12 @@ app.use(cookieParser());
 //routes import
 import userRouter from "./routes/user.routes.js";
 import adminRouter from "./routes/admin.routes.js";
+import becomeAMentorRouter from "./routes/becomeAMentor.routes.js";
 
 //routes declaration
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/admin",adminRouter);
-
-
-
+app.use("/api/v1/user", userRouter);
+app.use("/api/v1/admin", adminRouter);
+app.use("/api/v1/become_a_mentor", becomeAMentorRouter) 
 
 //http://localhost:7000/api/v1/users/sign_up
 //http://localhost:7000/api/v1/users/sign_in
