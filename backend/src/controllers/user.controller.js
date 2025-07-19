@@ -33,11 +33,11 @@ const signUp = asyncHandler(async (req, res) => {
   // remove password and refresh token field from response
   // return response
 
-  const { name, phoneNo, email, password } = req.body;
-  console.log(name, phoneNo, email, password);
+  const { name, phoneNo, email, password, wishList } = req.body;
+  console.log(name, phoneNo, email, password, wishList);
 
   if ([name, phoneNo, email, password].some((field) => field === "")) {
-    throw newApiError(400, "Bimal, Submit data for all required fields");
+    throw new ApiError(400, "Bimal, Submit data for all required fields");
   }
 
   const existedUser = await User.findOne({
@@ -53,6 +53,7 @@ const signUp = asyncHandler(async (req, res) => {
     phoneNo,
     email,
     password,
+    wishList,
   });
 
   const createdUser = await User.findById(user._id).select(
@@ -131,8 +132,8 @@ const signOut = asyncHandler(async (req, res) => {
   await User.findByIdAndUpdate(
     req.user._id,
     {
-      $set: {
-        refreshToken: undefined,
+      $unset: {
+        refreshToken: 1,
       },
     },
     {
@@ -200,4 +201,59 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
   }
 });
 
-export { signUp, signIn, signOut, refreshAccessToken };
+const changeCurrentPassword = asyncHandler(async (req, res) => {
+  const { oldPassword, newPassword } = req.body;
+
+  const user = await User.findById(req.user?._id);
+  const isPasswordCorrect = await user.isPasswordCorrect(oldPassword);
+
+  if (!isPasswordCorrect) {
+    throw new ApiError(400, "Invalid old password");
+  }
+
+  user.password = newPassword;
+  await user.save({ validateBeforeSave: false });
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, {}, "Password changed successfully"));
+});
+
+const getCurrentUser = asyncHandler(async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, req.user, "current user fetched successfully."));
+});
+
+const updateAccountDetails = asyncHandler(async (req, res) => {
+  const { name, phoneNo, email } = req.body;
+  if (!name || !phoneNo || !email) {
+    throw new ApiError(400, "All fields are required.");
+  }
+
+  const user = await User.findByIdAndUpdate(
+    req.user?._id,
+    {
+      $set: {
+        name,
+        phoneNo,
+        email,
+      },
+    },
+    { new: true }
+  ).select("-password");
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, user, "Account details updated successfully."));
+});
+
+export {
+  signUp,
+  signIn,
+  signOut,
+  refreshAccessToken,
+  changeCurrentPassword,
+  getCurrentUser,
+  updateAccountDetails,
+};
