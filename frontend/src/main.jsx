@@ -50,6 +50,8 @@ import AddMentor, {
   action as addMentorAction,
 } from "./components/dashboard/AddMentor.jsx";
 
+import UpdateMentor from "./components/dashboard/UpdateMentor.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -120,8 +122,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/update_mentor",
-        element: <UpdateCollege />,
-        action: updateCollegeAction,
+        element: <UpdateMentor />,
       },
       {
         path: "/dashboard/delete_mentor",
