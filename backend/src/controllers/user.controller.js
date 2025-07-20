@@ -225,6 +225,17 @@ const getCurrentUser = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, req.user, "current user fetched successfully."));
 });
 
+const getAllUsers = asyncHandler(async (req, res) => {
+  try {
+    const users = await User.find().select('-password'); // exclude password
+    return res
+    .status(200)
+    .json(new ApiResponse(200,users,"All Signed Up Users fetched successfully !"));
+  } catch (error) {
+    res.status(500).json({ message: 'Server error while fetching users', error });
+  }
+});
+
 const updateAccountDetails = asyncHandler(async (req, res) => {
   const { name, phoneNo, email } = req.body;
   if (!name || !phoneNo || !email) {
@@ -256,4 +267,5 @@ export {
   changeCurrentPassword,
   getCurrentUser,
   updateAccountDetails,
+  getAllUsers,
 };

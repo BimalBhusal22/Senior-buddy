@@ -28,7 +28,6 @@ const userSchema = new mongoose.Schema(
     wishList: [
       {
         type: String,
-        unique: true,
       },
     ],
     refreshToken: {

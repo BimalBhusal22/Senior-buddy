@@ -120,4 +120,26 @@ const addBecomeAMentorRequest = asyncHandler(async (req, res) => {
     );
 });
 
-export { addBecomeAMentorRequest };
+const getAllMentorRequests = asyncHandler(async (req, res) => {
+  try {
+    const allMentorRequests = await BecomeAMentor.find();
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          allMentorRequests,
+          "All Become a Mentor Requests fetched successfully !"
+        )
+      );
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        message: "Server error while fetching all Become a Mentor Requests",
+        error,
+      });
+  }
+});
+
+export { addBecomeAMentorRequest, getAllMentorRequests };
