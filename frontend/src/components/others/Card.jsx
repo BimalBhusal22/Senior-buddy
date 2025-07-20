@@ -74,7 +74,7 @@ const Card = ({ item }) => {
                   aria-controls={item.id.toString()}
                   onClick={() => handleSeeOtherClicked()}
                 >
-                 <div className="text-center seeOther"> {values[index]}</div>
+                  <div className="text-center seeOther"> {values[index]}</div>
                 </button>
               </h2>
               <div
@@ -84,7 +84,12 @@ const Card = ({ item }) => {
               >
                 <div className="accordion-body">
                   {item.otherMentors.map((mentor) => (
-                    <AnotherMentor key={mentor.id} mentor={mentor} college={item.clzInfo.name} district={item.clzInfo.district} />
+                    <AnotherMentor
+                      key={mentor.id}
+                      mentor={mentor}
+                      college={item.clzInfo.name}
+                      district={item.clzInfo.district}
+                    />
                   ))}
                 </div>
               </div>

@@ -29,15 +29,7 @@ import BecomeAMentor, {
 } from "./routes/BecomeAMentor.jsx";
 import AdminDashboard from "./routes/AdminDashboard.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AddCollege, {
-  action as addCollegeAction,
-} from "./components/dashboard/AddCollege.jsx";
-import UpdateCollege, {
-  action as updateCollegeAction,
-} from "./components/dashboard/UpdateCollege.jsx";
-import DeleteCollege, {
-  action as deleteCollegeAction,
-} from "./components/dashboard/DeleteCollege.jsx";
+
 import { Provider } from "react-redux";
 import store from "./store/index.js";
 import SearchOutput from "./routes/SearchOutput.jsx";
@@ -45,6 +37,15 @@ import FilterOutput from "./routes/FilterOutput.jsx";
 import Container from "./routes/Container.jsx";
 import BigContainer from "./components/home/BigContainer.jsx";
 import ExtendedMentorProfile from "./routes/ExtendedMentorProfile.jsx";
+import ViewMentors from "./components/dashboard/ViewMentors.jsx";
+import ViewUsers from "./components/dashboard/ViewUsers.jsx";
+import ViewMentorRequests from "./components/dashboard/ViewMentorRequests.jsx";
+import AddMentor, {
+  action as addMentorAction,
+} from "./components/dashboard/AddMentor.jsx";
+
+import UpdateMentor from "./components/dashboard/UpdateMentor.jsx";
+import DeleteMentor from "./components/dashboard/DeleteMentor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -110,19 +111,29 @@ const router = createBrowserRouter([
     element: <AdminDashboard />,
     children: [
       {
-        path: "/dashboard/add_college",
-        element: <AddCollege />,
-        action: addCollegeAction,
+        path: "/dashboard/add_mentor",
+        element: <AddMentor />,
+        action: addMentorAction,
       },
       {
-        path: "/dashboard/update_college",
-        element: <UpdateCollege />,
-        action: updateCollegeAction,
+        path: "/dashboard/update_mentor",
+        element: <UpdateMentor />,
       },
       {
-        path: "/dashboard/delete_college",
-        element: <DeleteCollege />,
-        action: deleteCollegeAction,
+        path: "/dashboard/delete_mentor",
+        element: <DeleteMentor />,
+      },
+      {
+        path: "/dashboard/view_mentors",
+        element: <ViewMentors />,
+      },
+      {
+        path: "/dashboard/view_users",
+        element: <ViewUsers />,
+      },
+      {
+        path: "/dashboard/view_mentor_requests",
+        element: <ViewMentorRequests />,
       },
     ],
   },

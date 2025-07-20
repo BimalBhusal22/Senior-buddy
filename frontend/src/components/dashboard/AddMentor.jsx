@@ -1,7 +1,7 @@
 import { Form, redirect, useActionData } from "react-router-dom";
 import React, { useState } from "react";
 
-const BecomeAMentor = () => {
+const AddMentor = () => {
   const actionErrors = useActionData();
   const districts = [
     "Achham",
@@ -130,22 +130,13 @@ const BecomeAMentor = () => {
         <div className="container-fluid py-4">
           <div className="container">
             <div className="row">
-              <div className="col-12 fs-2 fw-bold text-center">
-                Become A Mentor
-              </div>
-              <div className="col-12 text-center ">
-                {/* Sign up now to get the help! */}
-                <span className="specialWord">Help</span> newcomers and get{" "}
-                <span className="specialWord">Paid</span> for your valuable{" "}
-                <span className="specialWord">Guidance</span> !
-              </div>
+              <br />
               <div className="col-12 fw-bold text-center fs-3 ">
-                <br />
-                Add your information
+                Add Mentor's information
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
-                  <div className="col-12 py-1">Full Name</div>
+                  <div className="col-12 py-1">Mentor's Name</div>
                   <div className="col-12 py-1">
                     <input
                       type="text"
@@ -163,7 +154,7 @@ const BecomeAMentor = () => {
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
-                  <div className="col-12 py-1">Faculty</div>
+                  <div className="col-12 py-1">Mentor's Faculty</div>
                   <div className="col-12 py-1">
                     <input
                       type="text"
@@ -182,7 +173,7 @@ const BecomeAMentor = () => {
               {/* Gender (updated for consistency) */}
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
-                  <div className="col-12 py-1">Gender</div>
+                  <div className="col-12 py-1">Mentor's Gender</div>
                   <div className="col-12 py-1 myInputBox d-flex gap-4">
                     <label className="d-flex align-items-center gap-1">
                       <input
@@ -212,7 +203,7 @@ const BecomeAMentor = () => {
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
-                  <div className="col-12 py-1">Phone Number</div>
+                  <div className="col-12 py-1">Mentor's Phone Number</div>
                   <div className="col-12 py-1">
                     <input
                       type="text"
@@ -229,7 +220,7 @@ const BecomeAMentor = () => {
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
-                  <div className="col-12 py-1">Email Address</div>
+                  <div className="col-12 py-1">Mentor's Email Address</div>
                   <div className="col-12 py-1">
                     <input
                       type="text"
@@ -247,7 +238,7 @@ const BecomeAMentor = () => {
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
-                  <div className="col-12 py-1">Facebook Link</div>
+                  <div className="col-12 py-1">Mentor's Facebook Link</div>
                   <div className="col-12 py-1">
                     <input
                       type="url"
@@ -267,7 +258,7 @@ const BecomeAMentor = () => {
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
-                  <div className="col-12 py-1">Upload your image </div>
+                  <div className="col-12 py-1">Upload Mentor's image </div>
                   <div className="col-12 py-1">
                     <input
                       type="file"
@@ -285,7 +276,7 @@ const BecomeAMentor = () => {
 
               <div className="col-12 fw-bold text-center fs-3 ">
                 <br />
-                Add your college's information
+                Add Mentor's college's information
               </div>
               <div className="col-12 d-flex justify-content-center py4top">
                 <div>
@@ -432,9 +423,6 @@ const BecomeAMentor = () => {
               <div className="col-12  d-flex justify-content-center py4top">
                 <div className="mySignUpBtnContainer">
                   <button className="mySignUpBtn my-1">Submit</button>
-                  <div className="col-12 py-1 text-center lightSmallFont">
-                    We will contact you as soon as possible!
-                  </div>
                 </div>
               </div>
             </div>
@@ -566,4 +554,21 @@ export async function action({ request }) {
   return redirect("/");
 }
 
-export default BecomeAMentor;
+export default AddMentor;
+
+//   const [mentors, setMentors] = useState([]);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         // Replace with actual API call
+//         const response = await fetch("/api/mentors");
+//         const data = await response.json();
+//         setMentors(data);
+//       } catch (error) {
+//         console.error("Error fetching mentors:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, []);

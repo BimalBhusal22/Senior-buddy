@@ -19,34 +19,67 @@ const AdminDashboard = () => {
 
         <div className="d-flex flex-wrap justify-content-center">
           <div className="mx-2">
-            <Link to="/dashboard/add_college">
+            <Link to="/dashboard/add_mentor">
               <button
                 type="button"
                 className="btn btn-success dashboardBtn mt-4 py-2"
               >
-                Add College
+                Add Mentor
               </button>
             </Link>
           </div>
 
           <div className="mx-2">
-            <Link to="/dashboard/update_college">
+            <Link to="/dashboard/update_mentor">
               <button
                 type="button"
                 className="btn btn-info dashboardBtn mt-4 py-2"
               >
-                Update College
+                Update Mentor
               </button>
             </Link>
           </div>
 
           <div className="mx-2">
-            <Link to="/dashboard/delete_college">
+            <Link to="/dashboard/delete_mentor">
               <button
                 type="button"
                 className="btn btn-danger dashboardBtn mt-4 py-2"
               >
-                Delete College
+                Delete Mentor
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2">
+            <Link to="/dashboard/view_mentors">
+              <button
+                type="button"
+                className="btn btn-info dashboardBtn mt-4 py-2"
+              >
+                View Mentors
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2">
+            <Link to="/dashboard/view_mentor_requests">
+              <button
+                type="button"
+                className="btn btn-info dashboardBtn mt-4 py-2"
+              >
+                View Mentor Requests
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2">
+            <Link to="/dashboard/view_users">
+              <button
+                type="button"
+                className="btn btn-info dashboardBtn mt-4 py-2"
+              >
+                View Users
               </button>
             </Link>
           </div>

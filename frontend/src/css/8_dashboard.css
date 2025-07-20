@@ -1,34 +1,34 @@
-.dashboardBtn{
+/* @import "tailwindcss"; */
+.dashboardBtn {
+  width: 250px;
+  font-weight: bold;
+}
+.dashboardCrossBtn {
+  border: none;
+  background-color: unset;
+}
+.adminDashboardHeading {
+  background-color: var(--primary_color);
+  color: var(--secondary_color);
+}
+.colorBlue {
+  color: var(--secondary_color);
+}
+.label {
+  width: 150px;
+}
+.inputBox {
+  width: 300px;
+}
+@media screen and (max-width: 350px) {
+  #collegeNameInputBox {
+    width: 270px;
+  }
+  .inputBox {
     width: 250px;
-    font-weight: bold;
+  }
 }
-.dashboardCrossBtn{
-    border: none;
-    background-color: unset;
-}
-.adminDashboardHeading{
-    background-color: var(--primary_color);
-    color: var(--secondary_color);
-}
-.colorBlue{
-    color: var(--secondary_color);
-}
-.label{
-    width: 150px;
-}
-.inputBox{
-    width: 300px;
-}
-@media screen and (max-width:350px){
-    #collegeNameInputBox{
-        width: 270px;
-    }
-    .inputBox{
-        width: 250px;
-    }
-    
-}
-.collegeNameInput{
-    width:350px;
-    padding-left: 10px;
+.collegeNameInput {
+  width: 350px;
+  padding-left: 10px;
 }
