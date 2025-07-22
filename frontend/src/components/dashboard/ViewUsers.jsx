@@ -4,41 +4,60 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const ViewUsers = () => {
   const [users, setUsers] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   // Simulate fetching from backend
   useEffect(() => {
     const fetchUsers = async () => {
       // Replace this with an actual API call using fetch/axios
-      const userData = [
-        {
-          fullName: "Virat Kohli",
-          phoneNumber: "9867510254",
-          email: "virat@gmail.com",
-          password: "vamika",
-        },
-        {
-          fullName: "Virat Kohli",
-          phoneNumber: "9867510254",
-          email: "virat@gmail.com",
-          password: "vamika",
-        },
-        {
-          fullName: "Virat Kohli",
-          phoneNumber: "9867510254",
-          email: "virat@gmail.com",
-          password: "vamika",
-        },
-        {
-          fullName: "Virat Kohli",
-          phoneNumber: "9867510254",
-          email: "virat@gmail.com",
-          password: "vamika",
-        },
-      ];
-      setUsers(userData);
+      try {
+        const response = await fetch(
+          "http://localhost:7000/api/v1/user/get_all_users"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch users");
+        }
+        const data = await response.json();
+        console.log(data.data);
+        setUsers(data.data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
+
+    //   const userData = [
+    //     {
+    //       fullName: "Virat Kohli",
+    //       phoneNumber: "9867510254",
+    //       email: "virat@gmail.com",
+    //     },
+    //     {
+    //       fullName: "Virat Kohli",
+    //       phoneNumber: "9867510254",
+    //       email: "virat@gmail.com",
+    //     },
+    //     {
+    //       fullName: "Virat Kohli",
+    //       phoneNumber: "9867510254",
+    //       email: "virat@gmail.com",
+    //     },
+    //     {
+    //       fullName: "Virat Kohli",
+    //       phoneNumber: "9867510254",
+    //       email: "virat@gmail.com",
+    //     },
+    //   ];
+    //   setUsers(userData);
+    // };
 
     fetchUsers();
   }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="container mt-5">
@@ -51,7 +70,6 @@ const ViewUsers = () => {
               <th>Full Name</th>
               <th>Phone Number</th>
               <th>Email</th>
-              <th>Password</th>
             </tr>
           </thead>
           <tbody>
@@ -65,10 +83,9 @@ const ViewUsers = () => {
               users.map((user, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{user.fullName}</td>
-                  <td>{user.phoneNumber}</td>
+                  <td>{user.name}</td>
+                  <td>{user.phoneNo}</td>
                   <td>{user.email}</td>
-                  <td>{user.password}</td>
                 </tr>
               ))
             )}
