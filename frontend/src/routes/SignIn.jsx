@@ -1,4 +1,4 @@
-import { Form, redirect, useActionData } from "react-router-dom";
+import { Form, Link, redirect, useActionData } from "react-router-dom";
 import React, { useState } from "react";
 
 const SignIn = () => {
@@ -72,7 +72,10 @@ const SignIn = () => {
                   <button className="mySignUpBtn my-1">Sign In</button>
                   <div className="col-12 py-1 text-center lightSmallFont">
                     Don't have an account yet?{" "}
-                    <span className="logInHere"> Sign up.</span>
+                    <Link to="/sign_up">
+                      {" "}
+                      <span className="logInHere"> Sign up.</span>
+                    </Link>
                   </div>
                 </div>
               </div>
