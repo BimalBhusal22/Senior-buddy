@@ -1,65 +1,71 @@
 import React, { useEffect, useState } from "react";
+import { mentorRequestsStore } from "./../../routes/BecomeAMentor";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ViewMentorRequests = () => {
   const [mentorRequests, setMentorRequests] = useState([]);
-
   // Mock fetch data from backend
   useEffect(() => {
     const fetchMentorRequests = async () => {
+      const allRequests = [...mentorRequestsStore];
       // Simulate API response
-      const data = [
-        {
-          mentorImage:
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
-          mentorName: "Jivan",
-          mentorGender: "M",
-          mentorFaculty: "BSc. CSIT",
-          mentorPhoneNo: "9111111111",
-          mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          mentorEmail: "jivangaire@gmail.com",
-          collegeImage: "images/colleges/ButwalMultiple.jpg",
-          collegeName: "Butwal Multiple Campus",
-          collegeDistrict: "Rupandehi",
-          collegeLevels: ["bachelor", "master"],
-          collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
-          collegeWebsiteLink: "https://bumc.tu.edu.np/",
-        },
-        {
-          mentorImage:
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
-          mentorName: "Jivan",
-          mentorGender: "M",
-          mentorFaculty: "BSc. CSIT",
-          mentorPhoneNo: "9111111111",
-          mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          mentorEmail: "jivangaire@gmail.com",
-          collegeImage: "images/colleges/ButwalMultiple.jpg",
-          collegeName: "Butwal Multiple Campus",
-          collegeDistrict: "Rupandehi",
-          collegeLevels: ["bachelor", "master"],
-          collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
-          collegeWebsiteLink: "https://bumc.tu.edu.np/",
-        },
-        {
-          mentorImage:
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
-          mentorName: "Jivan",
-          mentorGender: "M",
-          mentorFaculty: "BSc. CSIT",
-          mentorPhoneNo: "9111111111",
-          mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          mentorEmail: "jivangaire@gmail.com",
-          collegeImage: "images/colleges/ButwalMultiple.jpg",
-          collegeName: "Butwal Multiple Campus",
-          collegeDistrict: "Rupandehi",
-          collegeLevels: ["bachelor", "master"],
-          collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
-          collegeWebsiteLink: "https://bumc.tu.edu.np/",
-        },
-        // Add more mock entries if needed
-      ];
-      setMentorRequests(data);
+      if (allRequests.length === 0) {
+        const data = [
+          {
+            mentorImage:
+              "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
+            mentorName: "Jivan",
+            mentorGender: "M",
+            mentorFaculty: "BSc. CSIT",
+            mentorPhoneNo: "9111111111",
+            mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+            mentorEmail: "jivangaire@gmail.com",
+            collegeImage: "images/colleges/ButwalMultiple.jpg",
+            collegeName: "Butwal Multiple Campus",
+            collegeDistrict: "Rupandehi",
+            collegeLevels: ["bachelor", "master"],
+            collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
+            collegeWebsiteLink: "https://bumc.tu.edu.np/",
+          },
+          {
+            mentorImage:
+              "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
+            mentorName: "Jivan",
+            mentorGender: "M",
+            mentorFaculty: "BSc. CSIT",
+            mentorPhoneNo: "9111111111",
+            mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+            mentorEmail: "jivangaire@gmail.com",
+            collegeImage: "images/colleges/ButwalMultiple.jpg",
+            collegeName: "Butwal Multiple Campus",
+            collegeDistrict: "Rupandehi",
+            collegeLevels: ["bachelor", "master"],
+            collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
+            collegeWebsiteLink: "https://bumc.tu.edu.np/",
+          },
+          {
+            mentorImage:
+              "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
+            mentorName: "Jivan",
+            mentorGender: "M",
+            mentorFaculty: "BSc. CSIT",
+            mentorPhoneNo: "9111111111",
+            mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+            mentorEmail: "jivangaire@gmail.com",
+            collegeImage: "images/colleges/ButwalMultiple.jpg",
+            collegeName: "Butwal Multiple Campus",
+            collegeDistrict: "Rupandehi",
+            collegeLevels: ["bachelor", "master"],
+            collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
+            collegeWebsiteLink: "https://bumc.tu.edu.np/",
+          },
+          // Add more mock entries if needed
+        ];
+        setMentorRequests(data);
+      } else {
+        setMentorRequests(allRequests);
+      }
     };
 
     fetchMentorRequests();

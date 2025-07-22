@@ -1,8 +1,9 @@
-import { Form, redirect, useActionData } from "react-router-dom";
+import { Form, redirect, useActionData, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 const BecomeAMentor = () => {
   const actionErrors = useActionData();
+  const navigate = useNavigate();
   const districts = [
     "Achham",
     "Arghakhanchi",
@@ -453,6 +454,8 @@ const styles = {
   },
 };
 
+let mentorRequestsStore = [];
+
 export async function action({ request }) {
   const formDataRaw = await request.formData();
 
@@ -555,15 +558,33 @@ export async function action({ request }) {
     return errors;
   }
 
+  let mentorImageUrl = "";
+  let collegeImageUrl = "";
+
+  if (mentorImage && mentorImage.size > 0) {
+    mentorImageUrl = URL.createObjectURL(mentorImage);
+  }
+
+  if (collegeImage && collegeImage.size > 0) {
+    collegeImageUrl = URL.createObjectURL(collegeImage);
+  }
+
   // ✅ Final structured payload
   const finalPayload = {
     ...data,
     collegeLevels,
     collegeFaculties,
+    mentorImage: mentorImageUrl || "https://via.placeholder.com/70",
+    collegeImage: collegeImageUrl || "https://via.placeholder.com/60",
   };
 
+  mentorRequestsStore.push(finalPayload);
+
   console.log("🚀 Final submission payload:", finalPayload);
+  console.log("📦 Stored mentor requests:", mentorRequestsStore);
   return redirect("/");
 }
+
+export { mentorRequestsStore };
 
 export default BecomeAMentor;
