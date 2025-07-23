@@ -228,7 +228,7 @@ a{
     top: -1px;
     margin-right: 3px;
 }
-.searchBar, .signInUp, .theme{
+.searchBar, .signInUp,.signOut, .theme{
     position: relative;
     top: 3px;
 }

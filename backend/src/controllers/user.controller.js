@@ -4,7 +4,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
 import jwt from "jsonwebtoken";
 
-const generateAccessAndRefereshTokens = async (userId) => {
+const generateAccessAndRefreshTokens = async (userId) => {
   try {
     const user = await User.findById(userId);
     const accessToken = user.generateAccessToken();
@@ -33,10 +33,10 @@ const signUp = asyncHandler(async (req, res) => {
   // remove password and refresh token field from response
   // return response
 
-  const { name, phoneNo, email, password, wishList } = req.body;
-  console.log(name, phoneNo, email, password, wishList);
+  const { name, role, phoneNo, email, password } = req.body;
+  console.log(name, role, phoneNo, email, password);
 
-  if ([name, phoneNo, email, password].some((field) => field === "")) {
+  if ([name, role, phoneNo, email, password].some((field) => field === "")) {
     throw new ApiError(400, "Bimal, Submit data for all required fields");
   }
 
@@ -50,15 +50,13 @@ const signUp = asyncHandler(async (req, res) => {
 
   const user = await User.create({
     name,
+    role,
     phoneNo,
     email,
     password,
-    wishList,
   });
 
-  const createdUser = await User.findById(user._id).select(
-    "-password -refreshToken"
-  );
+  const createdUser = await User.findById(user._id).select("-password");
 
   if (!createdUser) {
     throw new ApiError(500, "Bimal, Something went wrong while user sign up.");
@@ -98,7 +96,7 @@ const signIn = asyncHandler(async (req, res) => {
     throw new ApiError(401, "Invalid Password");
   }
 
-  const { accessToken, refreshToken } = await generateAccessAndRefereshTokens(
+  const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(
     user._id
   );
 
@@ -227,17 +225,25 @@ const getCurrentUser = asyncHandler(async (req, res) => {
 
 const getAllUsers = asyncHandler(async (req, res) => {
   try {
-    const users = await User.find().select('-password'); // exclude password
+    const users = await User.find().select("-password"); // exclude password
     return res
-    .status(200)
-    .json(new ApiResponse(200,users,"All Signed Up Users fetched successfully !"));
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          users,
+          "All Signed Up Users fetched successfully !"
+        )
+      );
   } catch (error) {
-    res.status(500).json({ message: 'Server error while fetching users', error });
+    res
+      .status(500)
+      .json({ message: "Server error while fetching users", error });
   }
 });
 
 const updateAccountDetails = asyncHandler(async (req, res) => {
-  const { name, phoneNo, email } = req.body;
+  const { name, phoneNo, email } = req.body[0];
   if (!name || !phoneNo || !email) {
     throw new ApiError(400, "All fields are required.");
   }

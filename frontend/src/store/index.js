@@ -5,6 +5,7 @@ import wishlistSlice from "./wishlistSlice";
 import searchSlice from "./searchSlice";
 import filterSlice from "./filterSlice";
 import selectedMentorSlice from "./selectedMentorSlice";
+import userProfileSlice from "./userProfileSlice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     search: searchSlice.reducer,
     filter: filterSlice.reducer,
     selectedMentor: selectedMentorSlice.reducer,
+    userProfile: userProfileSlice.reducer,
   },
 });
 

@@ -155,6 +155,30 @@ const getAllMentorsForAdmin = asyncHandler(async (req, res) => {
   }
 });
 
+const getOneMentor = asyncHandler(async (req, res) => {
+  const { _id } = req.body;
+
+  if (!_id) {
+    throw new ApiError(400, "Bimal, Mentor ID is required in the request body");
+  }
+
+  const mentor = await Mentor.findById(_id);
+
+  if (!mentor) {
+    throw new ApiError(404, "Bimal, Mentor not found");
+  }
+
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        mentor,
+        "Bimal, One Mentor data fetched successfully"
+      )
+    );
+});
+
 const updateMentor = asyncHandler(async (req, res) => {
   const mentorId = req.body._id;
   const {
@@ -279,6 +303,7 @@ export {
   addMentor,
   getAllMentors,
   getAllMentorsForAdmin,
+  getOneMentor,
   updateMentor,
   deleteMentor,
 };

@@ -4,6 +4,7 @@ import {
   deleteMentor,
   getAllMentors,
   getAllMentorsForAdmin,
+  getOneMentor,
   updateMentor,
 } from "../controllers/admin.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
@@ -36,6 +37,7 @@ router.route("/update_mentor").post(
   ]),
   updateMentor
 );
+router.route("/get_one_mentor").post(getOneMentor);
 router.route("/delete_mentor").post(deleteMentor);
 router.route("/get_all_mentors").get(getAllMentors);
 router.route("/get_all_mentors_for_admin").get(getAllMentorsForAdmin);

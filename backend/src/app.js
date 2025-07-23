@@ -7,7 +7,6 @@ const app = express();
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
-    credentials: true,
   })
 );
 
@@ -24,7 +23,7 @@ import becomeAMentorRouter from "./routes/becomeAMentor.routes.js";
 //routes declaration
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/admin", adminRouter);
-app.use("/api/v1/become_a_mentor", becomeAMentorRouter) 
+app.use("/api/v1/become_a_mentor", becomeAMentorRouter);
 
 //http://localhost:7000/api/v1/users/sign_up
 //http://localhost:7000/api/v1/users/sign_in

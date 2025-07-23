@@ -555,15 +555,54 @@ export async function action({ request }) {
     return errors;
   }
 
-  // ✅ Final structured payload
-  const finalPayload = {
-    ...data,
-    collegeLevels,
-    collegeFaculties,
-  };
+  const formDataToSend = new FormData();
 
-  console.log("🚀 Final submission payload:", finalPayload);
-  return redirect("/");
+  // Append all fields
+  formDataToSend.append("mentorName", data.mentorName);
+  formDataToSend.append("mentorFaculty", data.mentorFaculty);
+  formDataToSend.append("mentorPhoneNo", data.mentorPhoneNo);
+  formDataToSend.append("mentorEmail", data.mentorEmail);
+  formDataToSend.append("mentorGender", data.mentorGender);
+  formDataToSend.append("mentorFbProfileLink", data.mentorFbProfileLink);
+  formDataToSend.append("collegeName", data.collegeName);
+  formDataToSend.append("collegeDistrict", data.collegeDistrict);
+  formDataToSend.append("collegeWebsiteLink", data.collegeWebsiteLink);
+
+  // Array fields (append one by one)
+  collegeLevels.forEach((level) =>
+    formDataToSend.append("collegeLevels", level)
+  );
+  collegeFaculties.forEach((faculty) =>
+    formDataToSend.append("collegeFaculties", faculty)
+  );
+
+  // Append images (actual files)
+  formDataToSend.append("mentorImage", mentorImage);
+  formDataToSend.append("collegeImage", collegeImage);
+
+  // Send as multipart/form-data automatically (do not set Content-Type manually)
+  const res = await fetch(
+    "http://localhost:7000/api/v1/become_a_mentor/add_become_a_mentor_request",
+    {
+      method: "POST",
+      body: formDataToSend,
+    }
+  );
+
+  const result = await res.json();
+
+  if (!res.ok) {
+    return {
+      general: result.message || "Failed to send become a mentor request",
+    };
+  }
+  if (res.ok) {
+    console.log(
+      "Response from server after become a mentor request successfully sent: ",
+      result.data
+    );
+    return redirect("/");
+  }
 }
 
 export default BecomeAMentor;

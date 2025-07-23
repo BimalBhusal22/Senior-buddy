@@ -5,8 +5,8 @@ const SignUp = () => {
   const actionErrors = useActionData();
 
   const [formData, setFormData] = useState({
-    fullName: "",
-    phoneNumber: "",
+    name: "",
+    phoneNo: "",
     email: "",
     password: "",
   });
@@ -33,14 +33,14 @@ const SignUp = () => {
                 <div className="col-12 py-1">
                   <input
                     type="text"
-                    name="fullName"
+                    name="name"
                     className="myInputBox"
                     placeholder="Your Name"
-                    value={formData.fullName}
+                    value={formData.name}
                     onChange={handleChange}
                   />
-                  {actionErrors?.fullName && (
-                    <p style={styles.error}>{actionErrors.fullName}</p>
+                  {actionErrors?.name && (
+                    <p style={styles.error}>{actionErrors.name}</p>
                   )}
                 </div>
               </div>
@@ -52,13 +52,13 @@ const SignUp = () => {
                 <div className="col-12 py-1">
                   <input
                     type="text"
-                    name="phoneNumber"
+                    name="phoneNo"
                     className="myInputBox"
-                    value={formData.phoneNumber}
+                    value={formData.phoneNo}
                     onChange={handleChange}
                   />
-                  {actionErrors?.phoneNumber && (
-                    <p style={styles.error}>{actionErrors.phoneNumber}</p>
+                  {actionErrors?.phoneNo && (
+                    <p style={styles.error}>{actionErrors.phoneNo}</p>
                   )}
                 </div>
               </div>
@@ -132,20 +132,20 @@ export async function action({ request }) {
   const errors = {};
   const alphabetRegex = /^[A-Za-z\s]+$/;
 
-  if (!formData.fullName?.trim()) {
-    errors.fullName = "Full Name is required";
-  } else if (formData.fullName.trim().length < 3) {
-    errors.fullName = "Full Name must be at least 3 characters";
-  } else if (!alphabetRegex.test(formData.fullName.trim())) {
-    errors.fullName = "Full name must contain only letters.";
+  if (!formData.name?.trim()) {
+    errors.name = "Full Name is required";
+  } else if (formData.name.trim().length < 3) {
+    errors.name = "Full Name must be at least 3 characters";
+  } else if (!alphabetRegex.test(formData.name.trim())) {
+    errors.name = "Full name must contain only letters.";
   }
 
-  if (!formData.phoneNumber?.trim()) {
-    errors.phoneNumber = "Phone Number is required";
-  } else if (!/^\d+$/.test(formData.phoneNumber.trim())) {
-    errors.phoneNumber = "Phone Number must contain only digits";
-  } else if (formData.phoneNumber.trim().length < 10) {
-    errors.phoneNumber = "Phone Number must be at least 10 digits";
+  if (!formData.phoneNo?.trim()) {
+    errors.phoneNo = "Phone Number is required";
+  } else if (!/^\d+$/.test(formData.phoneNo.trim())) {
+    errors.phoneNo = "Phone Number must contain only digits";
+  } else if (formData.phoneNo.trim().length < 10) {
+    errors.phoneNo = "Phone Number must be at least 10 digits";
   }
 
   if (!formData.email?.trim()) {
@@ -167,8 +167,17 @@ export async function action({ request }) {
   }
 
   // ✅ If passed validation
-  console.log("Form submitted to backend:", formData);
-  return redirect("/");
+  console.log("Data submitted after Sign Up to backend:", formData);
+  fetch("http://localhost:7000/api/v1/user/sign_up", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log("Response from server to frontend after Sign Up:", res);
+    });
+  return redirect("/sign_in");
 }
 
 export default SignUp;

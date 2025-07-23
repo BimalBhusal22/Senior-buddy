@@ -8,6 +8,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Name is a required field"],
     },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
     phoneNo: {
       type: String,
       required: [true, "PhoneNo is a required field"],
@@ -25,11 +30,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Password is a required field"],
     },
-    wishList: [
-      {
-        type: String,
-      },
-    ],
     refreshToken: {
       type: String,
     },
