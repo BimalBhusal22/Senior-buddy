@@ -1,29 +1,28 @@
 import { useState } from "react";
-import { Trash2, Phone, AlertTriangle } from "lucide-react";
+import { Trash2, Hash, AlertTriangle } from "lucide-react";
 
 const DeleteMentor = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [mentorId, setMentorId] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState(""); // 'success', 'error', or ''
 
-  const validatePhoneNumber = (phone) => {
-    // Validate exactly 10 digits
-    const phoneRegex = /^\d{10}$/;
-    return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ""));
+  const validateMentorId = (id) => {
+    // Basic validation - check if ID is not empty and has reasonable length
+    return id.trim().length > 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!phoneNumber.trim()) {
-      setMessage("Phone number is required");
+    if (!mentorId.trim()) {
+      setMessage("Mentor ID is required");
       setMessageType("error");
       return;
     }
 
-    if (!validatePhoneNumber(phoneNumber)) {
-      setMessage("Please enter exactly 10 digits");
+    if (!validateMentorId(mentorId)) {
+      setMessage("Please enter a valid mentor ID");
       setMessageType("error");
       return;
     }
@@ -33,19 +32,21 @@ const DeleteMentor = () => {
     setMessageType("");
 
     try {
-      // Replace with your actual API endpoint
-      const response = await fetch("/api/mentors/delete", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ phoneNumber: phoneNumber.trim() }),
-      });
+      const response = await fetch(
+        "http://localhost:7000/api/v1/admin/delete_mentor",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ _id: mentorId.trim() }),
+        }
+      );
 
       if (response.ok) {
         setMessage("Mentor deleted successfully");
         setMessageType("success");
-        setPhoneNumber("");
+        setMentorId("");
       } else {
         const errorData = await response.json();
         setMessage(errorData.message || "Failed to delete mentor");
@@ -59,11 +60,9 @@ const DeleteMentor = () => {
     }
   };
 
-  const handlePhoneChange = (e) => {
+  const handleMentorIdChange = (e) => {
     const value = e.target.value;
-    // Only allow digits and limit to 10 characters
-    const numericValue = value.replace(/\D/g, "").slice(0, 10);
-    setPhoneNumber(numericValue);
+    setMentorId(value);
 
     // Clear message when user starts typing
     if (message) {
@@ -74,7 +73,6 @@ const DeleteMentor = () => {
 
   return (
     <>
-      {/* Bootstrap CSS CDN */}
       <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
         rel="stylesheet"
@@ -106,35 +104,33 @@ const DeleteMentor = () => {
 
             <div>
               <div className="mb-3">
-                <label htmlFor="phoneNumber" className="form-label fw-medium">
-                  Mentor Phone Number
+                <label htmlFor="mentorId" className="form-label fw-medium">
+                  Mentor ID
                 </label>
                 <div className="input-group">
                   <span className="input-group-text">
-                    <Phone className="text-muted" size={20} />
+                    <Hash className="text-muted" size={20} />
                   </span>
                   <input
-                    type="tel"
-                    id="phoneNumber"
+                    type="text"
+                    id="mentorId"
                     className={`form-control ${
-                      phoneNumber && phoneNumber.length !== 10
+                      mentorId && !validateMentorId(mentorId)
                         ? "is-invalid"
-                        : phoneNumber.length === 10
+                        : mentorId && validateMentorId(mentorId)
                         ? "is-valid"
                         : ""
                     }`}
-                    value={phoneNumber}
-                    onChange={handlePhoneChange}
-                    placeholder="Enter 10-digit phone number"
+                    value={mentorId}
+                    onChange={handleMentorIdChange}
+                    placeholder="Enter mentor ID"
                     disabled={isLoading}
                     required
-                    maxLength="10"
-                    pattern="\d{10}"
                     onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
                   />
-                  {phoneNumber && phoneNumber.length !== 10 && (
+                  {mentorId && !validateMentorId(mentorId) && (
                     <div className="invalid-feedback">
-                      Phone number must be exactly 10 digits
+                      Please enter a valid mentor ID
                     </div>
                   )}
                 </div>
@@ -152,7 +148,7 @@ const DeleteMentor = () => {
 
               <button
                 onClick={handleSubmit}
-                disabled={isLoading || !phoneNumber.trim()}
+                disabled={isLoading || !mentorId.trim()}
                 className="btn btn-danger w-100 py-2 d-flex align-items-center justify-content-center"
               >
                 {isLoading ? (
