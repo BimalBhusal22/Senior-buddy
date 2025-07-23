@@ -8,8 +8,8 @@ const DeleteMentor = () => {
   const [messageType, setMessageType] = useState(""); // 'success', 'error', or ''
 
   const validatePhoneNumber = (phone) => {
-    // Basic phone number validation (adjust regex based on your requirements)
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+    // Validate exactly 10 digits
+    const phoneRegex = /^\d{10}$/;
     return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ""));
   };
 
@@ -23,7 +23,7 @@ const DeleteMentor = () => {
     }
 
     if (!validatePhoneNumber(phoneNumber)) {
-      setMessage("Please enter a valid phone number");
+      setMessage("Please enter exactly 10 digits");
       setMessageType("error");
       return;
     }
@@ -60,7 +60,11 @@ const DeleteMentor = () => {
   };
 
   const handlePhoneChange = (e) => {
-    setPhoneNumber(e.target.value);
+    const value = e.target.value;
+    // Only allow digits and limit to 10 characters
+    const numericValue = value.replace(/\D/g, "").slice(0, 10);
+    setPhoneNumber(numericValue);
+
     // Clear message when user starts typing
     if (message) {
       setMessage("");
@@ -69,80 +73,109 @@ const DeleteMentor = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
-      <div className="flex items-center mb-6">
-        <div className="bg-red-100 p-3 rounded-full mr-4">
-          <Trash2 className="w-6 h-6 text-red-600" />
-        </div>
-        <h2 className="text-2xl font-bold text-gray-800">Delete Mentor</h2>
-      </div>
+    <>
+      {/* Bootstrap CSS CDN */}
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
 
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-        <div className="flex items-center">
-          <AlertTriangle className="w-5 h-5 text-yellow-400 mr-2" />
-          <p className="text-sm text-yellow-700">
-            Warning: This action cannot be undone. All data related to this
-            mentor will be permanently deleted.
-          </p>
-        </div>
-      </div>
-
-      <div className="space-y-4">
-        <div>
-          <label
-            htmlFor="phoneNumber"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Mentor Phone Number
-          </label>
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Phone className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="tel"
-              id="phoneNumber"
-              value={phoneNumber}
-              onChange={handlePhoneChange}
-              placeholder="Enter mentor's phone number"
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
-              disabled={isLoading}
-              onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
-            />
-          </div>
-        </div>
-
-        {message && (
-          <div
-            className={`p-4 rounded-lg ${
-              messageType === "success"
-                ? "bg-green-50 text-green-800 border border-green-200"
-                : "bg-red-50 text-red-800 border border-red-200"
-            }`}
-          >
-            <p className="text-sm font-medium">{message}</p>
-          </div>
-        )}
-
-        <button
-          onClick={handleSubmit}
-          disabled={isLoading || !phoneNumber.trim()}
-          className="w-full bg-red-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      <div className="container-fluid d-flex justify-content-center">
+        <div
+          className="card shadow-lg"
+          style={{ maxWidth: "400px", width: "100%" }}
         >
-          {isLoading ? (
-            <div className="flex items-center justify-center">
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-              Deleting...
+          <div className="card-body p-4">
+            <div className="d-flex align-items-center mb-4">
+              <div className="bg-danger bg-opacity-10 p-3 rounded-circle me-3">
+                <Trash2 className="text-danger" size={24} />
+              </div>
+              <h2 className="h4 mb-0 text-dark fw-bold">Delete Mentor</h2>
             </div>
-          ) : (
-            <div className="flex items-center justify-center">
-              <Trash2 className="w-5 h-5 mr-2" />
-              Delete Mentor
+
+            <div className="alert alert-warning d-flex align-items-start mb-4">
+              <AlertTriangle
+                className="text-warning me-2 flex-shrink-0"
+                size={20}
+              />
+              <small className="mb-0">
+                Warning: This action cannot be undone. All data related to this
+                mentor will be permanently deleted.
+              </small>
             </div>
-          )}
-        </button>
+
+            <div>
+              <div className="mb-3">
+                <label htmlFor="phoneNumber" className="form-label fw-medium">
+                  Mentor Phone Number
+                </label>
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <Phone className="text-muted" size={20} />
+                  </span>
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    className={`form-control ${
+                      phoneNumber && phoneNumber.length !== 10
+                        ? "is-invalid"
+                        : phoneNumber.length === 10
+                        ? "is-valid"
+                        : ""
+                    }`}
+                    value={phoneNumber}
+                    onChange={handlePhoneChange}
+                    placeholder="Enter 10-digit phone number"
+                    disabled={isLoading}
+                    required
+                    maxLength="10"
+                    pattern="\d{10}"
+                    onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
+                  />
+                  {phoneNumber && phoneNumber.length !== 10 && (
+                    <div className="invalid-feedback">
+                      Phone number must be exactly 10 digits
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {message && (
+                <div
+                  className={`alert ${
+                    messageType === "success" ? "alert-success" : "alert-danger"
+                  } mb-3`}
+                >
+                  <small className="fw-medium mb-0">{message}</small>
+                </div>
+              )}
+
+              <button
+                onClick={handleSubmit}
+                disabled={isLoading || !phoneNumber.trim()}
+                className="btn btn-danger w-100 py-2 d-flex align-items-center justify-content-center"
+              >
+                {isLoading ? (
+                  <>
+                    <div
+                      className="spinner-border spinner-border-sm me-2"
+                      role="status"
+                      aria-hidden="true"
+                    ></div>
+                    Deleting...
+                  </>
+                ) : (
+                  <>
+                    <Trash2 className="me-2" size={20} />
+                    Delete Mentor
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
