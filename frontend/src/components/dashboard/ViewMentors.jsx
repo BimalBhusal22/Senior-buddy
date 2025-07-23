@@ -8,56 +8,56 @@ const ViewMentors = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Simulating API call with sample data for demo
-        setTimeout(() => {
-          const sampleData = [
-            {
-              _id: "507f1f77bcf86cd799439011",
-              mentorName: "Jivan Gaire",
-              mentorGender: "M",
-              mentorFaculty: "BSc. CSIT",
-              mentorPhoneNo: "9111111111",
-              mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-              mentorEmail: "jivangaire@gmail.com",
-              collegeName: "Butwal Multiple Campus",
-              collegeDistrict: "Rupandehi",
-            },
-            {
-              _id: "507f1f77bcf86cd799439012",
-              mentorName: "Sita Sharma",
-              mentorGender: "F",
-              mentorFaculty: "BBA",
-              mentorPhoneNo: "9222222222",
-              mentorFbProfileLink: "https://www.facebook.com/sita.sharma",
-              mentorEmail: "sita.sharma@gmail.com",
-              collegeName: "Kathmandu University",
-              collegeDistrict: "Kavre",
-            },
-            {
-              _id: "507f1f77bcf86cd799439013",
-              mentorName: "Ram Prasad",
-              mentorGender: "M",
-              mentorFaculty: "BSc",
-              mentorPhoneNo: "9333333333",
-              mentorFbProfileLink: "https://www.facebook.com/ram.prasad",
-              mentorEmail: "ram.prasad@gmail.com",
-              collegeName: "Tribhuvan University",
-              collegeDistrict: "Kathmandu",
-            },
-          ];
-          setMentors(sampleData);
-          setLoading(false);
-        }, 1000);
+        // // Simulating API call with sample data for demo
+        // setTimeout(() => {
+        //   const sampleData = [
+        //     {
+        //       _id: "507f1f77bcf86cd799439011",
+        //       mentorName: "Jivan Gaire",
+        //       mentorGender: "M",
+        //       mentorFaculty: "BSc. CSIT",
+        //       mentorPhoneNo: "9111111111",
+        //       mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+        //       mentorEmail: "jivangaire@gmail.com",
+        //       collegeName: "Butwal Multiple Campus",
+        //       collegeDistrict: "Rupandehi",
+        //     },
+        //     {
+        //       _id: "507f1f77bcf86cd799439012",
+        //       mentorName: "Sita Sharma",
+        //       mentorGender: "F",
+        //       mentorFaculty: "BBA",
+        //       mentorPhoneNo: "9222222222",
+        //       mentorFbProfileLink: "https://www.facebook.com/sita.sharma",
+        //       mentorEmail: "sita.sharma@gmail.com",
+        //       collegeName: "Kathmandu University",
+        //       collegeDistrict: "Kavre",
+        //     },
+        //     {
+        //       _id: "507f1f77bcf86cd799439013",
+        //       mentorName: "Ram Prasad",
+        //       mentorGender: "M",
+        //       mentorFaculty: "BSc",
+        //       mentorPhoneNo: "9333333333",
+        //       mentorFbProfileLink: "https://www.facebook.com/ram.prasad",
+        //       mentorEmail: "ram.prasad@gmail.com",
+        //       collegeName: "Tribhuvan University",
+        //       collegeDistrict: "Kathmandu",
+        //     },
+        //   ];
+        //   setMentors(sampleData);
+        //   setLoading(false);
+        // }, 1000);
 
         // Replace with your actual API call
-        // const response = await fetch(
-        //   "http://localhost:7000/api/v1/admin/get_all_mentors_for_admin"
-        // );
-        // if (!response.ok) {
-        //   throw new Error("Failed to fetch users");
-        // }
-        // const data = await response.json();
-        // setMentors(data.data);
+        const response = await fetch(
+          "http://localhost:7000/api/v1/admin/get_all_mentors_for_admin"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch users");
+        }
+        const data = await response.json();
+        setMentors(data.data);
       } catch (error) {
         console.error("Error fetching mentors:", error);
         setError(error.message);
@@ -169,6 +169,7 @@ const ViewMentors = () => {
           </div>
 
           {/* Stats Card */}
+
           <div className="row justify-content-center mb-4">
             <div className="col-md-4">
               <div className="stats-card p-4">
@@ -200,9 +201,7 @@ const ViewMentors = () => {
                     <th className="px-4 py-3 fw-semibold text-uppercase small">
                       Name
                     </th>
-                    <th className="px-4 py-3 fw-semibold text-uppercase small">
-                      Gender
-                    </th>
+
                     <th className="px-4 py-3 fw-semibold text-uppercase small">
                       Faculty
                     </th>
@@ -223,6 +222,7 @@ const ViewMentors = () => {
                     </th>
                   </tr>
                 </thead>
+
                 <tbody>
                   {mentors.map((mentor, index) => (
                     <tr key={mentor._id}>
@@ -244,17 +244,7 @@ const ViewMentors = () => {
                           </div>
                         </div>
                       </td>
-                      <td className="px-4 py-3">
-                        <span
-                          className={`badge ${
-                            mentor.mentorGender === "M"
-                              ? "bg-primary"
-                              : "bg-danger"
-                          }`}
-                        >
-                          {mentor.mentorGender === "M" ? "Male" : "Female"}
-                        </span>
-                      </td>
+
                       <td className="px-4 py-3">
                         <span className="badge bg-success">
                           {mentor.mentorFaculty}
