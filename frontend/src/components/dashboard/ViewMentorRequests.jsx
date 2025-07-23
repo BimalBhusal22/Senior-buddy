@@ -1,80 +1,53 @@
 import React, { useEffect, useState } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ViewMentorRequests = () => {
   const [mentorRequests, setMentorRequests] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Mock fetch data from backend
+  //  fetch data from backend
   useEffect(() => {
     const fetchMentorRequests = async () => {
-      // Simulate API response
-      const data = [
-        {
-          mentorImage:
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
-          mentorName: "Jivan",
-          mentorGender: "M",
-          mentorFaculty: "BSc. CSIT",
-          mentorPhoneNo: "9111111111",
-          mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          mentorEmail: "jivangaire@gmail.com",
-          collegeImage: "images/colleges/ButwalMultiple.jpg",
-          collegeName: "Butwal Multiple Campus",
-          collegeDistrict: "Rupandehi",
-          collegeLevels: ["bachelor", "master"],
-          collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
-          collegeWebsiteLink: "https://bumc.tu.edu.np/",
-        },
-        {
-          mentorImage:
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
-          mentorName: "Jivan",
-          mentorGender: "M",
-          mentorFaculty: "BSc. CSIT",
-          mentorPhoneNo: "9111111111",
-          mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          mentorEmail: "jivangaire@gmail.com",
-          collegeImage: "images/colleges/ButwalMultiple.jpg",
-          collegeName: "Butwal Multiple Campus",
-          collegeDistrict: "Rupandehi",
-          collegeLevels: ["bachelor", "master"],
-          collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
-          collegeWebsiteLink: "https://bumc.tu.edu.np/",
-        },
-        {
-          mentorImage:
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
-          mentorName: "Jivan",
-          mentorGender: "M",
-          mentorFaculty: "BSc. CSIT",
-          mentorPhoneNo: "9111111111",
-          mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          mentorEmail: "jivangaire@gmail.com",
-          collegeImage: "images/colleges/ButwalMultiple.jpg",
-          collegeName: "Butwal Multiple Campus",
-          collegeDistrict: "Rupandehi",
-          collegeLevels: ["bachelor", "master"],
-          collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
-          collegeWebsiteLink: "https://bumc.tu.edu.np/",
-        },
-        // Add more mock entries if needed
-      ];
-      setMentorRequests(data);
+      try {
+        // Replace with actual API call
+        const response = await fetch(
+          "http://localhost:7000/api/v1/become_a_mentor/get_all_mentor_requests"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch users");
+        }
+        const data = await response.json();
+        console.log(data.data);
+        setMentorRequests(data.data);
+      } catch (error) {
+        console.error("Error fetching mentors:", error);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchMentorRequests();
   }, []);
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   const handleApprove = async (mentorData) => {
     try {
       // Replace the URL below with your real backend endpoint
-      const response = await fetch("/api/approve-mentor", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(mentorData),
-      });
+      const response = await fetch(
+        "http://localhost:7000/api/v1/admin/add_mentor",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(mentorRequests),
+        }
+      );
 
       if (response.ok) {
         alert("Mentor approved successfully!");

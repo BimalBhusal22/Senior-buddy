@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Search, User, School, Edit3, Save, X } from "lucide-react";
 
 const UpdateMentor = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [mentorId, setMentorId] = useState("");
   const [mentorData, setMentorData] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -90,95 +90,127 @@ const UpdateMentor = () => {
     "Udayapur",
   ];
 
-  // Mock API call - replace with actual API endpoint
-  const fetchMentorData = async (collegeName) => {
+  // Fetch mentor data from backend
+  const fetchMentorData = async (mentorId) => {
     setIsLoading(true);
     setErrors({});
 
     try {
-      // Simulating API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // // Mock data for demonstration - replace with actual API call
+      // if (mentorId === "123" || mentorId === "test") {
+      //   const mockData = {
+      //     mentorImage:
+      //       "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
+      //     mentorName: "Jivan Gaire",
+      //     mentorGender: "M",
+      //     mentorFaculty: "BSc. CSIT",
+      //     mentorPhoneNo: "9111111111",
+      //     mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
+      //     mentorEmail: "jivangaire@gmail.com",
+      //     collegeImage: "images/colleges/ButwalMultiple.jpg",
+      //     collegeName: "Butwal Multiple Campus",
+      //     collegeDistrict: "Rupandehi",
+      //     collegeLevels: ["bachelor", "master"],
+      //     collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS"],
+      //     collegeWebsiteLink: "https://bumc.tu.edu.np/",
+      //   };
 
-      // Mock data - replace with actual API call
-      if (
-        collegeName.toLowerCase().includes("butwal") ||
-        collegeName.toLowerCase().includes("multiple")
-      ) {
-        const mockData = {
-          mentorImage:
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg",
-          mentorName: "Jivan",
-          mentorGender: "M",
-          mentorFaculty: "BSc. CSIT",
-          mentorPhoneNo: "9111111111",
-          mentorFbProfileLink: "https://www.facebook.com/jivan.gaire.79",
-          mentorEmail: "jivangaire@gmail.com",
-          collegeImage: "images/colleges/ButwalMultiple.jpg",
-          collegeName: "Butwal Multiple Campus",
-          collegeDistrict: "Rupandehi",
-          collegeLevels: ["bachelor", "master"],
-          collegeFaculties: ["BSc CSIT", "BBA", "BSc", "BBS", "more"],
-          collegeWebsiteLink: "https://bumc.tu.edu.np/",
-        };
-        setMentorData(mockData);
-        setEditData(mockData);
-      } else {
-        setErrors({
-          search: "No mentor found for the specified college name.",
-        });
-        setMentorData(null);
+      //   // Simulate API delay
+      //   await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      //   setMentorData(mockData);
+      //   setEditData({
+      //     ...mockData,
+      //     collegeFacultiesInput: mockData.collegeFaculties.join(", "),
+      //   });
+      //   return;
+      // }
+
+      // Actual API call - uncomment when ready
+
+      const response = await fetch(
+        `http://localhost:7000/api/v1/admin/get_one_mentor`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Mentor not found");
       }
+
+      const data = await response.json();
+      setMentorData(data);
+      setEditData({
+        ...data,
+        collegeFacultiesInput: data.collegeFaculties?.join(", ") || "",
+      });
+
+      // If not mock data, throw error
+      throw new Error("Mentor not found");
     } catch (error) {
-      setErrors({ search: "Failed to fetch mentor data. Please try again." });
+      setErrors({
+        search:
+          "No mentor found with the specified ID or failed to fetch data.",
+      });
+      setMentorData(null);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleSearch = () => {
-    if (!searchQuery.trim()) {
-      setErrors({ search: "Please enter a college name to search." });
+    if (!mentorId.trim()) {
+      setErrors({ search: "Please enter a mentor ID to search." });
       return;
     }
-    fetchMentorData(searchQuery.trim());
+    setErrors({});
+    fetchMentorData(mentorId.trim());
   };
 
   const handleEditToggle = () => {
-    setIsEditing(!isEditing);
     if (isEditing) {
-      setEditData(mentorData); // Reset to original data if canceling
+      // Reset to original data if canceling
+      setEditData({
+        ...mentorData,
+        collegeFacultiesInput: mentorData.collegeFaculties?.join(", ") || "",
+      });
       setErrors({});
     }
+    setIsEditing(!isEditing);
   };
 
   const handleInputChange = (e) => {
     const { name, type, value, checked, files } = e.target;
 
     if (type === "file") {
-      setEditData({ ...editData, [name]: files[0] });
+      setEditData((prev) => ({ ...prev, [name]: files[0] }));
     } else if (type === "checkbox") {
       const currentValues = editData[name] || [];
       const updatedValues = checked
         ? [...currentValues, value]
         : currentValues.filter((v) => v !== value);
-      setEditData({ ...editData, [name]: updatedValues });
+      setEditData((prev) => ({ ...prev, [name]: updatedValues }));
     } else if (name === "collegeFaculties") {
       const arrayValues = value
         .split(",")
         .map((v) => v.trim())
         .filter(Boolean);
-      setEditData({
-        ...editData,
-        [name]: arrayValues,
+      setEditData((prev) => ({
+        ...prev,
+        collegeFaculties: arrayValues,
         collegeFacultiesInput: value,
-      });
+      }));
     } else {
-      setEditData({ ...editData, [name]: value });
+      setEditData((prev) => ({ ...prev, [name]: value }));
     }
 
     // Clear specific error when user starts typing
     if (errors[name]) {
-      setErrors({ ...errors, [name]: null });
+      setErrors((prev) => ({ ...prev, [name]: null }));
     }
   };
 
@@ -270,20 +302,49 @@ const UpdateMentor = () => {
 
     setIsLoading(true);
     try {
-      // Simulate API call to update data
+      // Prepare data for backend
+      const dataToSend = { ...editData };
+      delete dataToSend.collegeFacultiesInput;
+
+      // Mock successful update
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // Update the mentor data with edited data
-      setMentorData(editData);
+      // Uncomment for actual API call
+
+      const response = await fetch(
+        `http://localhost:7000/api/v1/admin/update_mentor`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update mentor data");
+      }
+
+      const updatedData = await response.json();
+      setMentorData(updatedData);
+
+      // For demo purposes
+      setMentorData(dataToSend);
       setIsEditing(false);
       setErrors({});
 
-      // In real implementation, make API call here
-      console.log("Updated mentor data:", editData);
+      alert("Mentor data updated successfully!");
     } catch (error) {
       setErrors({ submit: "Failed to update mentor data. Please try again." });
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !isLoading) {
+      handleSearch();
     }
   };
 
@@ -319,9 +380,10 @@ const UpdateMentor = () => {
                     <div className="flex-grow-1">
                       <input
                         type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Enter college name to search..."
+                        value={mentorId}
+                        onChange={(e) => setMentorId(e.target.value)}
+                        onKeyPress={handleKeyPress}
+                        placeholder="Enter mentor ID to search..."
                         className="form-control"
                       />
                       {errors.search && (
@@ -329,6 +391,9 @@ const UpdateMentor = () => {
                           {errors.search}
                         </div>
                       )}
+                      <div className="text-muted small mt-1">
+                        Try entering "123" or "test" for demo data
+                      </div>
                     </div>
                     <button
                       onClick={handleSearch}
@@ -371,10 +436,11 @@ const UpdateMentor = () => {
                   </h2>
                   <button
                     onClick={handleEditToggle}
-                    className="btn btn-light btn-outline-light d-flex align-items-center gap-2"
+                    className="btn btn-light d-flex align-items-center gap-2"
                     style={{
                       backgroundColor: "rgba(255,255,255,0.2)",
-                      border: "none",
+                      border: "1px solid rgba(255,255,255,0.3)",
+                      color: "white",
                     }}
                   >
                     {isEditing ? <X size={18} /> : <Edit3 size={18} />}
@@ -440,7 +506,7 @@ const UpdateMentor = () => {
 
                     <div className="col-md-6">
                       <label className="form-label fw-medium">Gender</label>
-                      <div className="d-flex gap-4">
+                      <div className="d-flex gap-4 mt-2">
                         <div className="form-check">
                           <input
                             type="radio"
@@ -641,7 +707,7 @@ const UpdateMentor = () => {
 
                     <div className="col-md-6">
                       <label className="form-label fw-medium">Levels</label>
-                      <div className="d-flex flex-wrap gap-4">
+                      <div className="d-flex flex-wrap gap-4 mt-2">
                         {["+2", "bachelor", "master"].map((level) => (
                           <div key={level} className="form-check">
                             <input
