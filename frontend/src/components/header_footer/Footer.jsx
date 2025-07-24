@@ -4,10 +4,12 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SiTelegram } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const { user } = JSON.parse(localStorage.getItem("user"));
+  const userProfile = useSelector((store) => store.userProfile);
+  const user = JSON.parse(localStorage.getItem("user")) || userProfile;
   return (
     <>
       <div className="container-fluid">
@@ -60,7 +62,7 @@ const Footer = () => {
                     Become a Mentor
                   </Link>
                 </li>
-                {user.role === "admin" ? (
+                {user.user.role === "admin" ? (
                   <li>
                     <Link to="/dashboard" className="impLink">
                       Dashboard
