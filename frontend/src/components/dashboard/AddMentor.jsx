@@ -584,6 +584,10 @@ export async function action({ request }) {
   formDataToSend.append("mentorImage", mentorImage);
   formDataToSend.append("collegeImage", collegeImage);
 
+  console.log("FormData contents:");
+  for (let [key, value] of formDataToSend.entries()) {
+    console.log(key, value);
+  }
   // Send as multipart/form-data automatically (do not set Content-Type manually)
   const res = await fetch("http://localhost:7000/api/v1/admin/add_mentor", {
     method: "POST",

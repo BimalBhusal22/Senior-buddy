@@ -19,7 +19,7 @@ const ViewMentorRequests = () => {
           throw new Error("Failed to fetch users");
         }
         const data = await response.json();
-        console.log(data.data);
+        // console.log(data.data);
         setMentorRequests(data.data);
       } catch (error) {
         console.error("Error fetching mentors:", error);
@@ -36,31 +36,145 @@ const ViewMentorRequests = () => {
   if (error) return <div>Error: {error}</div>;
 
   const handleApprove = async (mentorData) => {
+    console.log(mentorData._id);
+    console.log(mentorData);
+    let mentorImageUrl = "";
+    let collegeImageUrl = "";
+
+    if (mentorData.mentorImage && mentorData.mentorImage.size > 0) {
+      mentorImageUrl = URL.createObjectURL(mentorData.mentorImage);
+    }
+
+    if (mentorData.collegeImage && mentorData.collegeImage.size > 0) {
+      collegeImageUrl = URL.createObjectURL(mentorData.collegeImage);
+    }
+
+    const formDataToSend = new FormData();
+
+    // Append all fields
+    formDataToSend.append("mentorName", mentorData.mentorName);
+    formDataToSend.append("mentorFaculty", mentorData.mentorFaculty);
+    formDataToSend.append("mentorPhoneNo", mentorData.mentorPhoneNo);
+    formDataToSend.append("mentorEmail", mentorData.mentorEmail);
+    formDataToSend.append("mentorGender", mentorData.mentorGender);
+    formDataToSend.append(
+      "mentorFbProfileLink",
+      mentorData.mentorFbProfileLink
+    );
+    formDataToSend.append("collegeName", mentorData.collegeName);
+    formDataToSend.append("collegeDistrict", mentorData.collegeDistrict);
+    formDataToSend.append("collegeWebsiteLink", mentorData.collegeWebsiteLink);
+
+    // Array fields (append one by one)
+    mentorData.collegeLevels.forEach((level) =>
+      formDataToSend.append("collegeLevels", level)
+    );
+    mentorData.collegeFaculties.forEach((faculty) =>
+      formDataToSend.append("collegeFaculties", faculty)
+    );
+
+    // // Append images (actual files)
+    // formDataToSend.append("mentorImage", mentorData.mentorImage);
+    // formDataToSend.append("collegeImage", mentorData.collegeImage);
+
+    // Handle images - Check if they are File objects or URLs
+    if (mentorData.mentorImage) {
+      if (mentorData.mentorImage instanceof File) {
+        // It's a File object, append directly
+        formDataToSend.append("mentorImage", mentorData.mentorImage);
+      } else if (typeof mentorData.mentorImage === "string") {
+        // It's a URL, we need to fetch it and convert to File/Blob
+        try {
+          const imageResponse = await fetch(mentorData.mentorImage);
+          const imageBlob = await imageResponse.blob();
+          formDataToSend.append("mentorImage", imageBlob, "mentor-image.jpg");
+        } catch (imgError) {
+          console.error("Error fetching mentor image:", imgError);
+          // Fallback: send the URL as text
+          formDataToSend.append("mentorImageUrl", mentorData.mentorImage);
+        }
+      }
+    }
+
+    if (mentorData.collegeImage) {
+      if (mentorData.collegeImage instanceof File) {
+        // It's a File object, append directly
+        formDataToSend.append("collegeImage", mentorData.collegeImage);
+      } else if (typeof mentorData.collegeImage === "string") {
+        // It's a URL, we need to fetch it and convert to File/Blob
+        try {
+          const imageResponse = await fetch(mentorData.collegeImage);
+          const imageBlob = await imageResponse.blob();
+          formDataToSend.append("collegeImage", imageBlob, "college-image.jpg");
+        } catch (imgError) {
+          console.error("Error fetching college image:", imgError);
+          // Fallback: send the URL as text
+          formDataToSend.append("collegeImageUrl", mentorData.collegeImage);
+        }
+      }
+    }
+
+    // console.log(formDataToSend);
+    // console.log("FormData contents:");
+    // for (let [key, value] of formDataToSend.entries()) {
+    //   console.log(key, value);
+    // }
+
     try {
       // Replace the URL below with your real backend endpoint
+
       const response = await fetch(
         "http://localhost:7000/api/v1/admin/add_mentor",
+        {
+          method: "POST",
+
+          body: formDataToSend,
+        }
+      );
+
+      // Better error handling
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Success response:", result);
+        alert("Mentor approved successfully!");
+
+        // Remove the approved mentor from the list
+        setMentorRequests((prev) =>
+          prev.filter((m) => m.mentorEmail !== mentorData.mentorEmail)
+        );
+      } else {
+        const errorText = await response.text();
+        console.error(
+          "Server responded with error:",
+          response.status,
+          errorText
+        );
+        alert(`Failed to approve mentor. Server error: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Error approving mentor:", error);
+      alert(`An error occurred: ${error.message}`);
+    }
+
+    try {
+      const response = await fetch(
+        "http://localhost:7000/api/v1/become_a_mentor/delete_become_a_mentor_request",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(mentorRequests),
+          body: JSON.stringify({ _id: mentorData._id }),
         }
       );
-
       if (response.ok) {
-        alert("Mentor approved successfully!");
-        // Optionally remove the approved mentor from the list
-        setMentorRequests((prev) =>
-          prev.filter((m) => m.mentorEmail !== mentorData.mentorEmail)
-        );
+        console.error("mentor request deleted successfully.");
       } else {
-        alert("Failed to approve mentor.");
+        console.error("Failed to delete mentor request.");
       }
     } catch (error) {
-      console.error("Error approving mentor:", error);
-      alert("An error occurred.");
+      console.error("error occured during deletion of mentor request.");
+      console.log(error);
     }
   };
 

@@ -6,6 +6,7 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { User } from "../models/user.model.js";
 
 const addMentor = asyncHandler(async (req, res) => {
+  console.log("req :", req);
   const {
     mentorName,
     mentorGender,
