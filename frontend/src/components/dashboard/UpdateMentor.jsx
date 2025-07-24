@@ -1,14 +1,18 @@
-import { Form, redirect, useActionData } from "react-router-dom";
+import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 import { Search, User, School, Edit3, Save, X } from "lucide-react";
 
 const UpdateMentor = () => {
   const actionErrors = useActionData();
+  const navigation = useNavigation();
   const [mentorId, setMentorId] = useState("");
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [mentorData, setMentorData] = useState(null);
+
+  // Check if form is being submitted
+  const isSubmitting = navigation.state === "submitting";
 
   const districts = [
     "Achham",
@@ -286,6 +290,7 @@ const UpdateMentor = () => {
                         placeholder="Your Name"
                         value={formData.mentorName}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.mentorName && (
                         <p style={styles.error}>{actionErrors.mentorName}</p>
@@ -304,6 +309,7 @@ const UpdateMentor = () => {
                         placeholder="Your Faculty"
                         value={formData.mentorFaculty}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.mentorFaculty && (
                         <p style={styles.error}>{actionErrors.mentorFaculty}</p>
@@ -323,6 +329,7 @@ const UpdateMentor = () => {
                           value="M"
                           checked={formData.mentorGender === "M"}
                           onChange={handleChange}
+                          disabled={isSubmitting}
                         />
                         Male
                       </label>
@@ -333,6 +340,7 @@ const UpdateMentor = () => {
                           value="F"
                           checked={formData.mentorGender === "F"}
                           onChange={handleChange}
+                          disabled={isSubmitting}
                         />
                         Female
                       </label>
@@ -352,6 +360,7 @@ const UpdateMentor = () => {
                         className="myInputBox"
                         value={formData.mentorPhoneNo}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.mentorPhoneNo && (
                         <p style={styles.error}>{actionErrors.mentorPhoneNo}</p>
@@ -370,6 +379,7 @@ const UpdateMentor = () => {
                         placeholder="your@email.com"
                         value={formData.mentorEmail}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.mentorEmail && (
                         <p style={styles.error}>{actionErrors.mentorEmail}</p>
@@ -388,6 +398,7 @@ const UpdateMentor = () => {
                         placeholder="facebook profile link"
                         value={formData.mentorFbProfileLink}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.mentorFbProfileLink && (
                         <p style={styles.error}>
@@ -415,6 +426,7 @@ const UpdateMentor = () => {
                         accept="image/*"
                         className="myInputBox"
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.mentorImage && (
                         <p style={styles.error}>{actionErrors.mentorImage}</p>
@@ -438,6 +450,7 @@ const UpdateMentor = () => {
                         placeholder="Your college's name"
                         value={formData.collegeName}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.collegeName && (
                         <p style={styles.error}>{actionErrors.collegeName}</p>
@@ -454,6 +467,7 @@ const UpdateMentor = () => {
                         name="collegeDistrict"
                         value={formData.collegeDistrict}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       >
                         <option value="">Select District</option>
                         {districts.map((district) => (
@@ -481,6 +495,7 @@ const UpdateMentor = () => {
                           value="+2"
                           checked={formData.collegeLevels.includes("+2")}
                           onChange={handleChange}
+                          disabled={isSubmitting}
                         />
                         +2
                       </label>
@@ -491,6 +506,7 @@ const UpdateMentor = () => {
                           value="bachelor"
                           checked={formData.collegeLevels.includes("bachelor")}
                           onChange={handleChange}
+                          disabled={isSubmitting}
                         />
                         Bachelor
                       </label>
@@ -501,6 +517,7 @@ const UpdateMentor = () => {
                           value="master"
                           checked={formData.collegeLevels.includes("master")}
                           onChange={handleChange}
+                          disabled={isSubmitting}
                         />
                         Master
                       </label>
@@ -521,6 +538,7 @@ const UpdateMentor = () => {
                         placeholder="Enter faculties separated by comma"
                         value={formData.collegeFaculties}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.collegeFaculties && (
                         <p style={styles.error}>
@@ -548,6 +566,7 @@ const UpdateMentor = () => {
                         accept="image/*"
                         className="myInputBox"
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.collegeImage && (
                         <p style={styles.error}>{actionErrors.collegeImage}</p>
@@ -566,6 +585,7 @@ const UpdateMentor = () => {
                         className="myInputBox"
                         value={formData.collegeWebsiteLink}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       {actionErrors?.collegeWebsiteLink && (
                         <p style={styles.error}>
@@ -577,7 +597,33 @@ const UpdateMentor = () => {
                 </div>
                 <div className="col-12  d-flex justify-content-center py4top">
                   <div className="mySignUpBtnContainer">
-                    <button className="mySignUpBtn my-1">Update Mentor</button>
+                    <button
+                      className="mySignUpBtn my-1"
+                      disabled={isSubmitting}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "8px",
+                        opacity: isSubmitting ? 0.7 : 1,
+                        cursor: isSubmitting ? "not-allowed" : "pointer",
+                      }}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div
+                            className="spinner-border text-light"
+                            style={spinnerStyle}
+                            role="status"
+                          >
+                            <span className="visually-hidden">Loading...</span>
+                          </div>
+                          Updating...
+                        </>
+                      ) : (
+                        "Update Mentor"
+                      )}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -617,13 +663,15 @@ export async function action({ request }) {
 
   const errors = {};
   const alphabetRegex = /^[A-Za-z\s]+$/;
+  const nameRegex = /^[A-Za-z'.\s]+$/;
 
   if (!data.mentorName) {
     errors.mentorName = "Full Name is required.";
   } else if (data.mentorName.trim().length < 3) {
     errors.mentorName = "Full Name must be of at least 3 letters.";
-  } else if (!alphabetRegex.test(data.mentorName.trim())) {
-    errors.mentorName = "Full Name must contain only letters.";
+  } else if (!nameRegex.test(data.mentorName.trim())) {
+    errors.mentorName =
+      "Full Name must contain only letters, apostrophes(') or periods(.).";
   }
 
   if (!data.mentorFaculty) {
@@ -667,8 +715,9 @@ export async function action({ request }) {
     errors.collegeName = "College Name is required.";
   } else if (data.collegeName.trim().length < 3) {
     errors.collegeName = "College Name must be of at least 3 letters.";
-  } else if (!alphabetRegex.test(data.collegeName.trim())) {
-    errors.collegeName = "College Name must contain only letters.";
+  } else if (!nameRegex.test(data.collegeName.trim())) {
+    errors.collegeName =
+      "College Name must contain only letters, apostrophes(') or periods(.).";
   }
 
   if (!data.collegeDistrict) {
@@ -752,7 +801,7 @@ export async function action({ request }) {
 
   if (res.ok) {
     console.log("Mentor updated successfully: ", result.data);
-    return redirect("/"); // Redirect to mentors list or appropriate page
+    return redirect("/dashboard"); // Redirect to mentors list or appropriate page
   }
 }
 

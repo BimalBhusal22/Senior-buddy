@@ -6,6 +6,7 @@ const ViewMentorRequests = () => {
   const [mentorRequests, setMentorRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [approvingMentorId, setApprovingMentorId] = useState(null); // New state for tracking approval loading
 
   //  fetch data from backend
   useEffect(() => {
@@ -36,6 +37,8 @@ const ViewMentorRequests = () => {
   if (error) return <div>Error: {error}</div>;
 
   const handleApprove = async (mentorData) => {
+    setApprovingMentorId(mentorData._id); // Set loading state for this specific mentor
+
     console.log(mentorData._id);
     console.log(mentorData);
     let mentorImageUrl = "";
@@ -175,6 +178,8 @@ const ViewMentorRequests = () => {
     } catch (error) {
       console.error("error occured during deletion of mentor request.");
       console.log(error);
+    } finally {
+      setApprovingMentorId(null); // Clear loading state when done
     }
   };
 
@@ -253,8 +258,20 @@ const ViewMentorRequests = () => {
                 <button
                   className="btn btn-success"
                   onClick={() => handleApprove(mentor)}
+                  disabled={approvingMentorId === mentor._id}
                 >
-                  Approve
+                  {approvingMentorId === mentor._id ? (
+                    <>
+                      <span
+                        className="spinner-border spinner-border-sm me-2"
+                        role="status"
+                        aria-hidden="true"
+                      ></span>
+                      Approving...
+                    </>
+                  ) : (
+                    "Approve"
+                  )}
                 </button>
               </div>
             </div>

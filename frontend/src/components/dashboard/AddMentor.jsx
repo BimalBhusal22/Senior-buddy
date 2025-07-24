@@ -1,8 +1,12 @@
-import { Form, redirect, useActionData } from "react-router-dom";
+import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import React, { useState } from "react";
 
 const AddMentor = () => {
   const actionErrors = useActionData();
+  const navigation = useNavigation();
+
+  // Check if form is being submitted
+  const isSubmitting = navigation.state === "submitting";
 
   const districts = [
     "Achham",
@@ -150,6 +154,7 @@ const AddMentor = () => {
                       placeholder="Your Name"
                       value={formData.mentorName}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.mentorName && (
                       <p style={styles.error}>{actionErrors.mentorName}</p>
@@ -168,6 +173,7 @@ const AddMentor = () => {
                       placeholder="Your Faculty"
                       value={formData.mentorFaculty}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.mentorFaculty && (
                       <p style={styles.error}>{actionErrors.mentorFaculty}</p>
@@ -187,6 +193,7 @@ const AddMentor = () => {
                         value="M"
                         checked={formData.mentorGender === "M"}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       Male
                     </label>
@@ -197,6 +204,7 @@ const AddMentor = () => {
                         value="F"
                         checked={formData.mentorGender === "F"}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       Female
                     </label>
@@ -216,6 +224,7 @@ const AddMentor = () => {
                       className="myInputBox"
                       value={formData.mentorPhoneNo}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.mentorPhoneNo && (
                       <p style={styles.error}>{actionErrors.mentorPhoneNo}</p>
@@ -234,6 +243,7 @@ const AddMentor = () => {
                       placeholder="your@email.com"
                       value={formData.mentorEmail}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.mentorEmail && (
                       <p style={styles.error}>{actionErrors.mentorEmail}</p>
@@ -252,6 +262,7 @@ const AddMentor = () => {
                       placeholder="facebook profile link"
                       value={formData.mentorFbProfileLink}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.mentorFbProfileLink && (
                       <p style={styles.error}>
@@ -271,6 +282,7 @@ const AddMentor = () => {
                       accept="image/*"
                       className="myInputBox"
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.mentorImage && (
                       <p style={styles.error}>{actionErrors.mentorImage}</p>
@@ -294,6 +306,7 @@ const AddMentor = () => {
                       placeholder="Your college's name"
                       value={formData.collegeName}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.collegeName && (
                       <p style={styles.error}>{actionErrors.collegeName}</p>
@@ -310,6 +323,7 @@ const AddMentor = () => {
                       name="collegeDistrict"
                       value={formData.collegeDistrict}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     >
                       <option value="">Select District</option>
                       {districts.map((district) => (
@@ -339,6 +353,7 @@ const AddMentor = () => {
                         value="+2"
                         checked={formData.collegeLevels.includes("+2")}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       +2
                     </label>
@@ -349,6 +364,7 @@ const AddMentor = () => {
                         value="bachelor"
                         checked={formData.collegeLevels.includes("bachelor")}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       Bachelor
                     </label>
@@ -359,6 +375,7 @@ const AddMentor = () => {
                         value="master"
                         checked={formData.collegeLevels.includes("master")}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                       />
                       Master
                     </label>
@@ -379,6 +396,7 @@ const AddMentor = () => {
                       placeholder="Enter faculties seperated by comma"
                       value={formData.collegeFaculties}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.collegeFaculties && (
                       <p style={styles.error}>
@@ -398,6 +416,7 @@ const AddMentor = () => {
                       accept="image/*"
                       className="myInputBox"
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.collegeImage && (
                       <p style={styles.error}>{actionErrors.collegeImage}</p>
@@ -416,6 +435,7 @@ const AddMentor = () => {
                       className="myInputBox"
                       value={formData.collegeWebsiteLink}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                     {actionErrors?.collegeWebsiteLink && (
                       <p style={styles.error}>
@@ -427,7 +447,20 @@ const AddMentor = () => {
               </div>
               <div className="col-12  d-flex justify-content-center py4top">
                 <div className="mySignUpBtnContainer">
-                  <button className="mySignUpBtn my-1">Add mentor</button>
+                  <button
+                    className="mySignUpBtn my-1"
+                    disabled={isSubmitting}
+                    style={isSubmitting ? styles.disabledButton : {}}
+                  >
+                    {isSubmitting ? (
+                      <div style={styles.buttonContent}>
+                        <div style={styles.spinner}></div>
+                        <span style={styles.loadingText}>Adding mentor...</span>
+                      </div>
+                    ) : (
+                      "Add mentor"
+                    )}
+                  </button>
                 </div>
               </div>
             </div>
@@ -444,7 +477,38 @@ const styles = {
     fontSize: "0.8em",
     marginTop: "5px",
   },
+  disabledButton: {
+    opacity: 0.7,
+    cursor: "not-allowed",
+  },
+  buttonContent: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "10px",
+  },
+  spinner: {
+    width: "18px",
+    height: "18px",
+    border: "2px solid #ffffff40",
+    borderTop: "2px solid #ffffff",
+    borderRadius: "50%",
+    animation: "spin 1s linear infinite",
+  },
+  loadingText: {
+    fontSize: "inherit",
+  },
 };
+
+// Add CSS animation for spinner (you can also add this to your CSS file)
+const spinnerStyle = document.createElement("style");
+spinnerStyle.textContent = `
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`;
+document.head.appendChild(spinnerStyle);
 
 export async function action({ request }) {
   const formDataRaw = await request.formData();
@@ -466,13 +530,15 @@ export async function action({ request }) {
 
   const errors = {};
   const alphabetRegex = /^[A-Za-z\s]+$/;
+  const nameRegex = /^[A-Za-z'.\s]+$/;
 
   if (!data.mentorName) {
     errors.mentorName = "Full Name is required.";
   } else if (data.mentorName.trim().length < 3) {
     errors.mentorName = "Full Name must be of at least 3 letters.";
-  } else if (!alphabetRegex.test(data.mentorName.trim())) {
-    errors.mentorName = "Full Name must contain only letters.";
+  } else if (!nameRegex.test(data.mentorName.trim())) {
+    errors.mentorName =
+      "Full Name must contain only letters, apostrophes(') or periods(.).";
   }
 
   // ... other validation logic ...
@@ -516,8 +582,9 @@ export async function action({ request }) {
     errors.collegeName = "College Name is required.";
   } else if (data.collegeName.trim().length < 3) {
     errors.collegeName = "College Name must be of atleast 3 letters.";
-  } else if (!alphabetRegex.test(data.collegeName.trim())) {
-    errors.collegeName = "College Name must contain only letters.";
+  } else if (!nameRegex.test(data.collegeName.trim())) {
+    errors.collegeName =
+      "College Name must contain only letters, apostrophes(') or periods(.).";
   }
 
   if (!data.collegeDistrict) {
@@ -606,7 +673,7 @@ export async function action({ request }) {
       "Response from server after add mentor  successfully sent: ",
       result.data
     );
-    return redirect("/");
+    return redirect("/dashboard");
   }
 }
 
