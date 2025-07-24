@@ -663,13 +663,15 @@ export async function action({ request }) {
 
   const errors = {};
   const alphabetRegex = /^[A-Za-z\s]+$/;
+  const nameRegex = /^[A-Za-z'.\s]+$/;
 
   if (!data.mentorName) {
     errors.mentorName = "Full Name is required.";
   } else if (data.mentorName.trim().length < 3) {
     errors.mentorName = "Full Name must be of at least 3 letters.";
-  } else if (!alphabetRegex.test(data.mentorName.trim())) {
-    errors.mentorName = "Full Name must contain only letters.";
+  } else if (!nameRegex.test(data.mentorName.trim())) {
+    errors.mentorName =
+      "Full Name must contain only letters, apostrophes(') or periods(.).";
   }
 
   if (!data.mentorFaculty) {
@@ -713,8 +715,9 @@ export async function action({ request }) {
     errors.collegeName = "College Name is required.";
   } else if (data.collegeName.trim().length < 3) {
     errors.collegeName = "College Name must be of at least 3 letters.";
-  } else if (!alphabetRegex.test(data.collegeName.trim())) {
-    errors.collegeName = "College Name must contain only letters.";
+  } else if (!nameRegex.test(data.collegeName.trim())) {
+    errors.collegeName =
+      "College Name must contain only letters, apostrophes(') or periods(.).";
   }
 
   if (!data.collegeDistrict) {

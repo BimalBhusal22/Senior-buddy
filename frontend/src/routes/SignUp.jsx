@@ -132,13 +132,13 @@ export async function action({ request }) {
   const formData = Object.fromEntries(await request.formData());
 
   const errors = {};
-  const alphabetRegex = /^[A-Za-z\s]+$/;
+  const nameRegex = /^[A-Za-z'.\s]+$/;
 
   if (!formData.name?.trim()) {
     errors.name = "Full Name is required";
   } else if (formData.name.trim().length < 3) {
     errors.name = "Full Name must be at least 3 characters";
-  } else if (!alphabetRegex.test(formData.name.trim())) {
+  } else if (!nameRegex.test(formData.name.trim())) {
     errors.name = "Full name must contain only letters.";
   }
 
