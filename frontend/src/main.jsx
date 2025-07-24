@@ -45,7 +45,9 @@ import AddMentor, {
   action as addMentorAction,
 } from "./components/dashboard/AddMentor.jsx";
 
-import UpdateMentor from "./components/dashboard/UpdateMentor.jsx";
+import UpdateMentor, {
+  action as updateMentorAction,
+} from "./components/dashboard/UpdateMentor.jsx";
 import DeleteMentor from "./components/dashboard/DeleteMentor.jsx";
 
 const router = createBrowserRouter([
@@ -119,6 +121,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/update_mentor",
         element: <UpdateMentor />,
+        action: updateMentorAction,
       },
       {
         path: "/dashboard/delete_mentor",
