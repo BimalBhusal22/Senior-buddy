@@ -12,28 +12,30 @@ const filterSlice = createSlice({
   initialState: [],
   reducers: {
     addInitialCards: (state, action) => {
-      stateCopy = action.payload.items;
-      return action.payload.items;
+      stateCopy = action.payload;
+      return action.payload;
     },
     applyDisciplineFilter: (state, action) => {
+      // console.log(action.payload);
       selectedDiscipline = action.payload;
 
       if (selectedDiscipline) {
         filteredCards = stateCopy.filter((item) =>
-          item.clzInfo.faculties.includes(selectedDiscipline)
+          // console.log(item.collegeFaculties)
+          item.collegeFaculties.includes(selectedDiscipline)
         );
       }
 
       if (selectedDistrict) {
         filteredCards = filteredCards.filter(
-          (item) => item.clzInfo.district === selectedDistrict
+          (item) => item.collegeDistrict === selectedDistrict
         );
-        console.log("applyDisciplineFilter", filteredCards);
+        // console.log("applyDisciplineFilter", filteredCards);
       }
 
       if (selectedLevel) {
         filteredCards = filteredCards.filter((item) =>
-          item.clzInfo.levels.includes(selectedLevel)
+          item.collegeLevels.includes(selectedLevel)
         );
       }
 
@@ -46,46 +48,48 @@ const filterSlice = createSlice({
 
       if (selectedDistrict) {
         filteredCards = stateCopy.filter(
-          (item) => item.clzInfo.district === selectedDistrict
+          (item) => item.collegeDistrict === selectedDistrict
         );
       }
       if (selectedDiscipline) {
         filteredCards = filteredCards.filter((item) =>
-          item.clzInfo.faculties.includes(selectedDiscipline)
+          item.collegeFaculties.includes(selectedDiscipline)
         );
       }
 
       if (selectedLevel) {
         filteredCards = filteredCards.filter((item) =>
-          item.clzInfo.levels.includes(selectedLevel)
+          item.collegeLevels.includes(selectedLevel)
         );
       }
 
       const bimal = "bimal"; //If I remove a line anything like this then the return value is empty array.
-      console.log("applyDistrictFilter", filteredCards);
+      // console.log("applyDistrictFilter", filteredCards);
       return filteredCards;
     },
     applyLevelFilter: (state, action) => {
+      // console.log("applyLevelFilter action.payload :",action.payload)
       selectedLevel = action.payload;
 
       if (selectedLevel) {
         filteredCards = stateCopy.filter((item) =>
-          item.clzInfo.levels.includes(selectedLevel)
+          // console.log("applyLevelFilter item.collegeLevels", item.collegeLevels)
+          item.collegeLevels.includes(selectedLevel)
         );
       }
-      // console.log(filteredCards);
+      console.log(filteredCards);
       if (selectedDiscipline) {
         filteredCards = filteredCards.filter((item) =>
-          item.clzInfo.faculties.includes(selectedDiscipline)
+          item.collegeFaculties.includes(selectedDiscipline)
         );
       }
       // console.log(filteredCards);
       if (selectedDistrict) {
         filteredCards = filteredCards.filter(
-          (item) => item.clzInfo.district === selectedDistrict
+          (item) => item.collegeDistrict === selectedDistrict
         );
       }
-      console.log("applyLevelFilter", filteredCards);
+      // console.log("applyLevelFilter", filteredCards);
       const bimal = "bimal"; //If I remove a line anything like this then the return value is empty array.
       return filteredCards;
     },

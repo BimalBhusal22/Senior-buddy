@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { user } = JSON.parse(localStorage.getItem("user"));
   return (
     <>
       <div className="container-fluid">
@@ -45,17 +46,27 @@ const Footer = () => {
               <h3>Important Links</h3>
               <ul className="impLinks">
                 <li>
-                  <a href="aboutus.html" className="impLink">About Us</a>
+                  <a href="aboutus.html" className="impLink">
+                    About Us
+                  </a>
                 </li>
                 <li>
-                  <a href="faqs.html" className="impLink">FAQs</a>
+                  <a href="faqs.html" className="impLink">
+                    FAQs
+                  </a>
                 </li>
                 <li>
-                  <Link to="/become_a_mentor" className="impLink">Become a Mentor</Link>
+                  <Link to="/become_a_mentor" className="impLink">
+                    Become a Mentor
+                  </Link>
                 </li>
-                <li>
-                  <Link to="/dashboard" className="impLink">Dashboard</Link>
-                </li>
+                {user.role === "admin" ? (
+                  <li>
+                    <Link to="/dashboard" className="impLink">
+                      Dashboard
+                    </Link>
+                  </li>
+                ) : null}
               </ul>
             </div>
           </section>

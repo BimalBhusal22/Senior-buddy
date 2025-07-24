@@ -11,7 +11,7 @@ const HeaderUpperNavbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userProfile = useSelector((store) => store.userProfile);
-  const { user } = JSON.parse(localStorage.getItem("user") || userProfile);
+  const { user } = JSON.parse(localStorage.getItem("user")) || userProfile;
   const handleSignOutClick = async () => {
     const userDublicate = JSON.parse(localStorage.getItem("user"));
     const res = await fetch("http://localhost:7000/api/v1/user/sign_out", {

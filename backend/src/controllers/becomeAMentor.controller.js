@@ -120,6 +120,26 @@ const addBecomeAMentorRequest = asyncHandler(async (req, res) => {
     );
 });
 
+const deleteBecomeAMentorRequest = asyncHandler(async (req, res) => {
+  const { _id } = req.body;
+
+  if (!_id) {
+    throw new ApiError(400, "Bimal, Become a Mentor Request ID is required in the request body");
+  }
+
+  const mentorRequest = await BecomeAMentor.findById(_id);
+
+  if (!mentorRequest) {
+    throw new ApiError(404, "Bimal, Become a Mentor Request with provided ID not found");
+  }
+
+  await BecomeAMentor.findByIdAndDelete(_id);
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, {}, "Bimal, Become a mentor request with provided ID deleted successfully"));
+});
+
 const getAllMentorRequests = asyncHandler(async (req, res) => {
   try {
     const allMentorRequests = await BecomeAMentor.find();
@@ -142,4 +162,4 @@ const getAllMentorRequests = asyncHandler(async (req, res) => {
   }
 });
 
-export { addBecomeAMentorRequest, getAllMentorRequests };
+export { addBecomeAMentorRequest,deleteBecomeAMentorRequest, getAllMentorRequests };

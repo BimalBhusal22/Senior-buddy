@@ -17,6 +17,7 @@ import "./css/6_user_profile.css";
 import "./css/7_InUpMentor.css";
 import "./css/8_dashboard.css";
 import "./css/9_menu_filter.css";
+import "./css/10_popUpNotification.css";
 import Home from "./routes/Home.jsx";
 import MentorProfile from "./routes/MentorProfile.jsx";
 import UserProfile, {

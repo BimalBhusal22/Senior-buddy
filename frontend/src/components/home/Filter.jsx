@@ -139,7 +139,7 @@ const Filter = () => {
                 type="radio"
                 id="bachelor"
                 name="filter3"
-                onClick={() => handleOnClickLevel("Bachelor")}
+                onClick={() => handleOnClickLevel("bachelor")}
               />
               <label htmlFor="bachelor">
                 <span className="ms-1">Bachelor</span>
@@ -149,7 +149,7 @@ const Filter = () => {
                 type="radio"
                 id="master"
                 name="filter3"
-                onClick={() => handleOnClickLevel("Master")}
+                onClick={() => handleOnClickLevel("master")}
               />
               <label htmlFor="master">
                 <span className="ms-1">Master</span>

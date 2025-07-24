@@ -7,12 +7,12 @@ const searchSlice = createSlice({
   initialState: [],
   reducers: {
     addInitialCards: (state, action) => {
-      stateCopy = action.payload.items;
-      return action.payload.items;
+      stateCopy = action.payload;
+      return action.payload;
     },
     showSearchedCard: (state, action) => {
       const searchedCard = JSON.parse(JSON.stringify(stateCopy)).filter(
-        (item) => item.clzInfo.name === action.payload
+        (item) => item.collegeName === action.payload
       );
       const bimal = "bimal"; //If I remove a line anything like this then the return value is empty array.
       return searchedCard;

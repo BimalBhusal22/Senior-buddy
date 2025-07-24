@@ -5,7 +5,7 @@ const cardsSlice = createSlice({
   initialState: [],
   reducers: {
     addInitialCards: (state, action) => {
-      return action.payload.items;
+      return action.payload;
     },
     showSearchedCard: (state, action) => {
       const searchedCard = JSON.parse(JSON.stringify(state)).filter(

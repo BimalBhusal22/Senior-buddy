@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   addBecomeAMentorRequest,
+  deleteBecomeAMentorRequest,
   getAllMentorRequests,
 } from "../controllers/becomeAMentor.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
@@ -20,6 +21,9 @@ router.route("/add_become_a_mentor_request").post(
   ]),
   addBecomeAMentorRequest
 );
+router
+  .route("/delete_become_a_mentor_request")
+  .post(deleteBecomeAMentorRequest);
 router.route("/get_all_mentor_requests").get(getAllMentorRequests);
 
 // router.route("/add_mentor").post(addMentor);

@@ -43,25 +43,27 @@ const Card = ({ item }) => {
       <div className="card1 BimalCard shadow-lg">
         <div className="part1">
           <div className="part11">
-            <img src={item.mentor1.image} height="150px" width="150px" />
+            <img src={item.mentorImage} height="150px" width="150px" />
           </div>
           <div className="part12">
-            {item.mentor1.name}
-            <br />
-            {item.mentor1.present}
-            <br />
-            {item.mentor1.past}
-            <br />
+            <div className="lineHeight15">
+              <span>{item.mentorName}</span>
+              <br />
+              <span>{item.mentorFaculty}</span>
+              <br />
+              <span>{item.collegeName}</span>
+              <br />
+            </div>
             <button className="howHeHelps" onClick={handleOnClickHowHeHelps}>
               <Link to="/mentor_profile" className="fw-bold normalWtMbl">
-                How {item.mentor1.gender === "M" ? "he" : "she"} Helps?
+                How {item.mentorGender === "M" ? "he" : "she"} Helps?
               </Link>
             </button>
             <div></div>
           </div>
         </div>
 
-        <div className="part2">
+        {/* <div className="part2">
           <div className="accordion myAccordion" id="accordionEx">
             <div className="accordion-item">
               <h2 className="accordion-header">
@@ -95,18 +97,18 @@ const Card = ({ item }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="part3">
           <div className="part31">
-            <img src={item.clzInfo.image} height="100px" width="100%" />
+            <img src={item.collegeImage} height="100px" width="100%" />
           </div>
           <div className="part32">
             <div>
-              {item.clzInfo.name}, {item.clzInfo.district}
+              {item.collegeName}, {item.collegeDistrict}
             </div>
             <div className="facultiesSize">
-              {item.clzInfo.faculties.map((faculty) => (
+              {item.collegeFaculties.map((faculty) => (
                 <span className="mx-1" key={faculty}>
                   {" "}
                   {faculty}
@@ -115,7 +117,7 @@ const Card = ({ item }) => {
             </div>
             <div className="clzBtnsContainer">
               <button className="visitWebsite">
-                <a href={item.clzInfo.websiteLink} target="_blank">
+                <a href={item.collegeWebsiteLink} target="_blank">
                   Visit Website
                   <GoArrowRight />
                 </a>{" "}

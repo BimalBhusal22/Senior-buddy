@@ -16,14 +16,14 @@ const FetchItems = () => {
     const signal = controller.signal;
 
     dispatch(fetchStatusActions.markFetchingStarted());
-    fetch("http://localhost:8080/items", { signal })
+    fetch("http://localhost:7000/api/v1/admin/get_all_mentors", { signal })
       .then((res) => res.json())
       .then((items) => {
         dispatch(fetchStatusActions.markFetchDone());
         dispatch(fetchStatusActions.markFetchingFinished());
-        dispatch(cardsActions.addInitialCards(items));
-        dispatch(searchActions.addInitialCards(items));
-        dispatch(filterActions.addInitialCards(items));
+        dispatch(cardsActions.addInitialCards(items.data));
+        dispatch(searchActions.addInitialCards(items.data));
+        dispatch(filterActions.addInitialCards(items.data));
       });
 
     return () => {

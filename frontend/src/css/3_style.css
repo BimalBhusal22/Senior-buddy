@@ -25,7 +25,7 @@
     border: var(--card_border);
     display: inline-block;
     width: 320px;
-    min-height: 495px ;
+    min-height: 470px ;
     box-sizing: border-box;
     font-size: 16px;
     margin: 2vw;
@@ -37,6 +37,7 @@
     /* border-bottom:2px solid black; */
     height:155px;
     display: flex;
+    margin-bottom: 20px;
 }
 .part11{
     display:inline-block;
@@ -57,14 +58,15 @@
 .part12{
     display:inline-block;
     box-sizing: border-box;
-    height:95%;
+    /* height:80%; */
+    height: 100px;
     width:55%;
     border-radius: 10px;
-    line-height: 30px;
+    /* line-height: 20px; */
     /* margin:20px 2px 2px 2px; */
     padding: 10px;
-    position:relative; 
-    top:10px; 
+    /* position:relative; 
+    top:10px;  */
 }
 .part31{
     /* box-sizing: border-box; */
@@ -102,6 +104,7 @@
     color: white;
 }
 .howHeHelps{
+    padding: 3px;
     margin-top: 7px;
 }
 .howHeHelps:hover, .howHeHelps:active{
@@ -112,9 +115,9 @@
     color: white;
 }
 .part12{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
 }
 .-body {
     padding: 0px;
@@ -124,7 +127,7 @@
     transform: scale(0.8);
   }
   50% {
-    transform: scale(1);
+    transform: scale(0.9);
   }
 }
 .messagePart{
