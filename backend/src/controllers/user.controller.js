@@ -225,7 +225,7 @@ const getCurrentUser = asyncHandler(async (req, res) => {
 
 const getAllUsers = asyncHandler(async (req, res) => {
   try {
-    const users = await User.find().select("-password"); // exclude password
+    const users = await User.find().sort({ createdAt: -1 }).select("-password"); // exclude password
     return res
       .status(200)
       .json(

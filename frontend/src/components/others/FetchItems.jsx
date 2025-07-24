@@ -19,6 +19,9 @@ const FetchItems = () => {
     fetch("http://localhost:7000/api/v1/admin/get_all_mentors", { signal })
       .then((res) => res.json())
       .then((items) => {
+        items.data.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
         dispatch(fetchStatusActions.markFetchDone());
         dispatch(fetchStatusActions.markFetchingFinished());
         dispatch(cardsActions.addInitialCards(items.data));

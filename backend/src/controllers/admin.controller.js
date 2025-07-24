@@ -124,9 +124,9 @@ const addMentor = asyncHandler(async (req, res) => {
 
 const getAllMentors = asyncHandler(async (req, res) => {
   try {
-    const mentors = await Mentor.find().select(
-      "-mentorPhoneNo -mentorFbProfileLink -mentorEmail"
-    );
+    const mentors = await Mentor.find()
+      .sort({ createdAt: -1 })
+      .select("-mentorPhoneNo -mentorFbProfileLink -mentorEmail");
     return res
       .status(200)
       .json(
@@ -141,9 +141,11 @@ const getAllMentors = asyncHandler(async (req, res) => {
 
 const getAllMentorsForAdmin = asyncHandler(async (req, res) => {
   try {
-    const mentors = await Mentor.find().select(
-      "-mentorImage -mentorGender -collegeImage -collegeLevels -collegeFaculties -collegeWebsiteLink"
-    );
+    const mentors = await Mentor.find()
+      .sort({ createdAt: -1 })
+      .select(
+        "-mentorImage -mentorGender -collegeImage -collegeLevels -collegeFaculties -collegeWebsiteLink"
+      );
     return res
       .status(200)
       .json(

@@ -3,16 +3,23 @@ import { ImHome } from "react-icons/im";
 import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../store/filterSlice";
 import MoreFacultySelection from "./MoreFacultySelection";
-import SignIn from "../../routes/SignIn";
+import { IoMdPerson } from "react-icons/io";
 
 const HeaderLowerNavbar = () => {
   const wishlist = useSelector((store) => store.wishlist);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const userProfile = useSelector((store) => store.userProfile);
+  const user = JSON.parse(localStorage.getItem("user")) || userProfile;
+
   const handleOnClick = (faculty) => {
     navigate("/filter_output");
     dispatch(filterActions.applyDisciplineFilter(faculty));
+  };
+
+  const handleOnClickUserProfile = () => {
+    user.user.role !== "" ? navigate("/user_profile") : navigate("/sign_up");
   };
   return (
     <nav className="lowerNavbar">
@@ -110,15 +117,16 @@ const HeaderLowerNavbar = () => {
         </li>
 
         <li>
-          <Link to="/user_profile">
-            <button className="specialTab sCtgy userProfile fw-bold">
-              UN
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
-                {wishlist.length}
-                <span className="visually-hidden">unread messages</span>
-              </span>
-            </button>
-          </Link>
+          <button
+            className="specialTab sCtgy userProfile fw-bold"
+            onClick={handleOnClickUserProfile}
+          >
+            <IoMdPerson className="fs-4" />
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
+              {wishlist.length}
+              <span className="visually-hidden">unread messages</span>
+            </span>
+          </button>
         </li>
       </ul>
     </nav>

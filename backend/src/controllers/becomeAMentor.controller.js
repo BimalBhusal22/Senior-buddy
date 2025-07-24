@@ -124,25 +124,39 @@ const deleteBecomeAMentorRequest = asyncHandler(async (req, res) => {
   const { _id } = req.body;
 
   if (!_id) {
-    throw new ApiError(400, "Bimal, Become a Mentor Request ID is required in the request body");
+    throw new ApiError(
+      400,
+      "Bimal, Become a Mentor Request ID is required in the request body"
+    );
   }
 
   const mentorRequest = await BecomeAMentor.findById(_id);
 
   if (!mentorRequest) {
-    throw new ApiError(404, "Bimal, Become a Mentor Request with provided ID not found");
+    throw new ApiError(
+      404,
+      "Bimal, Become a Mentor Request with provided ID not found"
+    );
   }
 
   await BecomeAMentor.findByIdAndDelete(_id);
 
   return res
     .status(200)
-    .json(new ApiResponse(200, {}, "Bimal, Become a mentor request with provided ID deleted successfully"));
+    .json(
+      new ApiResponse(
+        200,
+        {},
+        "Bimal, Become a mentor request with provided ID deleted successfully"
+      )
+    );
 });
 
 const getAllMentorRequests = asyncHandler(async (req, res) => {
   try {
-    const allMentorRequests = await BecomeAMentor.find();
+    const allMentorRequests = await BecomeAMentor.find().sort({
+      createdAt: -1,
+    });
     return res
       .status(200)
       .json(
@@ -153,13 +167,15 @@ const getAllMentorRequests = asyncHandler(async (req, res) => {
         )
       );
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: "Server error while fetching all Become a Mentor Requests",
-        error,
-      });
+    res.status(500).json({
+      message: "Server error while fetching all Become a Mentor Requests",
+      error,
+    });
   }
 });
 
-export { addBecomeAMentorRequest,deleteBecomeAMentorRequest, getAllMentorRequests };
+export {
+  addBecomeAMentorRequest,
+  deleteBecomeAMentorRequest,
+  getAllMentorRequests,
+};
