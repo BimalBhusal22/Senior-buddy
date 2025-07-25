@@ -3,10 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const selectedMentorSlice = createSlice({
   name: "selectedMentor",
   initialState: {
-        mentor: {},
-        college: "",
-        district: "",
-      },
+    mentorImage: "",
+    mentorName: "",
+    mentorFaculty: "",
+    collegeName: "",
+    collegeDistrict: "",
+  },
   reducers: {
     setSelectedMentor: (state, action) => {
       return action.payload;

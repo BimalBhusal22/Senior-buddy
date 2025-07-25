@@ -81,3 +81,13 @@
 .paginationBtn{
   width: 98px;
 }
+.lineHeight{
+  line-height: 1.7;
+}
+.lh-small{
+  line-height: 1.2;
+}
+.mentorFaculty{
+  font-weight: bold;
+  color: var(--secondary_color);
+}

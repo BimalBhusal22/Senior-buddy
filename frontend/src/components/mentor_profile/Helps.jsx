@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Helps = () => {
   const navigate = useNavigate();
 
-  const { mentor } = useSelector((store) => store.selectedMentor);
+  const { mentorName } = useSelector((store) => store.selectedMentor);
 
   const handleOnClickGetHelp = () => {
     let signedIn = true;
@@ -18,7 +18,7 @@ const Helps = () => {
           <div className="col-12 text-center">
             <div className="heading fw-bold">
               Your Senior friend{" "}
-              <span className="heading fw-bold seniorName">{mentor.name}</span>{" "}
+              <span className="heading fw-bold seniorName">{mentorName}</span>{" "}
               can Help You in:
             </div>{" "}
           </div>

@@ -4,7 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 const MentorInfo = () => {
   const navigate = useNavigate();
 
-  const { mentor } = useSelector((store) => store.selectedMentor);
+  const { mentorImage, mentorName, mentorFaculty, collegeName } = useSelector(
+    (store) => store.selectedMentor
+  );
 
   const handleOnClickGetHelp = () => {
     let signedIn = true;
@@ -15,14 +17,14 @@ const MentorInfo = () => {
     <div className="introContainer  py-4">
       <div className="part1 shadow-lg intro">
         <div className="part11">
-          <img src={mentor.imageUrl} height="150px" width="150px" />
+          <img src={mentorImage} height="150px" width="150px" />
         </div>
         <div className="part12 fw-bold">
-          {mentor.name}
+          {mentorName}
           <br />
-          {mentor.present}
+          <span className="mentorFaculty">{mentorFaculty}</span>
           <br />
-          {mentor.past}
+          {collegeName}
           <br />
           <button className="fw-bold howHeHelps" onClick={handleOnClickGetHelp}>
             Get Help

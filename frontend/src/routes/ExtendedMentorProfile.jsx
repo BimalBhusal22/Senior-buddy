@@ -2,13 +2,13 @@ import { useSelector } from "react-redux";
 import ExtendedMentorInfo from "../components/mentor_profile/ExtendedMentorInfo";
 
 const ExtendedMentorProfile = () => {
-  const { mentor } = useSelector((store) => store.selectedMentor);
+  const { mentorName } = useSelector((store) => store.selectedMentor);
   return (
     <>
       <ExtendedMentorInfo />
       <h4 className="paymentStatement text-center mt-2 px-3 fw-bold">
         Isn't it Fair to Pay NRs. 200 for{" "}
-        <span className="seniorName fontSize1-5rem fw-bold">{mentor.name}</span>
+        <span className="seniorName fontSize1-5rem fw-bold">{mentorName}</span>
         's Valuable Time and Serious Efforts throught Your Journey?
       </h4>
       <p className="text-center fw-bold colorGray px-3">

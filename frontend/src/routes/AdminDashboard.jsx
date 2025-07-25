@@ -8,50 +8,17 @@ const AdminDashboard = () => {
       <div className="text-center mb-4">
         <h1 className="adminDashboardHeading py-4">
           Admin Dashboard{" "}
-          <span className="float-end pe-5">
+          <span className="dashboardCrossBtnContainer">
             <Link to="/">
               <button type="button" className="dashboardCrossBtn">
-                <RxCross2 className="fs-1" />
+                <RxCross2 className="display-3" />
               </button>
             </Link>
           </span>
         </h1>
 
         <div className="d-flex flex-wrap justify-content-center">
-          <div className="mx-2">
-            <Link to="/dashboard/add_mentor">
-              <button
-                type="button"
-                className="btn btn-success dashboardBtn mt-4 py-2"
-              >
-                Add Mentor
-              </button>
-            </Link>
-          </div>
-
-          <div className="mx-2">
-            <Link to="/dashboard/update_mentor">
-              <button
-                type="button"
-                className="btn btn-info dashboardBtn mt-4 py-2"
-              >
-                Update Mentor
-              </button>
-            </Link>
-          </div>
-
-          <div className="mx-2">
-            <Link to="/dashboard/delete_mentor">
-              <button
-                type="button"
-                className="btn btn-danger dashboardBtn mt-4 py-2"
-              >
-                Delete Mentor
-              </button>
-            </Link>
-          </div>
-
-          <div className="mx-2">
+          <div className="mx-2 col-12 col-sm-6  col-lg-3">
             <Link to="/dashboard/view_mentors">
               <button
                 type="button"
@@ -62,7 +29,7 @@ const AdminDashboard = () => {
             </Link>
           </div>
 
-          <div className="mx-2">
+          <div className="mx-2 col-12 col-sm-6  col-lg-3">
             <Link to="/dashboard/view_mentor_requests">
               <button
                 type="button"
@@ -73,13 +40,46 @@ const AdminDashboard = () => {
             </Link>
           </div>
 
-          <div className="mx-2">
+          <div className="mx-2 col-12 col-sm-6  col-lg-3">
             <Link to="/dashboard/view_users">
               <button
                 type="button"
                 className="btn btn-info dashboardBtn mt-4 py-2"
               >
                 View Users
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2 col-12 col-sm-6  col-lg-3">
+            <Link to="/dashboard/add_mentor">
+              <button
+                type="button"
+                className="btn btn-success dashboardBtn mt-4 py-2"
+              >
+                Add Mentor
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2 col-12 col-sm-6  col-lg-3">
+            <Link to="/dashboard/update_mentor">
+              <button
+                type="button"
+                className="btn btn-warning dashboardBtn mt-4 py-2"
+              >
+                Update Mentor
+              </button>
+            </Link>
+          </div>
+
+          <div className="mx-2 col-12 col-sm-6  col-lg-3">
+            <Link to="/dashboard/delete_mentor">
+              <button
+                type="button"
+                className="btn btn-danger dashboardBtn mt-4 py-2"
+              >
+                Delete Mentor
               </button>
             </Link>
           </div>

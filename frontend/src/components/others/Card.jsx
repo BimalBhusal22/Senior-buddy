@@ -32,9 +32,11 @@ const Card = ({ item }) => {
   const handleOnClickHowHeHelps = () => {
     dispatch(
       selectedMentorActions.setSelectedMentor({
-        mentor: item.mentor1,
-        college: item.clzInfo.name,
-        district: item.clzInfo.district,
+        mentorImage: item.mentorImage,
+        mentorName: item.mentorName,
+        mentorFaculty: item.mentorFaculty,
+        collegeName: item.collegeName,
+        collegeDistrict: item.collegeDistrict,
       })
     );
   };
@@ -46,13 +48,12 @@ const Card = ({ item }) => {
             <img src={item.mentorImage} height="150px" width="150px" />
           </div>
           <div className="part12">
-            <div className="lineHeight15">
+            <div className="lineHeight">
               <span>{item.mentorName}</span>
               <br />
-              <span>{item.mentorFaculty}</span>
+              <span className="mentorFaculty">{item.mentorFaculty}</span>
               <br />
-              <span>{item.collegeName}</span>
-              <br />
+              <div className="lh-small">{item.collegeName}</div>
             </div>
             <button className="howHeHelps" onClick={handleOnClickHowHeHelps}>
               <Link to="/mentor_profile" className="fw-bold normalWtMbl">
