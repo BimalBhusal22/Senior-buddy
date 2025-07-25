@@ -134,7 +134,7 @@ const BecomeAMentor = () => {
               <div className="col-12 fs-2 fw-bold text-center">
                 Become A Mentor
               </div>
-              <div className="col-12 text-center ">
+              <div className="col-12 text-center fs20">
                 {/* Sign up now to get the help! */}
                 <span className="specialWord">Help</span> newcomers and get{" "}
                 <span className="specialWord">Paid</span> for your valuable{" "}

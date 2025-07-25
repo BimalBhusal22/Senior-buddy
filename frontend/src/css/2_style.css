@@ -91,3 +91,6 @@
   font-weight: bold;
   color: var(--secondary_color);
 }
+.fs20{
+  font-size: 20px;
+}
