@@ -22,7 +22,7 @@
     position: relative;
     top: -10px;
 } */
-.lowerNavbar, .pcSearchBar, .signInUp, .theme{
+.lowerNavbar, .pcSearchBar, .signInUp, .signOut, .theme{
     display: none;
 }
 .mobileTheme{

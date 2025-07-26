@@ -1,6 +1,3 @@
-import { MdDarkMode } from "react-icons/md";
-import { MdLightMode } from "react-icons/md";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import FuzzySearchInput from "./FuzzySearchInput";
 import DarkMode from "../DarkMode/DarkMode";
@@ -41,12 +38,6 @@ const HeaderUpperNavbar = () => {
         </span>
       </button>
 
-      {/* <input
-        name="searchBar"
-        type="text"
-        placeholder="Search colleges . . ."
-        className="searchBar"
-      /> */}
       <span className="pcSearchBar">
         <FuzzySearchInput />
       </span>

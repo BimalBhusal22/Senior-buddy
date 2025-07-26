@@ -1,5 +1,4 @@
 import { MdOutlineTune } from "react-icons/md";
-import { MdDarkMode } from "react-icons/md";
 import FuzzySearchInput from "./FuzzySearchInput";
 import { RxHamburgerMenu } from "react-icons/rx";
 

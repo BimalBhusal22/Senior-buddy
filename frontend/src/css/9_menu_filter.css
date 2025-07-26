@@ -27,7 +27,7 @@
     background-color: unset;
     border: none;
 }
-.mobileSignInUp{
+.mobileSignInUp,.mobileSignOut{
     display: unset;
     top: 0px;
 }

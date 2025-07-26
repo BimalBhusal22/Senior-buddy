@@ -1,11 +1,41 @@
 import { RxCross1 } from "react-icons/rx";
-import { MdLightMode } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import store from "../../store";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userProfileActions } from "../../store/userProfileSlice";
+import { filterActions } from "../../store/filterSlice";
+import { ImHome } from "react-icons/im";
+import MoreFacultySelection from "../header_footer/MoreFacultySelection";
+import { IoMdPerson } from "react-icons/io";
 
 const MobileMenu = ({ handleMobileMenuClicked }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const wishlist = useSelector((store) => store.wishlist);
+  const userProfile = useSelector((store) => store.userProfile);
+  const { user } = JSON.parse(localStorage.getItem("user")) || userProfile;
+
+  const handleOnClick = (faculty) => {
+    navigate("/filter_output");
+    dispatch(filterActions.applyDisciplineFilter(faculty));
+  };
+
+  const handleSignOutClick = async () => {
+    const userDublicate = JSON.parse(localStorage.getItem("user"));
+    const res = await fetch("http://localhost:7000/api/v1/user/sign_out", {
+      method: "POST",
+      body: JSON.stringify([user, userDublicate]),
+      headers: { "Content-Type": "application/json" },
+    });
+    const result = await res.json();
+    console.log("Response from server after sign out: ", result);
+    dispatch(userProfileActions.removeUserInfo());
+    navigate("/");
+  };
+
+  const handleOnClickUserProfile = () => {
+    user.role !== "" ? navigate("/user_profile") : navigate("/sign_up");
+  };
+
   return (
     <div className="container-fluid mobileMenuContainer shadow-lg py-5">
       <div className="container">
@@ -25,63 +55,73 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
           </div>
 
           <div className="col-6 d-flex justify-content-center mt-3 pt-2">
-            <Link
-              to="/"
-              className="ctgy"
-              onClick={() => handleMobileMenuClicked()}
+            <button
+              type="button"
+              className="homeBtn"
+              onClick={() => {
+                navigate("/");
+                window.location.reload();
+              }}
             >
-              Home
-            </Link>
+              <ImHome className="homeIcon ctgy" />
+            </button>
           </div>
 
           <div className="col-6 d-flex justify-content-center mt-3 pt-2">
-            <Link
-              to="/bbs"
-              className="ctgy"
-              onClick={() => handleMobileMenuClicked()}
+            <button
+              className="noBgBorderBtn"
+              onClick={() => {
+                handleOnClick("BBS"), handleMobileMenuClicked();
+              }}
             >
-              BBS
-            </Link>
+              <label htmlFor="bbs">
+                <div className="ctgy">BBS</div>
+              </label>
+            </button>
           </div>
 
           <div className="col-6 d-flex justify-content-center mt-3 pt-2">
-            <Link
-              to="/bba"
-              className="ctgy"
-              onClick={() => handleMobileMenuClicked()}
+            <button
+              className="noBgBorderBtn"
+              onClick={() => handleOnClick("BBA")}
             >
-              BBA
-            </Link>
+              <label htmlFor="bba">
+                <div className="ctgy">BBA</div>
+              </label>
+            </button>
           </div>
 
           <div className="col-6 d-flex justify-content-center mt-3 pt-2">
-            <Link
-              to="/bhm"
-              className="ctgy"
-              onClick={() => handleMobileMenuClicked()}
+            <button
+              className="noBgBorderBtn"
+              onClick={() => handleOnClick("BHM")}
             >
-              BHM
-            </Link>
+              <label htmlFor="bhm">
+                <div className="ctgy">BHM</div>
+              </label>
+            </button>
           </div>
 
           <div className="col-6 d-flex justify-content-center mt-3 pt-2">
-            <Link
-              href="/bsccsit"
-              className="ctgy"
-              onClick={() => handleMobileMenuClicked()}
+            <button
+              className="noBgBorderBtn"
+              onClick={() => handleOnClick("BSc CSIT")}
             >
-              BSc. CSIT
-            </Link>
+              <label htmlFor="bsccsit">
+                <div className="ctgy">BSc. CSIT</div>
+              </label>
+            </button>
           </div>
 
           <div className="col-6 d-flex justify-content-center mt-3 pt-2">
-            <Link
-              to="bca.html"
-              className="ctgy"
-              onClick={() => handleMobileMenuClicked()}
+            <button
+              className="noBgBorderBtn"
+              onClick={() => handleOnClick("BCA")}
             >
-              BCA
-            </Link>
+              <label htmlFor="bca">
+                <div className="ctgy">BCA</div>
+              </label>
+            </button>
           </div>
 
           <div className="col-12 d-flex justify-content-center mt-3 pt-2">
@@ -89,38 +129,7 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
               <label htmlFor="more" className="ctgy">
                 More:
               </label>
-
-              <select name="moreFaculties" id="moreFaculties">
-                <option value="science">
-                  <Link to="/science" onClick={() => handleMobileMenuClicked()}>
-                    +2 Science
-                  </Link>
-                </option>
-                <option value="management">
-                  <Link
-                    to="/management"
-                    onClick={() => handleMobileMenuClicked()}
-                  >
-                    +2 Management
-                  </Link>{" "}
-                </option>
-                <option value="education">
-                  <Link
-                    to="education"
-                    onClick={() => handleMobileMenuClicked()}
-                  >
-                    +2 Education
-                  </Link>{" "}
-                </option>
-                <option value="engineering">
-                  <Link
-                    to="/engineering"
-                    onClick={() => handleMobileMenuClicked()}
-                  >
-                    Engineering
-                  </Link>
-                </option>
-              </select>
+              <MoreFacultySelection />
             </span>
           </div>
 
@@ -149,30 +158,43 @@ const MobileMenu = ({ handleMobileMenuClicked }) => {
           </div>
 
           <div className="col-12 d-flex justify-content-center  mt-3 pt-2">
-            <span className="signInUp mobileSignInUp">
-              <Link to="/sign_in" onClick={() => handleMobileMenuClicked()}>
-                <button className="signIn me-2">Sign-In</button>
-              </Link>
-              <Link to="/sign_up" onClick={() => handleMobileMenuClicked()}>
-                <button className="signUp ms-2">Sign-Up</button>
-              </Link>
-            </span>
+            {user.name !== "" ? (
+              <span className="signOut mobileSignOut">
+                <button
+                  className="signIn"
+                  onClick={() => {
+                    handleSignOutClick(), handleMobileMenuClicked();
+                  }}
+                >
+                  Sign-Out
+                </button>
+              </span>
+            ) : (
+              <span className="signInUp mobileSignInUp">
+                <Link to="/sign_in" onClick={() => handleMobileMenuClicked()}>
+                  <button className="signIn me-2">Sign-In</button>
+                </Link>
+                <Link to="/sign_up" onClick={() => handleMobileMenuClicked()}>
+                  <button className="signUp ms-2">Sign-Up</button>
+                </Link>
+              </span>
+            )}
           </div>
 
           <div className="col-12 d-flex justify-content-center mt-3 pt-2">
             <div>
-              <Link to="/user_profile">
-                <button
-                  className="specialTab sCtgy userProfile fw-bold"
-                  onClick={() => handleMobileMenuClicked()}
-                >
-                  UN
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
-                    {wishlist.length}
-                    <span className="visually-hidden">unread messages</span>
-                  </span>
-                </button>
-              </Link>
+              <button
+                className="specialTab sCtgy userProfile fw-bold"
+                onClick={() => {
+                  handleOnClickUserProfile(), handleMobileMenuClicked();
+                }}
+              >
+                <IoMdPerson className="fs-4" />
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger myBadge">
+                  {wishlist.length}
+                  <span className="visually-hidden">unread messages</span>
+                </span>
+              </button>
             </div>
           </div>
         </div>
