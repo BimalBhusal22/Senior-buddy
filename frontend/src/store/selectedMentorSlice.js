@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const selectedMentorSlice = createSlice({
   name: "selectedMentor",
   initialState: {
+    mentorId: "",
     mentorImage: "",
     mentorName: "",
     mentorFaculty: "",

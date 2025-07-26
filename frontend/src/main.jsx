@@ -49,6 +49,8 @@ import UpdateMentor, {
   action as updateMentorAction,
 } from "./components/dashboard/UpdateMentor.jsx";
 import DeleteMentor from "./components/dashboard/DeleteMentor.jsx";
+import Failure from "./components/esewa/Failure.jsx";
+import Success from "./components/esewa/Success.jsx";
 
 const router = createBrowserRouter([
   {
@@ -106,6 +108,14 @@ const router = createBrowserRouter([
         path: "user_profile",
         element: <UserProfile />,
         action: userProfileAction,
+      },
+      {
+        path: "payment_success",
+        element: <Success />,
+      },
+      {
+        path: "payment_failure",
+        element: <Failure />,
       },
     ],
   },

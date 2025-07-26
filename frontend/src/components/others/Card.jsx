@@ -32,6 +32,7 @@ const Card = ({ item }) => {
   const handleOnClickHowHeHelps = () => {
     dispatch(
       selectedMentorActions.setSelectedMentor({
+        mentorId: item._id,
         mentorImage: item.mentorImage,
         mentorName: item.mentorName,
         mentorFaculty: item.mentorFaculty,

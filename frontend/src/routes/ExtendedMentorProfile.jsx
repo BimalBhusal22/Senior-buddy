@@ -1,8 +1,26 @@
 import { useSelector } from "react-redux";
 import ExtendedMentorInfo from "../components/mentor_profile/ExtendedMentorInfo";
+import { generateUniqueId } from "esewajs";
+import axios from "axios";
 
 const ExtendedMentorProfile = () => {
-  const { mentorName } = useSelector((store) => store.selectedMentor);
+  const { mentorId, mentorName } = useSelector((store) => store.selectedMentor);
+
+  const handleOnClickESewa = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:7000/api/v1/payment/initiate_payment", //server payment route
+        {
+          amount: "200",
+          productId: generateUniqueId(),
+        }
+      );
+
+      window.location.href = response.data.url;
+    } catch (error) {
+      console.error("Bimal, Error initiating payment:", error);
+    }
+  };
   return (
     <>
       <ExtendedMentorInfo />
@@ -15,7 +33,11 @@ const ExtendedMentorProfile = () => {
         *Choose your desired payment method
       </p>
       <div className="d-flex flex-wrap justify-content-center mb-5 mt-4">
-        <button type="button" className="paymentBtn mx-4 px-4 esewaBtn">
+        <button
+          type="button"
+          className="paymentBtn mx-4 px-4 esewaBtn"
+          onClick={handleOnClickESewa}
+        >
           <img src="images/esewa.webp" height="50px" className="esewaImg"></img>
         </button>
         <button type="button" className="paymentBtn mx-4 px-4 pb-1 khaltiBtn">
