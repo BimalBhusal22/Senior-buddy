@@ -1,6 +1,6 @@
-# Senior Buddy - Near Peer Mentorship Platform
+# Senior buddy - Near Peer Mentorship Platform
 
-Senior Buddy is a web-based mentorship platform designed to help students in Nepal make better academic decisions by connecting them with senior students from their dream colleges. It provides authentic insights into teaching learning environment in the college, courses, fees, scholarships, and campus life, future scope, job opportunities — all from a mentor who’s been there.
+Senior buddy is a web-based mentorship platform designed to help students in Nepal make better academic decisions by connecting them with senior students from their dream colleges. It provides authentic insights into teaching learning environment in the college, courses, fees, scholarships, and campus life, future scope, job opportunities — all from a mentor who’s been there.
 
 ---
 
@@ -85,4 +85,4 @@ This project is part of the final year requirement for the Bachelor's Degree in 
 
 ---
 
-> "Senior Buddy isn’t just a tech platform — it’s a step toward educational clarity and student empowerment in Nepal."
+> "Senior buddy isn’t just a tech platform — it’s a step toward educational clarity and student empowerment in Nepal."
