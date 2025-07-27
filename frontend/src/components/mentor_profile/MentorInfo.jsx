@@ -8,9 +8,13 @@ const MentorInfo = () => {
     (store) => store.selectedMentor
   );
 
+  const userProfile = useSelector((store) => store.userProfile);
+  const user = JSON.parse(localStorage.getItem("user")) || userProfile;
+
   const handleOnClickGetHelp = () => {
-    let signedIn = true;
-    signedIn ? navigate("/extended_mentor_profile") : navigate("/sign_up");
+    user.user.role !== ""
+      ? navigate("/extended_mentor_profile")
+      : navigate("/sign_up");
   };
 
   return (
